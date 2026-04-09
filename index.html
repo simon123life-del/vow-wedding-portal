@@ -7,36 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
   <style>
     :root {
-      --tiffany: #81D8D0;
-      --tiffany-dark: #4AADA5;
-      --tiffany-deep: #1E7B74;
-      --tiffany-pale: #EAF7F6;
-      --tiffany-light: #C0E9E6;
-      --pearl: #FAFAF8;
-      --pearl-warm: #F5F0EA;
-      --champagne: #E8DCCB;
-      --champagne-mid: #D0BFA4;
-      --gold: #C4954A;
-      --gold-light: #D4A85C;
-      --white: #FFFFFF;
-      --text: #2D2926;
-      --text-mid: #5A504A;
-      --text-muted: #9A8F87;
-      --border: rgba(45,41,38,0.09);
-      --shadow-sm: 0 1px 4px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 18px rgba(0,0,0,0.10);
-      --shadow-lg: 0 14px 52px rgba(0,0,0,0.14);
-      --radius: 12px;
-      --radius-sm: 8px;
-      --sidebar-w: 248px;
-      --font-display: 'Cormorant Garant', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-      --bar-green: #4AADA5;
-      --bar-amber: #C4954A;
-      --bar-orange: #D4703A;
-      --bar-red: #C94848;
+      --tiffany:#81D8D0;--tiffany-dark:#4AADA5;--tiffany-deep:#1E7B74;--tiffany-pale:#EAF7F6;--tiffany-light:#C0E9E6;
+      --pearl:#FAFAF8;--pearl-warm:#F5F0EA;--champagne:#E8DCCB;--champagne-mid:#D0BFA4;
+      --gold:#C4954A;--gold-light:#D4A85C;--white:#FFFFFF;
+      --text:#2D2926;--text-mid:#5A504A;--text-muted:#9A8F87;
+      --border:rgba(45,41,38,.09);
+      --shadow-sm:0 1px 4px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.04);
+      --shadow-md:0 4px 18px rgba(0,0,0,.10);--shadow-lg:0 14px 52px rgba(0,0,0,.14);
+      --radius:12px;--radius-sm:8px;--sidebar-w:252px;
+      --font-display:'Cormorant Garant',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%;font-family:var(--font-body);background:var(--pearl);color:var(--text);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -44,46 +26,40 @@
 
     /* ── Sidebar ── */
     .sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--white);border-right:1px solid var(--champagne);display:flex;flex-direction:column;overflow-y:auto}
-    .sidebar-logo{padding:26px 22px 18px;border-bottom:1px solid var(--champagne)}
+    .sidebar-logo{padding:24px 22px 16px;border-bottom:1px solid var(--champagne)}
     .logo-mark{font-family:var(--font-display);font-size:30px;font-weight:500;color:var(--gold);line-height:1}
     .logo-sub{font-size:10px;color:var(--text-muted);letter-spacing:.14em;text-transform:uppercase;margin-top:3px}
-    .sidebar-countdown{padding:18px 22px;border-bottom:1px solid var(--champagne)}
+    .sidebar-countdown{padding:16px 22px;border-bottom:1px solid var(--champagne)}
     .countdown-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:3px}
-    .countdown-number{font-family:var(--font-display);font-size:52px;font-weight:300;color:var(--text);line-height:1}
+    .countdown-number{font-family:var(--font-display);font-size:50px;font-weight:300;color:var(--text);line-height:1}
     .countdown-unit{font-size:11px;color:var(--text-muted);margin-top:1px}
-    .countdown-date{font-size:12px;color:var(--tiffany-deep);margin-top:7px;font-family:var(--font-display);font-style:italic}
-    .sidebar-nav{padding:12px 8px;flex:1}
-    .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;color:var(--text-muted);font-size:13px;transition:all .15s;margin-bottom:2px;border:none;background:none;width:100%;text-align:left}
+    .countdown-date{font-size:12px;color:var(--tiffany-deep);margin-top:6px;font-family:var(--font-display);font-style:italic}
+    .sidebar-nav{padding:10px 8px;flex:1}
+    .nav-item{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;cursor:pointer;color:var(--text-muted);font-size:13px;transition:all .15s;margin-bottom:2px;border:none;background:none;width:100%;text-align:left}
     .nav-item:hover{background:var(--pearl-warm);color:var(--text)}
     .nav-item.active{background:var(--tiffany-pale);color:var(--tiffany-deep);font-weight:500}
-    .nav-icon{width:17px;text-align:center;font-size:14px}
+    .nav-icon{width:16px;text-align:center;font-size:13px}
     .sidebar-footer{padding:14px 22px;border-top:1px solid var(--champagne)}
     .sidebar-couple{font-family:var(--font-display);font-size:14px;color:var(--text-muted);font-style:italic}
 
     /* ── Main ── */
     .main{flex:1;overflow-y:auto;background:var(--pearl)}
-    .tab-panel{display:none;padding:30px 34px;animation:fadeIn .2s ease}
+    .tab-panel{display:none;padding:28px 32px;animation:fadeIn .2s ease}
     .tab-panel.active{display:block}
     @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-    .page-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+    .page-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px}
     .page-title{font-family:var(--font-display);font-size:38px;font-weight:400;color:var(--text);line-height:1}
     .page-subtitle{font-size:13px;color:var(--text-muted);margin-top:5px}
 
     /* ── Buttons ── */
-    .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 17px;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:13px;font-weight:500;cursor:pointer;border:none;transition:all .15s;white-space:nowrap}
-    .btn-primary{background:var(--tiffany-deep);color:#fff}
-    .btn-primary:hover{background:var(--tiffany-dark)}
-    .btn-outline{background:transparent;color:var(--text-mid);border:1px solid var(--border)}
-    .btn-outline:hover{border-color:var(--tiffany-dark);color:var(--tiffany-deep)}
-    .btn-ghost{background:transparent;color:var(--text-muted);padding:6px 10px}
-    .btn-ghost:hover{background:var(--pearl-warm);color:var(--text)}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:13px;font-weight:500;cursor:pointer;border:none;transition:all .15s;white-space:nowrap}
+    .btn-primary{background:var(--tiffany-deep);color:#fff}.btn-primary:hover{background:var(--tiffany-dark)}
+    .btn-outline{background:transparent;color:var(--text-mid);border:1px solid var(--border)}.btn-outline:hover{border-color:var(--tiffany-dark);color:var(--tiffany-deep)}
+    .btn-ghost{background:transparent;color:var(--text-muted);padding:6px 10px}.btn-ghost:hover{background:var(--pearl-warm);color:var(--text)}
     .btn-sm{padding:5px 11px;font-size:12px}
-    .btn-danger{background:#8B3A3A;color:#fff}
-    .btn-danger:hover{background:#722E2E}
-    .btn-tiffany{background:var(--tiffany);color:var(--tiffany-deep);font-weight:600}
-    .btn-tiffany:hover{background:var(--tiffany-light)}
-    .btn-gold{background:var(--champagne);color:var(--text-mid)}
-    .btn-gold:hover{background:var(--champagne-mid)}
+    .btn-danger{background:#8B3A3A;color:#fff}.btn-danger:hover{background:#722E2E}
+    .btn-tiffany{background:var(--tiffany);color:var(--tiffany-deep);font-weight:600}.btn-tiffany:hover{background:var(--tiffany-light)}
+    .btn-gold{background:var(--champagne);color:var(--text-mid)}.btn-gold:hover{background:var(--champagne-mid)}
 
     /* ── Badges ── */
     .badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:500}
@@ -93,34 +69,35 @@
     .badge-meeting{background:rgba(196,149,74,.13);color:var(--gold)}.badge-meeting .badge-dot{background:var(--gold)}
     .badge-booked{background:rgba(61,122,106,.13);color:#3D7A6A}.badge-booked .badge-dot{background:#3D7A6A}
     .badge-paid{background:rgba(30,77,64,.12);color:#1E4D40}.badge-paid .badge-dot{background:#1E4D40}
+    .rsvp-yes{background:rgba(61,122,106,.13);color:#3D7A6A}
+    .rsvp-no{background:rgba(139,58,58,.1);color:#8B3A3A}
+    .rsvp-maybe{background:rgba(196,149,74,.13);color:var(--gold)}
+    .rsvp-pending{background:rgba(154,143,135,.12);color:#9A8F87}
 
-    /* ── Cards ── */
+    /* ── Cards & toast ── */
     .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:20px}
-
-    /* ── Toast ── */
-    #toast-container{position:fixed;bottom:24px;right:24px;z-index:500;display:flex;flex-direction:column;gap:8px;pointer-events:none}
-    .toast{background:var(--text);color:#fff;padding:12px 18px;border-radius:10px;font-size:13px;max-width:320px;box-shadow:var(--shadow-lg);animation:toastIn .25s ease;pointer-events:none;line-height:1.4}
+    #toast-container{position:fixed;bottom:22px;right:22px;z-index:500;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+    .toast{background:var(--text);color:#fff;padding:11px 16px;border-radius:10px;font-size:13px;max-width:300px;box-shadow:var(--shadow-lg);animation:toastIn .25s ease;pointer-events:none;line-height:1.4}
     .toast.out{animation:toastOut .25s ease forwards}
     .toast em{color:var(--tiffany-light);font-style:normal}
     @keyframes toastIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
     @keyframes toastOut{to{opacity:0;transform:translateY(8px)}}
 
     /* ── Dashboard ── */
-    .dashboard-hero{background:linear-gradient(130deg,var(--tiffany-pale) 0%,var(--pearl) 55%,var(--pearl-warm) 100%);border:1px solid var(--tiffany-light);border-radius:16px;padding:30px 34px;margin-bottom:20px;position:relative;overflow:hidden}
-    .dashboard-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(129,216,208,.18) 0%,transparent 70%)}
-    .hero-label{font-size:10px;color:var(--tiffany-deep);text-transform:uppercase;letter-spacing:.16em;margin-bottom:9px;font-weight:600}
+    .dashboard-hero{background:linear-gradient(130deg,var(--tiffany-pale) 0%,var(--pearl) 55%,var(--pearl-warm) 100%);border:1px solid var(--tiffany-light);border-radius:16px;padding:28px 32px;margin-bottom:18px;position:relative;overflow:hidden}
+    .dashboard-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(129,216,208,.18) 0%,transparent 70%)}
+    .hero-label{font-size:10px;color:var(--tiffany-deep);text-transform:uppercase;letter-spacing:.16em;margin-bottom:8px;font-weight:600}
     .hero-heading{font-family:var(--font-display);font-size:42px;font-weight:400;color:var(--text);line-height:1.05}
     .hero-heading em{color:var(--tiffany-deep);font-style:italic}
-    .hero-meta{margin-top:9px;font-size:13px;color:var(--text-muted)}
-    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:20px}
-    .stat-card{background:var(--white);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-sm)}
-    .stat-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px;font-weight:500}
-    .stat-value{font-family:var(--font-display);font-size:40px;font-weight:500;color:var(--tiffany-deep);line-height:1}
+    .hero-meta{margin-top:8px;font-size:13px;color:var(--text-muted)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+    .stat-card{background:var(--white);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow-sm)}
+    .stat-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;font-weight:500}
+    .stat-value{font-family:var(--font-display);font-size:38px;font-weight:500;color:var(--tiffany-deep);line-height:1}
     .stat-sub{font-size:12px;color:var(--text-muted);margin-top:3px}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .section-heading{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--text);margin-bottom:13px}
-    .vendor-mini-list,.timeline-mini-list{display:flex;flex-direction:column;gap:6px}
-    .vendor-mini-item,.timeline-mini-item{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:var(--pearl);border-radius:8px;font-size:13px}
+    .section-heading{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--text);margin-bottom:12px}
+    .vendor-mini-item,.timeline-mini-item{display:flex;align-items:center;justify-content:space-between;padding:8px 11px;background:var(--pearl);border-radius:8px;font-size:13px;margin-bottom:5px}
     .vendor-mini-name,.timeline-mini-task{font-weight:500}
     .vendor-mini-cat,.timeline-mini-cat{font-size:11px;color:var(--text-muted);margin-top:1px}
     .timeline-mini-due{font-size:11px;color:var(--text-muted);white-space:nowrap}
@@ -128,59 +105,60 @@
     .timeline-mini-due.soon{color:var(--gold);font-weight:500}
 
     /* ── Vendors ── */
-    .vendor-filter-bar,.tips-filter-bar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+    .filter-bar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
     .filter-chip{padding:5px 13px;border-radius:100px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:var(--white);color:var(--text-muted);transition:all .15s}
     .filter-chip:hover{border-color:var(--tiffany-dark);color:var(--tiffany-deep)}
     .filter-chip.active{background:var(--tiffany-deep);color:#fff;border-color:var(--tiffany-deep)}
-    .vendors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:13px}
-    .vendor-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:17px 19px;cursor:pointer;transition:all .15s}
+    .vendors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+    .vendor-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:16px 18px;cursor:pointer;transition:all .15s}
     .vendor-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
-    .vendor-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+    .vendor-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:7px}
     .vendor-category-tag{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);font-weight:500}
     .vendor-name{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--text);margin-bottom:2px;line-height:1.1}
-    .vendor-contact{font-size:12px;color:var(--text-muted);margin-bottom:11px}
-    .vendor-financials{display:flex;align-items:center;justify-content:space-between;padding-top:11px;border-top:1px solid var(--pearl-warm)}
-    .vendor-price{font-family:var(--font-display);font-size:21px;font-weight:500;color:var(--tiffany-deep)}
-    .vendor-deposit{font-size:12px;color:var(--text-muted)}
-    .compare-cta{background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:10px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
+    .vendor-contact{font-size:12px;color:var(--text-muted);margin-bottom:10px}
+    .vendor-financials{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--pearl-warm)}
+    .vendor-price{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--tiffany-deep)}
+    .compare-cta{background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:10px;padding:11px 15px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
     .compare-cta-text{font-size:13px;color:var(--tiffany-deep)}
-    .compare-cta-text strong{font-weight:600}
-    .email-import-section{background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:8px;padding:12px 14px;margin-bottom:16px}
+    .email-import-section{background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:8px;padding:11px 13px;margin-bottom:14px}
     .email-import-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer}
     .email-import-title{font-size:13px;font-weight:500;color:var(--tiffany-deep)}
     .email-import-body{margin-top:10px;display:none}
     .email-import-body.open{display:block}
-    .email-import-textarea{width:100%;padding:9px 11px;border:1px solid var(--tiffany-light);border-radius:6px;font-family:var(--font-body);font-size:12px;color:var(--text);min-height:90px;resize:vertical;background:#fff;outline:none}
+    .email-import-textarea{width:100%;padding:8px 11px;border:1px solid var(--tiffany-light);border-radius:6px;font-family:var(--font-body);font-size:12px;color:var(--text);min-height:85px;resize:vertical;background:#fff;outline:none}
     .email-import-textarea:focus{border-color:var(--tiffany-dark)}
-    .empty-state{text-align:center;padding:44px 20px;color:var(--text-muted)}
-    .empty-state-icon{font-size:38px;margin-bottom:11px}
+    .empty-state{text-align:center;padding:40px 20px;color:var(--text-muted)}
+    .empty-state-icon{font-size:36px;margin-bottom:10px}
     .empty-state h3{font-family:var(--font-display);font-size:22px;color:var(--text-mid);margin-bottom:7px}
     .empty-state p{font-size:13px;line-height:1.6}
 
-    /* ── Compare Modal ── */
-    .modal-wide{width:min(960px,95vw) !important}
-    .compare-grid{display:flex;gap:0;overflow-x:auto;border:1px solid var(--champagne);border-radius:10px}
-    .compare-col{flex:1;min-width:220px;max-width:300px;padding:18px 16px;border-right:1px solid var(--champagne)}
+    /* ── Compare ── */
+    .modal-wide{width:min(1000px,96vw) !important}
+    .compare-grid{display:flex;overflow-x:auto;border:1px solid var(--champagne);border-radius:10px}
+    .compare-col{flex:1;min-width:210px;max-width:280px;padding:16px 14px;border-right:1px solid var(--champagne)}
     .compare-col:last-child{border-right:none}
-    .compare-col-name{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--text);margin-bottom:4px;line-height:1.1}
-    .compare-field{margin-bottom:12px}
-    .compare-field label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:4px}
-    .compare-input,.compare-textarea{width:100%;padding:7px 10px;border:1px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:13px;color:var(--text);background:#fff;outline:none;transition:border-color .15s}
+    .compare-col.compare-winner{background:var(--tiffany-pale);border-top:3px solid var(--tiffany-dark)}
+    .compare-col-name{font-family:var(--font-display);font-size:19px;font-weight:500;margin-bottom:4px;line-height:1.1}
+    .compare-price{font-family:var(--font-display);font-size:23px;font-weight:500;color:var(--tiffany-deep)}
+    .compare-field{margin-bottom:10px}
+    .compare-field label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:3px}
+    .compare-input,.compare-textarea{width:100%;padding:6px 9px;border:1px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:12px;color:var(--text);background:#fff;outline:none;transition:border-color .15s}
     .compare-input:focus,.compare-textarea:focus{border-color:var(--tiffany-dark)}
-    .compare-textarea{resize:vertical;min-height:64px}
-    .compare-price{font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--tiffany-deep)}
-    .compare-winner{background:var(--tiffany-pale);border-top:3px solid var(--tiffany-dark)}
-    .compare-col-links{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
-    .compare-book-btn{width:100%;justify-content:center;margin-top:12px;padding:10px}
+    .compare-textarea{resize:vertical;min-height:58px}
+    .compare-col-links{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+    .compare-book-btn{width:100%;justify-content:center;margin-top:10px;padding:9px}
 
     /* ── Timeline ── */
-    .timeline-group{margin-bottom:28px}
-    .timeline-group-header{display:flex;align-items:center;gap:12px;margin-bottom:9px}
-    .timeline-group-title{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--text);white-space:nowrap}
+    .view-toggle{display:flex;background:var(--pearl-warm);border-radius:8px;padding:3px;gap:2px;width:fit-content;margin-bottom:16px}
+    .view-toggle-btn{padding:6px 14px;border-radius:6px;border:none;background:transparent;font-family:var(--font-body);font-size:12px;font-weight:500;cursor:pointer;color:var(--text-muted);transition:all .15s}
+    .view-toggle-btn.active{background:var(--white);color:var(--tiffany-deep);box-shadow:var(--shadow-sm)}
+    .timeline-group{margin-bottom:24px}
+    .timeline-group-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+    .timeline-group-title{font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--text);white-space:nowrap}
     .timeline-group-line{flex:1;height:1px;background:var(--champagne)}
     .timeline-group-date{font-size:11px;color:var(--text-muted);white-space:nowrap}
     .timeline-items{display:flex;flex-direction:column;gap:5px}
-    .timeline-item{display:flex;align-items:center;gap:13px;padding:10px 15px;background:var(--white);border-radius:8px;box-shadow:var(--shadow-sm);cursor:pointer;transition:all .15s}
+    .timeline-item{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--white);border-radius:8px;box-shadow:var(--shadow-sm);cursor:pointer;transition:all .15s}
     .timeline-item:hover{box-shadow:var(--shadow-md)}
     .timeline-item.completed{opacity:.5}
     .timeline-item.overdue{border-left:3px solid #C94848}
@@ -196,118 +174,164 @@
     .timeline-due-date.overdue{color:#C94848;font-weight:500}
     .timeline-due-date.soon{color:var(--gold);font-weight:500}
 
-    /* ── Budget (Copilot-style) ── */
-    .budget-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:20px}
-    .budget-summary-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:18px 20px;position:relative}
-    .budget-summary-card.primary{background:var(--tiffany-pale);border:1px solid var(--tiffany-light)}
-    .budget-summary-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin-bottom:6px}
-    .budget-summary-card.primary .budget-summary-label{color:var(--tiffany-deep)}
-    .budget-summary-value{font-family:var(--font-display);font-size:36px;font-weight:400;color:var(--text);line-height:1}
-    .budget-summary-card.primary .budget-summary-value{color:var(--tiffany-deep)}
-    .budget-summary-sub{font-size:12px;color:var(--text-muted);margin-top:4px}
-    .budget-total-edit{background:transparent;border:none;border-bottom:2px solid var(--tiffany-light);font-family:var(--font-display);font-size:36px;font-weight:400;color:var(--tiffany-deep);width:100%;outline:none;padding-bottom:1px;transition:border-color .15s}
-    .budget-total-edit:focus{border-color:var(--tiffany-dark)}
-    .budget-overall-bar{height:8px;background:var(--pearl-warm);border-radius:4px;overflow:hidden;margin-top:14px}
-    .budget-overall-fill{height:100%;background:var(--bar-green);border-radius:4px;transition:width .4s ease}
+    /* ── Calendar ── */
+    .cal-nav{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+    .cal-month-title{font-family:var(--font-display);font-size:26px;font-weight:400;color:var(--text);flex:1;text-align:center}
+    .cal-nav-btn{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:15px;color:var(--text-mid);transition:all .15s}
+    .cal-nav-btn:hover{border-color:var(--tiffany-dark);color:var(--tiffany-deep)}
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+    .cal-day-header{text-align:center;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);padding:6px 0}
+    .cal-day{background:var(--white);border-radius:8px;min-height:72px;padding:6px 8px;box-shadow:var(--shadow-sm);position:relative}
+    .cal-day.other-month{background:transparent;box-shadow:none;opacity:.4}
+    .cal-day.today{border:2px solid var(--tiffany)}
+    .cal-day-num{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px}
+    .cal-day.today .cal-day-num{color:var(--tiffany-deep);font-weight:700}
+    .cal-dots{display:flex;flex-wrap:wrap;gap:2px}
+    .cal-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;cursor:pointer;transition:transform .1s}
+    .cal-dot:hover{transform:scale(1.4)}
+    .cal-event-label{font-size:10px;color:var(--text-muted);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .cal-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:14px;background:var(--white);border-radius:10px;box-shadow:var(--shadow-sm)}
+    .cal-legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-mid)}
+    .cal-legend-dot{width:8px;height:8px;border-radius:50%}
 
-    .budget-categories{display:flex;flex-direction:column;gap:0}
-    .budget-row{background:var(--white);border-radius:10px;padding:14px 18px;box-shadow:var(--shadow-sm);margin-bottom:8px;transition:box-shadow .15s}
+    /* ── Budget donut ── */
+    .budget-hero{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:22px 24px;margin-bottom:16px}
+    .budget-hero-inner{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+    .budget-donut-wrap{flex-shrink:0}
+    .budget-donut-legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+    .budget-legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-mid);white-space:nowrap}
+    .budget-legend-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+    .budget-stats{flex:1;display:flex;flex-direction:column;gap:12px;min-width:200px}
+    .budget-stat-row{display:flex;flex-direction:column;gap:2px}
+    .budget-stat-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted)}
+    .budget-stat-value{font-family:var(--font-display);font-size:32px;font-weight:400;color:var(--text);line-height:1}
+    .budget-stat-sub{font-size:12px;color:var(--text-muted)}
+    .budget-total-edit{background:transparent;border:none;border-bottom:2px solid var(--tiffany-light);font-family:var(--font-display);font-size:32px;font-weight:400;color:var(--text);outline:none;padding-bottom:1px;transition:border-color .15s;width:180px}
+    .budget-total-edit:focus{border-color:var(--tiffany-dark)}
+    .budget-categories{display:flex;flex-direction:column;gap:7px}
+    .budget-row{background:var(--white);border-radius:10px;padding:13px 17px;box-shadow:var(--shadow-sm);transition:box-shadow .15s}
     .budget-row:hover{box-shadow:var(--shadow-md)}
-    .budget-row-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-    .budget-row-name{font-size:13px;font-weight:500;color:var(--text)}
-    .budget-row-numbers{display:flex;align-items:center;gap:10px}
-    .budget-row-budgeted-input{background:transparent;border:1px solid transparent;border-radius:5px;padding:3px 8px;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--text);text-align:right;width:100px;transition:all .15s}
+    .budget-row-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+    .budget-row-name{font-size:13px;font-weight:500;color:var(--text);display:flex;align-items:center;gap:7px}
+    .budget-row-color{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+    .budget-row-budgeted-input{background:transparent;border:1px solid transparent;border-radius:5px;padding:3px 7px;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--text);text-align:right;width:100px;transition:all .15s}
     .budget-row-budgeted-input:hover{border-color:var(--champagne)}
     .budget-row-budgeted-input:focus{outline:none;border-color:var(--tiffany-dark);background:var(--tiffany-pale)}
-    .budget-row-bar-wrap{position:relative;height:8px;background:var(--pearl-warm);border-radius:4px;overflow:visible;margin-bottom:6px}
-    .budget-row-bar-fill{height:8px;border-radius:4px;transition:width .35s ease,background .35s ease;position:relative;min-width:2px}
-    .budget-row-bar-overflow{position:absolute;top:0;right:0;height:8px;background:var(--bar-red);border-radius:0 4px 4px 0}
+    .budget-row-bar-wrap{height:7px;background:var(--pearl-warm);border-radius:3px;overflow:hidden;margin-bottom:5px}
+    .budget-row-bar-fill{height:7px;border-radius:3px;transition:width .35s ease,background .35s ease}
     .budget-row-meta{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--text-muted)}
     .budget-row-meta .committed{font-weight:500;color:var(--text-mid)}
-    .budget-row-meta .remaining{}
-    .budget-row-meta .remaining.ok{color:var(--tiffany-deep);font-weight:500}
-    .budget-row-meta .remaining.warn{color:var(--gold);font-weight:500}
-    .budget-row-meta .remaining.danger{color:#C94848;font-weight:500}
-    .budget-transfer-btn{font-size:11px;background:transparent;border:none;cursor:pointer;color:var(--text-muted);padding:3px 8px;border-radius:5px;transition:all .15s}
+    .budget-remaining.ok{color:var(--tiffany-deep);font-weight:500}
+    .budget-remaining.warn{color:var(--gold);font-weight:500}
+    .budget-remaining.danger{color:#C94848;font-weight:500}
+    .budget-transfer-btn{font-size:11px;background:transparent;border:none;cursor:pointer;color:var(--text-muted);padding:3px 7px;border-radius:5px;transition:all .15s}
     .budget-transfer-btn:hover{background:var(--pearl-warm);color:var(--tiffany-deep)}
-    .budget-transfer-form{background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:8px;padding:12px 14px;margin-top:10px;display:none}
-    .budget-transfer-form.open{display:block}
-    .budget-transfer-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-    .budget-transfer-input{padding:6px 10px;border:1px solid var(--tiffany-light);border-radius:6px;font-family:var(--font-body);font-size:13px;color:var(--text);width:100px;outline:none}
-    .budget-transfer-input:focus{border-color:var(--tiffany-dark)}
-    .budget-transfer-select{padding:6px 10px;border:1px solid var(--tiffany-light);border-radius:6px;font-family:var(--font-body);font-size:13px;color:var(--text);background:#fff;outline:none}
-    .budget-transfer-select:focus{border-color:var(--tiffany-dark)}
+
+    /* ── Guests ── */
+    .guest-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:16px}
+    .guest-stat{background:var(--white);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow-sm);text-align:center}
+    .guest-stat-value{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--tiffany-deep);line-height:1}
+    .guest-stat-label{font-size:11px;color:var(--text-muted);margin-top:3px;text-transform:uppercase;letter-spacing:.08em}
+    .guest-table-wrap{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}
+    .guest-table{width:100%;border-collapse:collapse}
+    .guest-table th{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);padding:10px 14px;text-align:left;border-bottom:1px solid var(--champagne);background:var(--pearl)}
+    .guest-table td{padding:10px 14px;border-bottom:1px solid var(--pearl-warm);font-size:13px;vertical-align:middle}
+    .guest-table tr:last-child td{border-bottom:none}
+    .guest-table tr:hover td{background:var(--pearl)}
+    .guest-table .guest-name-cell{font-weight:500;color:var(--text)}
+    .guest-plus{font-size:11px;color:var(--text-muted)}
+    .guest-dietary-tag{font-size:11px;background:rgba(196,149,74,.12);color:var(--gold);padding:2px 7px;border-radius:100px}
+    .guest-actions{display:flex;gap:4px}
+    .seating-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+    .table-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:16px;position:relative}
+    .table-card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+    .table-card-name{font-family:var(--font-display);font-size:19px;font-weight:500}
+    .table-capacity-badge{font-size:11px;background:var(--tiffany-pale);color:var(--tiffany-deep);padding:3px 9px;border-radius:100px;font-weight:500}
+    .table-guest-list{display:flex;flex-direction:column;gap:5px}
+    .table-guest-item{display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:5px 8px;background:var(--pearl);border-radius:6px}
+    .table-guest-name{font-weight:500}
+    .table-empty-seat{font-size:12px;color:var(--text-muted);font-style:italic;padding:4px 8px}
+    .table-add-row{font-size:12px;color:var(--tiffany-deep);cursor:pointer;padding:5px 8px;border-radius:6px;border:1px dashed var(--tiffany-light);text-align:center;transition:all .15s}
+    .table-add-row:hover{background:var(--tiffany-pale)}
+    .table-delete-btn{position:absolute;top:10px;right:10px;background:transparent;border:none;cursor:pointer;color:var(--text-muted);font-size:12px;padding:3px;border-radius:4px}
+    .table-delete-btn:hover{background:var(--pearl-warm);color:#8B3A3A}
+    .unassigned-guests{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:16px;grid-column:1/-1}
+    .unassigned-label{font-family:var(--font-display);font-size:18px;margin-bottom:10px;color:var(--text)}
+    .unassigned-chips{display:flex;flex-wrap:wrap;gap:6px}
+    .unassigned-chip{font-size:12px;background:var(--pearl);border:1px solid var(--border);padding:4px 10px;border-radius:100px;color:var(--text-mid)}
 
     /* ── Documents ── */
-    .docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:13px}
-    .doc-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:17px 19px;transition:all .15s}
+    .docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+    .doc-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:16px 18px;transition:all .15s}
     .doc-card:hover{box-shadow:var(--shadow-md)}
     .doc-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:9px}
     .doc-icon{font-size:22px;margin-bottom:7px}
     .doc-name{font-weight:500;font-size:14px;color:var(--text);margin-bottom:2px}
     .doc-vendor{font-size:12px;color:var(--text-muted)}
     .doc-type-tag{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);font-weight:500}
-    .doc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:13px;padding-top:11px;border-top:1px solid var(--pearl-warm)}
+    .doc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:11px;padding-top:10px;border-top:1px solid var(--pearl-warm)}
     .doc-status-needed{background:rgba(139,58,58,.1);color:#8B3A3A}
     .doc-status-requested{background:rgba(74,173,165,.12);color:var(--tiffany-dark)}
     .doc-status-received{background:rgba(196,149,74,.12);color:var(--gold)}
     .doc-status-signed{background:rgba(61,122,106,.12);color:#3D7A6A}
     .doc-status-filed{background:rgba(30,77,64,.12);color:#1E4D40}
-    .doc-file-indicator{font-size:11px;color:var(--tiffany-deep);background:var(--tiffany-pale);padding:2px 8px;border-radius:100px;font-weight:500}
-    .file-drop-area{border:2px dashed var(--champagne);border-radius:8px;padding:16px;text-align:center;cursor:pointer;transition:all .15s;position:relative;margin-top:8px}
+    .file-drop-area{border:2px dashed var(--champagne);border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:all .15s;position:relative;margin-top:6px}
     .file-drop-area:hover,.file-drop-area.over{border-color:var(--tiffany-dark);background:var(--tiffany-pale)}
-    .file-drop-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer}
+    .file-drop-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
     .file-drop-text{font-size:12px;color:var(--text-muted);pointer-events:none}
     .file-drop-text strong{color:var(--tiffany-deep)}
 
     /* ── Inspo ── */
-    .inspo-section-header{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+    .inspo-section-header{display:flex;align-items:center;gap:14px;margin-bottom:12px}
     .inspo-section-title{font-family:var(--font-display);font-size:24px;font-weight:400;white-space:nowrap}
     .inspo-section-line{flex:1;height:1px;background:var(--champagne)}
-    .pinterest-card{background:linear-gradient(135deg,#E60023 0%,#AD081B 100%);border-radius:var(--radius);padding:24px 28px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .pinterest-card.unset{background:var(--pearl-warm);border:2px dashed var(--champagne-mid)}
-    .pinterest-card-left{}
-    .pinterest-logo{font-size:28px;margin-bottom:6px}
-    .pinterest-title{font-family:var(--font-display);font-size:22px;font-weight:500;color:#fff;margin-bottom:4px}
-    .pinterest-card.unset .pinterest-title{color:var(--text-mid)}
-    .pinterest-sub{font-size:12px;color:rgba(255,255,255,.7)}
-    .pinterest-card.unset .pinterest-sub{color:var(--text-muted)}
-    .pinterest-set-input{padding:8px 12px;border:1px solid var(--champagne);border-radius:7px;font-family:var(--font-body);font-size:13px;color:var(--text);background:#fff;width:260px;outline:none}
-    .pinterest-set-input:focus{border-color:var(--tiffany-dark)}
-    .inspo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:13px;margin-bottom:28px}
+    .inspo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:24px}
     .inspo-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;position:relative}
-    .inspo-card-tiktok iframe{width:100%;border:none;border-radius:var(--radius) var(--radius) 0 0;display:block}
-    .inspo-card-body{padding:13px 15px}
-    .inspo-card-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:4px}
+    .inspo-card-body{padding:12px 14px}
+    .inspo-card-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:3px}
     .inspo-card-title{font-weight:500;font-size:13px;color:var(--text);margin-bottom:2px}
     .inspo-card-note{font-size:12px;color:var(--text-muted);line-height:1.5}
-    .inspo-card-delete{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.4);border:none;cursor:pointer;color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;transition:all .15s}
-    .inspo-card-delete:hover{background:rgba(0,0,0,.6)}
-    .inspo-note-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:16px 18px;position:relative}
-    .inspo-note-cat{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:6px}
+    .inspo-card-delete{position:absolute;top:7px;right:7px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.45);border:none;cursor:pointer;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+    .inspo-card-delete:hover{background:rgba(0,0,0,.65)}
+    .inspo-note-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:15px 17px;position:relative}
+    .inspo-note-cat{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:5px}
     .inspo-note-text{font-size:13px;color:var(--text);line-height:1.6}
-    .inspo-note-delete{position:absolute;top:10px;right:10px;background:transparent;border:none;cursor:pointer;color:var(--text-muted);font-size:13px;padding:3px;border-radius:4px}
-    .inspo-note-delete:hover{background:var(--pearl-warm);color:#8B3A3A}
+    .inspo-link-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:15px 17px;position:relative;transition:all .15s}
+    .inspo-link-card:hover{box-shadow:var(--shadow-md)}
+    .inspo-link-type-tag{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+    .inspo-link-title{font-weight:500;font-size:14px;color:var(--text);margin-bottom:4px}
+    .inspo-link-url{font-size:11px;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-bottom:8px}
+    .inspo-note-delete,.inspo-link-delete{position:absolute;top:9px;right:9px;background:transparent;border:none;cursor:pointer;color:var(--text-muted);font-size:13px;padding:3px;border-radius:4px}
+    .inspo-note-delete:hover,.inspo-link-delete:hover{background:var(--pearl-warm);color:#8B3A3A}
+    .pinterest-card{background:linear-gradient(135deg,#E60023 0%,#AD081B 100%);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .pinterest-card.unset{background:var(--pearl-warm);border:2px dashed var(--champagne-mid)}
+    .pinterest-title{font-family:var(--font-display);font-size:22px;font-weight:500;color:#fff;margin-bottom:3px}
+    .pinterest-card.unset .pinterest-title{color:var(--text-mid)}
+    .pinterest-sub{font-size:12px;color:rgba(255,255,255,.75)}
+    .pinterest-card.unset .pinterest-sub{color:var(--text-muted)}
+    .pinterest-embed-area{margin-bottom:24px}
+    .pinterest-set-input{padding:8px 11px;border:1px solid var(--champagne);border-radius:7px;font-family:var(--font-body);font-size:13px;color:var(--text);background:#fff;width:240px;outline:none}
+    .pinterest-set-input:focus{border-color:var(--tiffany-dark)}
 
     /* ── Tips ── */
-    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:13px;margin-bottom:28px}
-    .tip-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:19px;transition:all .15s;position:relative}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px;margin-bottom:24px}
+    .tip-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:18px;transition:all .15s;position:relative}
     .tip-card:hover{box-shadow:var(--shadow-md)}
     .tip-card.curated{border-top:3px solid var(--tiffany)}
     .tip-card.personal{border-top:3px solid var(--champagne-mid)}
-    .tip-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:9px}
-    .tip-icon{font-size:25px;margin-bottom:7px}
+    .tip-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+    .tip-icon{font-size:24px;margin-bottom:6px}
     .tip-cat-tag{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);font-weight:500}
-    .tip-source{font-size:10px;font-weight:500;padding:2px 8px;border-radius:100px}
+    .tip-source{font-size:10px;font-weight:500;padding:2px 7px;border-radius:100px}
     .tip-source.rachel{background:var(--tiffany-pale);color:var(--tiffany-deep)}
     .tip-source.personal-tag{background:rgba(212,168,92,.12);color:var(--gold)}
-    .tip-title{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--text);margin-bottom:7px;line-height:1.2}
+    .tip-title{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--text);margin-bottom:6px;line-height:1.2}
     .tip-body{font-size:13px;color:var(--text-mid);line-height:1.6}
-    .tip-link{display:inline-flex;align-items:center;gap:4px;margin-top:9px;font-size:12px;color:var(--tiffany-deep);text-decoration:none;font-weight:500}
+    .tip-link{display:inline-flex;align-items:center;gap:4px;margin-top:8px;font-size:12px;color:var(--tiffany-deep);text-decoration:none;font-weight:500}
     .tip-link:hover{text-decoration:underline}
-    .tip-delete{position:absolute;top:11px;right:11px;background:transparent;border:none;cursor:pointer;color:var(--text-muted);font-size:13px;padding:4px;border-radius:4px}
+    .tip-delete,.tips-section-label .after-line{position:absolute;top:10px;right:10px;background:transparent;border:none;cursor:pointer;color:var(--text-muted);font-size:13px;padding:3px;border-radius:4px}
     .tip-delete:hover{background:var(--pearl-warm);color:#8B3A3A}
-    .tips-section-label{font-family:var(--font-display);font-size:24px;font-weight:400;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+    .tips-section-label{font-family:var(--font-display);font-size:24px;font-weight:400;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:12px}
     .tips-section-label::after{content:'';flex:1;height:1px;background:var(--champagne)}
 
     /* ── Modals ── */
@@ -316,52 +340,50 @@
     @keyframes bdIn{from{opacity:0}to{opacity:1}}
     .modal{background:var(--white);border-radius:16px;box-shadow:var(--shadow-lg);width:570px;max-width:95vw;max-height:90vh;overflow-y:auto;animation:modalIn .2s ease}
     @keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
-    .modal-header{padding:22px 26px 16px;border-bottom:1px solid var(--pearl-warm);display:flex;align-items:center;justify-content:space-between}
+    .modal-header{padding:20px 24px 15px;border-bottom:1px solid var(--pearl-warm);display:flex;align-items:center;justify-content:space-between}
     .modal-title{font-family:var(--font-display);font-size:27px;font-weight:500}
-    .modal-close{width:30px;height:30px;border-radius:50%;border:none;background:var(--pearl);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all .15s}
+    .modal-close{width:29px;height:29px;border-radius:50%;border:none;background:var(--pearl);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all .15s}
     .modal-close:hover{background:var(--pearl-warm);color:var(--text)}
-    .modal-body{padding:20px 26px}
-    .modal-footer{padding:13px 26px 20px;display:flex;gap:9px;justify-content:flex-end}
+    .modal-body{padding:18px 24px}
+    .modal-footer{padding:12px 24px 18px;display:flex;gap:8px;justify-content:flex-end}
 
     /* ── Forms ── */
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
     .form-grid-full{grid-column:1/-1}
-    .form-group{display:flex;flex-direction:column;gap:5px}
+    .form-group{display:flex;flex-direction:column;gap:4px}
     .form-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
-    .form-input,.form-select,.form-textarea{padding:9px 11px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:13px;color:var(--text);background:#fff;transition:border-color .15s;outline:none}
+    .form-input,.form-select,.form-textarea{padding:8px 11px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:13px;color:var(--text);background:#fff;transition:border-color .15s;outline:none}
     .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--tiffany-dark);box-shadow:0 0 0 3px rgba(74,173,165,.1)}
-    .form-textarea{resize:vertical;min-height:75px}
+    .form-textarea{resize:vertical;min-height:72px}
     .form-section-divider{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);padding-top:12px;border-top:1px solid var(--pearl-warm);margin-top:2px;grid-column:1/-1}
 
     /* ── Onboarding ── */
     #onboarding{position:fixed;inset:0;background:linear-gradient(135deg,var(--tiffany-pale) 0%,var(--pearl-warm) 50%,var(--champagne) 100%);display:flex;align-items:center;justify-content:center;z-index:200}
-    .ob-card{background:var(--white);border-radius:20px;padding:44px 48px;width:560px;max-width:95vw;box-shadow:var(--shadow-lg)}
+    .ob-card{background:var(--white);border-radius:20px;padding:42px 46px;width:560px;max-width:95vw;box-shadow:var(--shadow-lg)}
     .ob-step{display:none}
     .ob-step.active{display:block}
     .ob-mark{font-family:var(--font-display);font-size:50px;color:var(--gold);margin-bottom:2px;line-height:1}
-    .ob-tagline{font-family:var(--font-display);font-size:16px;font-style:italic;color:var(--text-muted);margin-bottom:28px}
-    .ob-form{display:flex;flex-direction:column;gap:16px}
-    .email-tip-box{background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:8px;padding:13px 15px;display:flex;gap:11px;align-items:flex-start}
-    .email-tip-icon{font-size:19px;flex-shrink:0;margin-top:1px}
+    .ob-tagline{font-family:var(--font-display);font-size:16px;font-style:italic;color:var(--text-muted);margin-bottom:26px}
+    .ob-form{display:flex;flex-direction:column;gap:15px}
+    .email-tip-box{background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:8px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+    .email-tip-icon{font-size:18px;flex-shrink:0;margin-top:1px}
     .email-tip-text{font-size:12px;color:var(--tiffany-deep);line-height:1.5}
     .email-tip-text strong{font-weight:600}
-    .ob-step2-title{font-family:var(--font-display);font-size:28px;font-weight:400;color:var(--text);margin-bottom:4px}
-    .ob-step2-sub{font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5}
-    .ob2-total-bar{background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:8px;padding:12px 14px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
+    .ob2-total-bar{background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:8px;padding:10px 13px;margin-bottom:13px;display:flex;align-items:center;justify-content:space-between}
     .ob2-total-label{font-size:12px;color:var(--tiffany-deep);font-weight:500}
     .ob2-total-remaining{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--tiffany-deep)}
     .ob2-total-remaining.over{color:#C94848}
-    .ob2-cats{display:flex;flex-direction:column;gap:8px;max-height:360px;overflow-y:auto;padding-right:4px}
-    .ob2-cat-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--pearl);border-radius:8px}
+    .ob2-cats{display:flex;flex-direction:column;gap:7px;max-height:340px;overflow-y:auto;padding-right:4px}
+    .ob2-cat-row{display:flex;align-items:center;gap:9px;padding:9px 11px;background:var(--pearl);border-radius:8px}
+    .ob2-cat-color{width:9px;height:9px;border-radius:50%;flex-shrink:0}
     .ob2-cat-name{flex:1;font-size:13px;font-weight:500;color:var(--text)}
-    .ob2-cat-pct{font-size:11px;color:var(--text-muted);width:30px;text-align:right}
-    .ob2-cat-input{padding:5px 9px;border:1px solid var(--champagne);border-radius:6px;font-family:var(--font-body);font-size:13px;color:var(--text);width:100px;text-align:right;outline:none;transition:border-color .15s}
+    .ob2-cat-pct{font-size:11px;color:var(--text-muted);width:28px;text-align:right}
+    .ob2-cat-input{padding:4px 8px;border:1px solid var(--champagne);border-radius:6px;font-family:var(--font-body);font-size:13px;color:var(--text);width:95px;text-align:right;outline:none;transition:border-color .15s}
     .ob2-cat-input:focus{border-color:var(--tiffany-dark);background:var(--tiffany-pale)}
-    ::-webkit-scrollbar{width:5px}
-    ::-webkit-scrollbar-track{background:transparent}
-    ::-webkit-scrollbar-thumb{background:var(--champagne);border-radius:3px}
+
+    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--champagne);border-radius:3px}
     .hidden{display:none !important}
-    @media(max-width:768px){.sidebar{width:58px;min-width:58px}.sidebar-logo .logo-sub,.sidebar-countdown,.sidebar-footer,.nav-item span{display:none}.tab-panel{padding:18px 16px}.stats-grid,.budget-summary{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.sidebar{width:56px;min-width:56px}.sidebar-logo .logo-sub,.sidebar-countdown,.sidebar-footer,.nav-item span{display:none}.tab-panel{padding:16px 14px}.stats-grid,.guest-stats{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -369,15 +391,11 @@
 <!-- ══ Onboarding ══ -->
 <div id="onboarding">
   <div class="ob-card">
-    <!-- Step 1 -->
     <div class="ob-step active" id="ob-step-1">
       <div class="ob-mark">Vow</div>
       <div class="ob-tagline">Your personal wedding command center</div>
       <div class="ob-form">
-        <div class="email-tip-box">
-          <div class="email-tip-icon">💌</div>
-          <div class="email-tip-text"><strong>Create a dedicated wedding email first.</strong> Set up something like <em>sarah.james2026@gmail.com</em> before contacting vendors. Every quote, contract, and thread in one inbox — shareable with your partner.</div>
-        </div>
+        <div class="email-tip-box"><div class="email-tip-icon">💌</div><div class="email-tip-text"><strong>Create a wedding email first.</strong> Set up something like <em>sarah.james2026@gmail.com</em> before contacting vendors. Every quote, contract, and thread in one inbox — shareable with your partner.</div></div>
         <div class="form-grid">
           <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" id="ob-bride" placeholder="e.g. Sarah" /></div>
           <div class="form-group"><label class="form-label">Partner's Name</label><input class="form-input" id="ob-partner" placeholder="e.g. James" /></div>
@@ -385,20 +403,16 @@
         <div class="form-group"><label class="form-label">Wedding Date</label><input class="form-input" id="ob-date" type="date" /></div>
         <div class="form-group"><label class="form-label">Total Budget</label><input class="form-input" id="ob-budget" type="number" placeholder="e.g. 60000" /></div>
         <div class="form-group"><label class="form-label">Venue (if known)</label><input class="form-input" id="ob-venue" placeholder="e.g. The Grand Pavilion" /></div>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;font-size:14px;" onclick="goToStep2()">Next: Allocate Budget →</button>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;padding:12px;font-size:14px;" onclick="goToStep2()">Next: Allocate Budget →</button>
         <button class="btn btn-ghost" style="width:100%;justify-content:center;font-size:12px;" onclick="skipBudget()">Skip budget for now</button>
       </div>
     </div>
-    <!-- Step 2 -->
     <div class="ob-step" id="ob-step-2">
-      <div class="ob-step2-title">Recommended Budget Split</div>
-      <div class="ob-step2-sub" id="ob2-sub">Based on your <strong id="ob2-total-display">budget</strong>, here's a typical wedding allocation. Adjust to match your priorities.</div>
-      <div class="ob2-total-bar">
-        <div class="ob2-total-label">Unallocated</div>
-        <div class="ob2-total-remaining" id="ob2-remaining">$0</div>
-      </div>
+      <div style="font-family:var(--font-display);font-size:28px;font-weight:400;margin-bottom:4px;">Recommended Budget Split</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:18px;">Based on your <strong id="ob2-total-display">budget</strong>. Adjust each category to match your priorities.</div>
+      <div class="ob2-total-bar"><div class="ob2-total-label">Unallocated</div><div class="ob2-total-remaining" id="ob2-remaining">$0</div></div>
       <div class="ob2-cats" id="ob2-cats"></div>
-      <div style="display:flex;gap:10px;margin-top:16px;">
+      <div style="display:flex;gap:10px;margin-top:14px;">
         <button class="btn btn-outline" style="flex:1;justify-content:center;" onclick="document.getElementById('ob-step-2').classList.remove('active');document.getElementById('ob-step-1').classList.add('active')">← Back</button>
         <button class="btn btn-primary" style="flex:2;justify-content:center;" onclick="finishOnboarding()">Start Planning →</button>
       </div>
@@ -418,6 +432,7 @@
     </div>
     <nav class="sidebar-nav">
       <button class="nav-item active" onclick="switchTab('dashboard')" id="nav-dashboard"><span class="nav-icon">◈</span><span>Dashboard</span></button>
+      <button class="nav-item" onclick="switchTab('guests')" id="nav-guests"><span class="nav-icon">👥</span><span>Guests</span></button>
       <button class="nav-item" onclick="switchTab('vendors')" id="nav-vendors"><span class="nav-icon">⊞</span><span>Vendors</span></button>
       <button class="nav-item" onclick="switchTab('timeline')" id="nav-timeline"><span class="nav-icon">◷</span><span>Timeline</span></button>
       <button class="nav-item" onclick="switchTab('budget')" id="nav-budget"><span class="nav-icon">◎</span><span>Budget</span></button>
@@ -431,87 +446,167 @@
   <main class="main">
     <!-- Dashboard -->
     <div class="tab-panel active" id="tab-dashboard">
-      <div class="dashboard-hero">
-        <div class="hero-label">Wedding Planning Dashboard</div>
-        <div class="hero-heading" id="hero-heading">Your Wedding Command Center</div>
-        <div class="hero-meta" id="hero-meta"></div>
-      </div>
+      <div class="dashboard-hero"><div class="hero-label">Wedding Planning Dashboard</div><div class="hero-heading" id="hero-heading">Your Wedding Command Center</div><div class="hero-meta" id="hero-meta"></div></div>
       <div class="stats-grid">
+        <div class="stat-card"><div class="stat-label">Guests Confirmed</div><div class="stat-value" id="stat-guests">0</div><div class="stat-sub" id="stat-guests-sub">of 0 invited</div></div>
         <div class="stat-card"><div class="stat-label">Vendors Booked</div><div class="stat-value" id="stat-booked">0</div><div class="stat-sub" id="stat-booked-sub">of 0 tracked</div></div>
-        <div class="stat-card"><div class="stat-label">Budget Committed</div><div class="stat-value" id="stat-budget-pct">0%</div><div class="stat-sub" id="stat-budget-sub">of total budget</div></div>
-        <div class="stat-card"><div class="stat-label">Tasks Complete</div><div class="stat-value" id="stat-tasks">0%</div><div class="stat-sub" id="stat-tasks-sub">timeline milestones</div></div>
+        <div class="stat-card"><div class="stat-label">Budget Committed</div><div class="stat-value" id="stat-budget-pct">0%</div><div class="stat-sub" id="stat-budget-sub">of total</div></div>
+        <div class="stat-card"><div class="stat-label">Tasks Complete</div><div class="stat-value" id="stat-tasks">0%</div><div class="stat-sub" id="stat-tasks-sub">milestones</div></div>
       </div>
       <div class="two-col">
-        <div class="card"><div class="section-heading">Vendor Status</div><div class="vendor-mini-list" id="dash-vendor-list"></div></div>
-        <div class="card"><div class="section-heading">Upcoming Milestones</div><div class="timeline-mini-list" id="dash-timeline-list"></div></div>
+        <div class="card"><div class="section-heading">Vendor Status</div><div id="dash-vendor-list"></div></div>
+        <div class="card"><div class="section-heading">Upcoming Milestones</div><div id="dash-timeline-list"></div></div>
       </div>
+    </div>
+
+    <!-- Guests -->
+    <div class="tab-panel" id="tab-guests">
+      <div class="page-header">
+        <div><div class="page-title">Guests</div><div class="page-subtitle">RSVP tracking, dietary needs & seating chart</div></div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-outline" onclick="openTableModal()">+ Add Table</button>
+          <button class="btn btn-primary" onclick="openGuestModal()">+ Add Guest</button>
+        </div>
+      </div>
+      <div class="guest-stats" id="guest-stats"></div>
+      <div class="view-toggle" style="margin-bottom:16px;">
+        <button class="view-toggle-btn active" id="guest-view-list-btn" onclick="setGuestView('list')">Guest List</button>
+        <button class="view-toggle-btn" id="guest-view-seating-btn" onclick="setGuestView('seating')">Seating Chart</button>
+      </div>
+      <div id="guest-list-view"></div>
+      <div id="guest-seating-view" style="display:none;"></div>
     </div>
 
     <!-- Vendors -->
     <div class="tab-panel" id="tab-vendors">
-      <div class="page-header">
-        <div><div class="page-title">Vendors</div><div class="page-subtitle">Track every vendor — link directly to their portals</div></div>
-        <button class="btn btn-primary" onclick="openVendorModal()">+ Add Vendor</button>
-      </div>
+      <div class="page-header"><div><div class="page-title">Vendors</div><div class="page-subtitle">Track every vendor — link directly to their portals</div></div><button class="btn btn-primary" onclick="openVendorModal()">+ Add Vendor</button></div>
       <div id="compare-cta-bar"></div>
-      <div class="vendor-filter-bar" id="vendor-filters"></div>
+      <div class="filter-bar" id="vendor-filters"></div>
       <div class="vendors-grid" id="vendors-grid"></div>
     </div>
 
     <!-- Timeline -->
     <div class="tab-panel" id="tab-timeline">
-      <div class="page-header">
-        <div><div class="page-title">Timeline</div><div class="page-subtitle" id="timeline-subtitle">Your personalized wedding planning countdown</div></div>
-        <span id="timeline-progress-text" style="font-size:13px;color:var(--text-muted);"></span>
+      <div class="page-header"><div><div class="page-title">Timeline</div><div class="page-subtitle" id="timeline-subtitle">Your personalized wedding planning countdown</div></div><span id="timeline-progress-text" style="font-size:13px;color:var(--text-muted);"></span></div>
+      <div class="view-toggle">
+        <button class="view-toggle-btn active" id="tl-view-list-btn" onclick="setTimelineView('list')">List</button>
+        <button class="view-toggle-btn" id="tl-view-cal-btn" onclick="setTimelineView('calendar')">Calendar</button>
       </div>
-      <div id="timeline-content"></div>
+      <div id="timeline-list-view"></div>
+      <div id="timeline-cal-view" style="display:none;">
+        <div class="cal-nav">
+          <button class="cal-nav-btn" onclick="calNavMonth(-1)">‹</button>
+          <div class="cal-month-title" id="cal-month-title"></div>
+          <button class="cal-nav-btn" onclick="calNavMonth(1)">›</button>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+        <div class="cal-legend" id="cal-legend"></div>
+      </div>
     </div>
 
     <!-- Budget -->
     <div class="tab-panel" id="tab-budget">
-      <div class="page-header">
-        <div><div class="page-title">Budget</div><div class="page-subtitle">Track allocation vs. committed spend — edit any category anytime</div></div>
-      </div>
-      <div class="budget-summary" id="budget-summary"></div>
+      <div class="page-header"><div><div class="page-title">Budget</div><div class="page-subtitle">Visual spend tracker — edit any category, move money between them</div></div></div>
+      <div class="budget-hero" id="budget-hero"></div>
       <div class="budget-categories" id="budget-categories"></div>
     </div>
 
     <!-- Documents -->
     <div class="tab-panel" id="tab-documents">
-      <div class="page-header">
-        <div><div class="page-title">Documents</div><div class="page-subtitle">Contracts, invoices, permits — upload directly or link to Drive</div></div>
-        <button class="btn btn-primary" onclick="openDocModal()">+ Add Document</button>
-      </div>
+      <div class="page-header"><div><div class="page-title">Documents</div><div class="page-subtitle">Upload contracts & invoices or link to Google Drive</div></div><button class="btn btn-primary" onclick="openDocModal()">+ Add Document</button></div>
       <div class="docs-grid" id="docs-grid"></div>
     </div>
 
     <!-- Inspo -->
     <div class="tab-panel" id="tab-inspo">
-      <div class="page-header">
-        <div><div class="page-title">Inspiration</div><div class="page-subtitle">Your mood board — Pinterest, TikTok, and your own notes</div></div>
-        <button class="btn btn-primary" onclick="openInspoModal()">+ Add Inspo</button>
-      </div>
-      <!-- Pinterest -->
-      <div class="inspo-section-header"><div class="inspo-section-title">Pinterest</div><div class="inspo-section-line"></div></div>
-      <div id="pinterest-card-area" style="margin-bottom:28px;"></div>
-      <!-- TikTok / saved inspo -->
+      <div class="page-header"><div><div class="page-title">Inspiration</div><div class="page-subtitle">Pinterest board, TikToks, shopping links & mood notes</div></div><button class="btn btn-primary" onclick="openInspoModal()">+ Add Inspo</button></div>
+      <div class="inspo-section-header"><div class="inspo-section-title">📌 Pinterest</div><div class="inspo-section-line"></div></div>
+      <div id="pinterest-area" style="margin-bottom:28px;"></div>
       <div class="inspo-section-header"><div class="inspo-section-title">Saved Inspo</div><div class="inspo-section-line"></div></div>
       <div class="inspo-grid" id="inspo-grid"></div>
     </div>
 
     <!-- Tips -->
     <div class="tab-panel" id="tab-tips">
-      <div class="page-header">
-        <div><div class="page-title">Tips</div><div class="page-subtitle">Advice from Rachel + your own notes for other brides</div></div>
-        <button class="btn btn-primary" onclick="openTipModal()">+ Add Your Tip</button>
-      </div>
-      <div class="tips-filter-bar" id="tips-filters"></div>
+      <div class="page-header"><div><div class="page-title">Tips</div><div class="page-subtitle">Advice from Rachel + your own notes for brides</div></div><button class="btn btn-primary" onclick="openTipModal()">+ Add Your Tip</button></div>
+      <div class="filter-bar" id="tips-filters"></div>
       <div class="tips-section-label">From Rachel</div>
       <div class="tips-grid" id="curated-tips-grid"></div>
       <div class="tips-section-label" id="personal-tips-label">Your Notes</div>
       <div class="tips-grid" id="personal-tips-grid"></div>
     </div>
   </main>
+</div>
+
+<!-- ══ Guest Modal ══ -->
+<div class="modal-backdrop" id="guest-modal-backdrop" onclick="closeGuestModal(event)">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title" id="guest-modal-title">Add Guest</div><button class="modal-close" onclick="closeGuestModal(true)">✕</button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group form-grid-full"><label class="form-label">Full Name</label><input class="form-input" id="g-name" placeholder="First & last name" /></div>
+        <div class="form-group"><label class="form-label">Email</label><input class="form-input" id="g-email" type="email" placeholder="guest@email.com" /></div>
+        <div class="form-group"><label class="form-label">Phone</label><input class="form-input" id="g-phone" placeholder="(555) 000-0000" /></div>
+        <div class="form-group"><label class="form-label">RSVP Status</label>
+          <select class="form-select" id="g-rsvp">
+            <option value="pending">Pending</option><option value="yes">Yes ✓</option><option value="no">No</option><option value="maybe">Maybe</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Side</label>
+          <select class="form-select" id="g-side">
+            <option value="bride">Bride's Side</option><option value="groom">Groom's Side</option><option value="both">Both / Mutual</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Meal Choice</label>
+          <select class="form-select" id="g-meal">
+            <option value="">Not selected</option><option value="chicken">Chicken</option><option value="fish">Fish</option><option value="beef">Beef</option><option value="veg">Vegetarian</option><option value="vegan">Vegan</option><option value="kids">Kids Meal</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Dietary Restrictions</label><input class="form-input" id="g-dietary" placeholder="e.g. Gluten-free, Nut allergy" /></div>
+        <div class="form-group"><label class="form-label">Table Assignment</label><input class="form-input" id="g-table" placeholder="Table name or number" /></div>
+        <div class="form-group"><label class="form-label">Plus One?</label>
+          <select class="form-select" id="g-plus-one">
+            <option value="">No</option><option value="yes">Yes</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Plus One Name</label><input class="form-input" id="g-plus-one-name" placeholder="Name (if known)" /></div>
+        <div class="form-group"><label class="form-label">Thank You Sent?</label>
+          <select class="form-select" id="g-thankyou">
+            <option value="no">Not yet</option><option value="yes">Sent ✓</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Gift Received</label><input class="form-input" id="g-gift" placeholder="e.g. KitchenAid, registry item" /></div>
+        <div class="form-group form-grid-full"><label class="form-label">Notes</label><textarea class="form-textarea" id="g-notes" placeholder="Address, special notes, etc."></textarea></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeGuestModal(true)">Cancel</button>
+      <button class="btn btn-danger hidden" id="g-delete-btn" onclick="deleteGuest()">Delete</button>
+      <button class="btn btn-primary" onclick="saveGuest()">Save Guest</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ Table Modal ══ -->
+<div class="modal-backdrop" id="table-modal-backdrop" onclick="closeTableModal(event)">
+  <div class="modal" style="width:420px;">
+    <div class="modal-header"><div class="modal-title" id="table-modal-title">Add Table</div><button class="modal-close" onclick="closeTableModal(true)">✕</button></div>
+    <div class="modal-body">
+      <div class="form-grid" style="grid-template-columns:1fr;">
+        <div class="form-group"><label class="form-label">Table Name / Number</label><input class="form-input" id="tb-name" placeholder="e.g. Table 1, Head Table, Sweetheart Table" /></div>
+        <div class="form-group"><label class="form-label">Capacity (seats)</label><input class="form-input" id="tb-capacity" type="number" placeholder="8" /></div>
+        <div class="form-group"><label class="form-label">Shape</label>
+          <select class="form-select" id="tb-shape"><option value="round">Round</option><option value="rectangle">Rectangle/Long</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Notes</label><input class="form-input" id="tb-notes" placeholder="e.g. Near dance floor" /></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeTableModal(true)">Cancel</button>
+      <button class="btn btn-danger hidden" id="tb-delete-btn" onclick="deleteTable()">Delete Table</button>
+      <button class="btn btn-primary" onclick="saveTable()">Save Table</button>
+    </div>
+  </div>
 </div>
 
 <!-- ══ Vendor Modal ══ -->
@@ -521,44 +616,51 @@
     <div class="modal-body">
       <div class="email-import-section">
         <div class="email-import-header" onclick="toggleEmailImport()">
-          <span class="email-import-title">📧 Paste vendor email to auto-fill — works with full threads</span>
+          <span class="email-import-title">📧 Paste vendor email to auto-fill (works with full threads)</span>
           <span style="font-size:11px;color:var(--tiffany-dark);" id="import-toggle-text">Expand ▾</span>
         </div>
         <div class="email-import-body" id="email-import-body">
-          <div style="font-size:12px;color:var(--tiffany-deep);margin-bottom:8px;">Paste any vendor email or thread — we'll extract the latest contact info and best price quote. <strong>Tip:</strong> In Gmail, use ⋮ → "Print" → copy all text for a full thread.</div>
+          <div style="font-size:12px;color:var(--tiffany-deep);margin-bottom:8px;">Paste any vendor email or thread. <strong>Tip:</strong> In Gmail, use ⋮ → Print → copy all text for a full thread.</div>
           <textarea class="email-import-textarea" id="email-paste-area" placeholder="Paste email text here..."></textarea>
-          <div style="margin-top:8px;display:flex;gap:8px;align-items:center;">
+          <div style="margin-top:7px;display:flex;gap:8px;align-items:center;">
             <button class="btn btn-tiffany btn-sm" onclick="parseEmail()">Parse & Fill Fields</button>
             <span id="parse-result" style="font-size:12px;color:var(--tiffany-deep);"></span>
           </div>
         </div>
       </div>
       <div class="form-grid">
-        <div class="form-group"><label class="form-label">Category</label><select class="form-select" id="v-category"><option value="">Select category...</option></select></div>
+        <div class="form-group"><label class="form-label">Category</label><select class="form-select" id="v-category"><option value="">Select...</option></select></div>
         <div class="form-group"><label class="form-label">Status</label>
           <select class="form-select" id="v-status">
-            <option value="researching">Researching</option><option value="contacted">Contacted</option>
-            <option value="meeting">Meeting Scheduled</option><option value="booked">Booked</option><option value="paid">Paid in Full</option>
+            <option value="researching">Researching</option><option value="contacted">Contacted</option><option value="meeting">Meeting Scheduled</option><option value="booked">Booked</option><option value="paid">Paid in Full</option>
           </select>
         </div>
         <div class="form-group form-grid-full"><label class="form-label">Business Name</label><input class="form-input" id="v-name" placeholder="e.g. Golden Hour Photography" /></div>
         <div class="form-group"><label class="form-label">Contact Name</label><input class="form-input" id="v-contact" placeholder="First & last name" /></div>
         <div class="form-group"><label class="form-label">Email</label><input class="form-input" id="v-email" type="email" placeholder="vendor@email.com" /></div>
-        <div class="form-group"><label class="form-label">Phone</label><input class="form-input" id="v-phone" type="tel" placeholder="(555) 000-0000" /></div>
+        <div class="form-group"><label class="form-label">Phone</label><input class="form-input" id="v-phone" placeholder="(555) 000-0000" /></div>
         <div class="form-group"><label class="form-label">Website</label><input class="form-input" id="v-website" type="url" placeholder="https://" /></div>
-        <div class="form-group"><label class="form-label">Client Portal</label><input class="form-input" id="v-portal" type="url" placeholder="Link to their client login" /></div>
-        <div class="form-group"><label class="form-label">Brochure / Proposal Link</label><input class="form-input" id="v-brochure" type="url" placeholder="Google Drive, Dropbox, etc." /></div>
+        <div class="form-group"><label class="form-label">Client Portal</label><input class="form-input" id="v-portal" type="url" placeholder="Client login URL" /></div>
+        <div class="form-group"><label class="form-label">Brochure Link</label><input class="form-input" id="v-brochure" type="url" placeholder="Google Drive, Dropbox, etc." /></div>
         <div class="form-group"><label class="form-label">Budget Category</label><select class="form-select" id="v-budget-cat"><option value="">None</option></select></div>
+        <div class="form-group form-grid-full">
+          <label class="form-label">Upload Brochure / Proposal (stored in browser)</label>
+          <div class="file-drop-area" id="brochure-drop-area">
+            <input type="file" id="v-brochure-file" onchange="handleBrochureSelect(this)" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
+            <div class="file-drop-text">📎 <strong>Click to upload</strong> brochure or proposal · PDF, DOC, JPG</div>
+          </div>
+          <div id="brochure-selected-display" style="font-size:12px;color:var(--tiffany-deep);margin-top:4px;display:none;"></div>
+        </div>
         <div class="form-section-divider">Financials</div>
         <div class="form-group"><label class="form-label">Quoted Price</label><input class="form-input" id="v-price" type="number" placeholder="0" /></div>
         <div class="form-group"><label class="form-label">Additional Fees</label><input class="form-input" id="v-fees" placeholder="e.g. travel, overtime" /></div>
         <div class="form-group"><label class="form-label">Deposit Paid</label><input class="form-input" id="v-deposit" type="number" placeholder="0" /></div>
         <div class="form-group"><label class="form-label">Balance Due Date</label><input class="form-input" id="v-balance-date" type="date" /></div>
         <div class="form-group"><label class="form-label">Catering Min. (venues)</label><input class="form-input" id="v-cat-min" type="number" placeholder="0" /></div>
-        <div class="form-group"><label class="form-label">Capacity / Hours</label><input class="form-input" id="v-capacity" placeholder="e.g. 150 guests, 8 hours" /></div>
+        <div class="form-group"><label class="form-label">Capacity / Hours</label><input class="form-input" id="v-capacity" placeholder="e.g. 150 guests, 8 hrs" /></div>
         <div class="form-group form-grid-full"><label class="form-label">Pros</label><input class="form-input" id="v-pros" placeholder="What you liked..." /></div>
-        <div class="form-group form-grid-full"><label class="form-label">Cons</label><input class="form-input" id="v-cons" placeholder="Concerns or drawbacks..." /></div>
-        <div class="form-group form-grid-full"><label class="form-label">Notes</label><textarea class="form-textarea" id="v-notes" placeholder="Package details, special requests, anything to remember..."></textarea></div>
+        <div class="form-group form-grid-full"><label class="form-label">Cons</label><input class="form-input" id="v-cons" placeholder="Concerns..." /></div>
+        <div class="form-group form-grid-full"><label class="form-label">Notes</label><textarea class="form-textarea" id="v-notes"></textarea></div>
       </div>
     </div>
     <div class="modal-footer">
@@ -573,28 +675,23 @@
 <div class="modal-backdrop" id="compare-modal-backdrop" onclick="closeCompareModal(event)">
   <div class="modal modal-wide" style="max-height:90vh;">
     <div class="modal-header"><div class="modal-title">Compare <span id="compare-cat-title"></span></div><button class="modal-close" onclick="closeCompareModal(true)">✕</button></div>
-    <div class="modal-body" style="padding:18px;">
-      <div class="compare-grid" id="compare-grid"></div>
-    </div>
+    <div class="modal-body" style="padding:16px;"><div class="compare-grid" id="compare-grid"></div></div>
   </div>
 </div>
 
 <!-- ══ Budget Transfer Modal ══ -->
 <div class="modal-backdrop" id="transfer-modal-backdrop" onclick="closeTransferModal(event)">
-  <div class="modal" style="width:420px;">
+  <div class="modal" style="width:400px;">
     <div class="modal-header"><div class="modal-title">Move Budget</div><button class="modal-close" onclick="closeTransferModal(true)">✕</button></div>
     <div class="modal-body">
-      <p style="font-size:13px;color:var(--text-mid);margin-bottom:16px;">Transfer budget between categories to reflect your real priorities.</p>
+      <p style="font-size:13px;color:var(--text-mid);margin-bottom:14px;">Transfer budget between categories.</p>
       <div class="form-grid" style="grid-template-columns:1fr;">
         <div class="form-group"><label class="form-label">Amount to Move</label><input class="form-input" id="transfer-amount" type="number" placeholder="$0" /></div>
         <div class="form-group"><label class="form-label">From</label><select class="form-select" id="transfer-from"></select></div>
         <div class="form-group"><label class="form-label">To</label><select class="form-select" id="transfer-to"></select></div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeTransferModal(true)">Cancel</button>
-      <button class="btn btn-primary" onclick="executeTransfer()">Move Budget</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeTransferModal(true)">Cancel</button><button class="btn btn-primary" onclick="executeTransfer()">Move Budget</button></div>
   </div>
 </div>
 
@@ -605,30 +702,22 @@
     <div class="modal-body">
       <div class="form-grid">
         <div class="form-group form-grid-full"><label class="form-label">Document Name</label><input class="form-input" id="d-name" placeholder="e.g. Photography Contract" /></div>
-        <div class="form-group"><label class="form-label">Type</label>
-          <select class="form-select" id="d-type"><option>Contract</option><option>Invoice</option><option>Proposal</option><option>Receipt</option><option>Permit</option><option>Other</option></select>
-        </div>
-        <div class="form-group"><label class="form-label">Status</label>
-          <select class="form-select" id="d-status"><option value="needed">Needed</option><option value="requested">Requested</option><option value="received">Received</option><option value="signed">Signed</option><option value="filed">Filed</option></select>
-        </div>
+        <div class="form-group"><label class="form-label">Type</label><select class="form-select" id="d-type"><option>Contract</option><option>Invoice</option><option>Proposal</option><option>Receipt</option><option>Permit</option><option>Other</option></select></div>
+        <div class="form-group"><label class="form-label">Status</label><select class="form-select" id="d-status"><option value="needed">Needed</option><option value="requested">Requested</option><option value="received">Received</option><option value="signed">Signed</option><option value="filed">Filed</option></select></div>
         <div class="form-group"><label class="form-label">Vendor</label><select class="form-select" id="d-vendor"><option value="">None</option></select></div>
         <div class="form-group form-grid-full"><label class="form-label">Link (Google Drive, email, etc.)</label><input class="form-input" id="d-url" type="url" placeholder="https://" /></div>
         <div class="form-group form-grid-full">
-          <label class="form-label">Upload File (stored locally in your browser)</label>
-          <div class="file-drop-area" id="file-drop-area">
-            <input type="file" id="d-file" onchange="handleFileSelect(this)" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.xls,.xlsx" />
+          <label class="form-label">Upload File (stored in browser)</label>
+          <div class="file-drop-area" id="doc-drop-area">
+            <input type="file" id="d-file" onchange="handleFileSelect(this)" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.xls,.xlsx" />
             <div class="file-drop-text">📎 <strong>Click to upload</strong> or drag & drop · PDF, DOC, JPG, PNG</div>
           </div>
-          <div id="file-selected-display" style="font-size:12px;color:var(--tiffany-deep);margin-top:5px;display:none;"></div>
+          <div id="file-selected-display" style="font-size:12px;color:var(--tiffany-deep);margin-top:4px;display:none;"></div>
         </div>
-        <div class="form-group form-grid-full"><label class="form-label">Notes</label><textarea class="form-textarea" id="d-notes" placeholder="Anything to remember..."></textarea></div>
+        <div class="form-group form-grid-full"><label class="form-label">Notes</label><textarea class="form-textarea" id="d-notes"></textarea></div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeDocModal(true)">Cancel</button>
-      <button class="btn btn-danger hidden" id="d-delete-btn" onclick="deleteDoc()">Delete</button>
-      <button class="btn btn-primary" onclick="saveDoc()">Save Document</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeDocModal(true)">Cancel</button><button class="btn btn-danger hidden" id="d-delete-btn" onclick="deleteDoc()">Delete</button><button class="btn btn-primary" onclick="saveDoc()">Save Document</button></div>
   </div>
 </div>
 
@@ -641,79 +730,86 @@
         <div class="form-group"><label class="form-label">Type</label>
           <select class="form-select" id="inspo-type" onchange="toggleInspoType()">
             <option value="tiktok">TikTok Video</option>
-            <option value="note">Mood Note</option>
+            <option value="link">Link (Instagram, Shopping, Blog, etc.)</option>
+            <option value="note">Mood Note / Idea</option>
           </select>
         </div>
         <div id="inspo-tiktok-fields">
           <div class="form-group"><label class="form-label">TikTok URL</label><input class="form-input" id="inspo-url" placeholder="https://www.tiktok.com/@user/video/..." /></div>
-          <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">Paste the full TikTok URL (not the short vm.tiktok.com link). Copy it from the TikTok app → Share → Copy Link → tap the link to get the full URL.</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:3px;">Copy full URL from TikTok app: Share → Copy Link → tap the link to expand it first.</div>
         </div>
-        <div id="inspo-note-fields" style="display:none;">
-          <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Category</label>
-            <select class="form-select" id="inspo-note-cat">
-              <option>Venue</option><option>Florals</option><option>Dress</option><option>Hair & Makeup</option><option>Décor</option><option>Cake</option><option>Music</option><option>Photos</option><option>General</option>
+        <div id="inspo-link-fields" style="display:none;">
+          <div class="form-group" style="margin-bottom:11px;"><label class="form-label">URL</label><input class="form-input" id="inspo-link-url" type="url" placeholder="https://" /></div>
+          <div class="form-group" style="margin-bottom:11px;"><label class="form-label">Title</label><input class="form-input" id="inspo-link-title" placeholder="What is this link?" /></div>
+          <div class="form-group"><label class="form-label">Source Type</label>
+            <select class="form-select" id="inspo-link-source">
+              <option>Instagram</option><option>Shopping</option><option>Blog / Article</option><option>YouTube</option><option>Website</option><option>Other</option>
             </select>
           </div>
-          <div class="form-group"><label class="form-label">Title</label><input class="form-input" id="inspo-note-title" placeholder="e.g. Dream centerpiece style" /></div>
+        </div>
+        <div id="inspo-note-fields" style="display:none;">
+          <div class="form-group" style="margin-bottom:11px;"><label class="form-label">Category</label>
+            <select class="form-select" id="inspo-note-cat">
+              <option>Venue</option><option>Florals</option><option>Dress</option><option>Hair & Makeup</option><option>Décor</option><option>Cake</option><option>Music</option><option>Photos</option><option>General Vibe</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:11px;"><label class="form-label">Title</label><input class="form-input" id="inspo-note-title" placeholder="e.g. Dream centerpiece style" /></div>
           <div class="form-group"><label class="form-label">Note</label><textarea class="form-textarea" id="inspo-note-body" placeholder="What inspired you about this..."></textarea></div>
         </div>
-        <div class="form-group"><label class="form-label">Label (optional)</label><input class="form-input" id="inspo-label" placeholder="e.g. Ceremony florals" /></div>
+        <div class="form-group"><label class="form-label">Label (optional)</label><input class="form-input" id="inspo-label" placeholder="e.g. Ceremony florals, Dress inspo" /></div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeInspoModal(true)">Cancel</button>
-      <button class="btn btn-primary" onclick="saveInspo()">Save</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeInspoModal(true)">Cancel</button><button class="btn btn-primary" onclick="saveInspo()">Save</button></div>
   </div>
 </div>
 
 <!-- ══ Tip Modal ══ -->
 <div class="modal-backdrop" id="tip-modal-backdrop" onclick="closeTipModal(event)">
-  <div class="modal" style="width:490px;">
+  <div class="modal" style="width:480px;">
     <div class="modal-header"><div class="modal-title">Add Your Tip</div><button class="modal-close" onclick="closeTipModal(true)">✕</button></div>
     <div class="modal-body">
       <div class="form-grid">
         <div class="form-group form-grid-full"><label class="form-label">Title</label><input class="form-input" id="t-title" placeholder="e.g. The thing I wish I knew..." /></div>
-        <div class="form-group"><label class="form-label">Category</label>
-          <select class="form-select" id="t-cat">
-            <option>Budget</option><option>Vendors</option><option>Planning</option><option>Day-Of</option><option>Beauty</option><option>Guests</option><option>Legal</option><option>Gifts</option><option>Other</option>
-          </select>
-        </div>
+        <div class="form-group"><label class="form-label">Category</label><select class="form-select" id="t-cat"><option>Budget</option><option>Vendors</option><option>Planning</option><option>Day-Of</option><option>Beauty</option><option>Guests</option><option>Legal</option><option>Gifts</option><option>Other</option></select></div>
         <div class="form-group"><label class="form-label">Icon (emoji)</label><input class="form-input" id="t-icon" placeholder="💡" maxlength="4" /></div>
-        <div class="form-group form-grid-full"><label class="form-label">Your Tip</label><textarea class="form-textarea" id="t-body" placeholder="Share what you learned, what worked, or what you'd do differently..." style="min-height:90px;"></textarea></div>
+        <div class="form-group form-grid-full"><label class="form-label">Your Tip</label><textarea class="form-textarea" id="t-body" placeholder="Share what you learned..." style="min-height:85px;"></textarea></div>
         <div class="form-group form-grid-full"><label class="form-label">Link (optional)</label><input class="form-input" id="t-link" type="url" placeholder="https://" /></div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeTipModal(true)">Cancel</button>
-      <button class="btn btn-primary" onclick="saveTip()">Save Tip</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeTipModal(true)">Cancel</button><button class="btn btn-primary" onclick="saveTip()">Save Tip</button></div>
   </div>
 </div>
 
 <div id="toast-container"></div>
 
 <script>
-// ══ Constants ══════════════════════════════════════════════════════════════
+// ══ Constants ════════════════════════════════════════════════════════════
 
-const VENDOR_CATEGORIES = ['Venue','Photographer','Videographer','Caterer','DJ','Band','Florist','Wedding Planner','Hair & Makeup','Cake & Desserts','Officiant','Transportation','Attire & Alterations','Invitations & Stationery','Jewelry & Rings','Honeymoon','Rehearsal Dinner','Décor & Rentals','Other'];
+const VENDOR_CATEGORIES=['Venue','Photographer','Videographer','Caterer','DJ','Band','Florist','Wedding Planner','Hair & Makeup','Cake & Desserts','Officiant','Transportation','Attire & Alterations','Invitations & Stationery','Jewelry & Rings','Honeymoon','Rehearsal Dinner','Décor & Rentals','Other'];
 
-const BUDGET_CATEGORIES = [
-  {id:'venue',      name:'Venue',                   pct:28},
-  {id:'catering',   name:'Catering & Bar',           pct:23},
+const BUDGET_CATEGORIES=[
+  {id:'venue',      name:'Venue',                   pct:25},
+  {id:'catering',   name:'Catering & Bar',           pct:22},
   {id:'photo',      name:'Photography & Video',      pct:12},
   {id:'florals',    name:'Florals & Décor',          pct:8},
   {id:'music',      name:'Music & Entertainment',    pct:5},
-  {id:'attire',     name:'Attire & Beauty',          pct:7},
+  {id:'attire',     name:'Attire & Beauty',          pct:6},
   {id:'stationery', name:'Invitations & Stationery', pct:2},
   {id:'transport',  name:'Transportation',           pct:2},
   {id:'cake',       name:'Cake & Desserts',          pct:2},
   {id:'planning',   name:'Planner & Coordinator',   pct:3},
   {id:'honeymoon',  name:'Honeymoon',                pct:4},
-  {id:'misc',       name:'Miscellaneous & Tips',     pct:4},
-]; // Total: 28+23+12+8+5+7+2+2+2+3+4+4 = 100%
+  {id:'accomm',     name:'Accommodations',           pct:3},
+  {id:'misc',       name:'Miscellaneous & Tips',     pct:6},
+]; // 25+22+12+8+5+6+2+2+2+3+4+3+6 = 100
 
-const V2B = {
+const BUDGET_COLORS={
+  venue:'#81D8D0',catering:'#F4845F',photo:'#F5C842',florals:'#7BC67E',
+  music:'#B983FF',attire:'#FF8FAB',stationery:'#5BA4CF',transport:'#52B788',
+  cake:'#FDAE6B',planning:'#9B59B6',honeymoon:'#EB5757',accomm:'#4ECDC4',misc:'#A8A8A8'
+};
+
+const V2B={
   'Venue':'venue','Caterer':'catering','Photographer':'photo','Videographer':'photo',
   'DJ':'music','Band':'music','Florist':'florals','Décor & Rentals':'florals',
   'Wedding Planner':'planning','Hair & Makeup':'attire','Cake & Desserts':'cake',
@@ -722,7 +818,18 @@ const V2B = {
   'Jewelry & Rings':'misc','Officiant':'misc','Other':'misc','Rehearsal Dinner':'misc'
 };
 
-const TIMELINE_MILESTONES = [
+const CAT_COLORS={
+  'Venue':'#81D8D0','Photography':'#F5C842','Catering':'#F4845F','Planning':'#9B59B6',
+  'Budget':'#4ECDC4','Music':'#B983FF','Florals':'#7BC67E','Video':'#F4845F',
+  'Honeymoon':'#EB5757','Cake':'#FDAE6B','Beauty':'#FF8FAB','Stationery':'#5BA4CF',
+  'Transport':'#52B788','Rings':'#F5C842','Décor':'#7BC67E','Guests':'#81D8D0',
+  'Party':'#B983FF','Wedding Party':'#FF8FAB','Payments':'#F4845F','Logistics':'#A8A8A8',
+  'Rehearsal':'#FDAE6B','Attire':'#FF8FAB','RSVP':'#5BA4CF','Ceremony':'#81D8D0',
+  'Legal':'#9B59B6','Digital':'#4ECDC4','Self-care':'#7BC67E','After':'#A8A8A8',
+  'Vendors':'#4AADA5','Registry':'#F5C842'
+};
+
+const TIMELINE_MILESTONES=[
   {id:'tA',mo:14,cat:'Venue',task:'Research venues & schedule tours'},
   {id:'t1',mo:12,cat:'Venue',task:'Book ceremony & reception venue'},
   {id:'t2',mo:12,cat:'Photography',task:'Book photographer'},
@@ -730,7 +837,7 @@ const TIMELINE_MILESTONES = [
   {id:'tB',mo:11,cat:'Digital',task:'Create wedding website & social pages'},
   {id:'t4',mo:11,cat:'Planning',task:'Hire wedding planner or day-of coordinator'},
   {id:'t5',mo:11,cat:'Budget',task:'Finalize total wedding budget'},
-  {id:'t6',mo:10,cat:'Guest List',task:'Draft initial guest list'},
+  {id:'t6',mo:10,cat:'Guests',task:'Draft initial guest list'},
   {id:'t7',mo:9,cat:'Attire',task:'Shop for & order wedding dress'},
   {id:'t8',mo:9,cat:'Music',task:'Book DJ or band'},
   {id:'t9',mo:9,cat:'Florals',task:'Book florist & schedule design meeting'},
@@ -772,190 +879,132 @@ const TIMELINE_MILESTONES = [
   {id:'tP',mo:-.5,cat:'After',task:'Leave reviews for your vendors — help other couples!'},
 ];
 
-const DOC_ICONS = {Contract:'📄',Invoice:'🧾',Proposal:'📋',Receipt:'🗒️',Permit:'🏛️',Other:'📁'};
+const DOC_ICONS={Contract:'📄',Invoice:'🧾',Proposal:'📋',Receipt:'🗒️',Permit:'🏛️',Other:'📁'};
+const LINK_ICONS={Instagram:'📸',Shopping:'🛍️','Blog / Article':'📰',YouTube:'▶️',Website:'🌐',Other:'🔗'};
+const LINK_COLORS={Instagram:'#E1306C',Shopping:'#F4845F',  'Blog / Article':'#5BA4CF',YouTube:'#FF0000',Website:'#4AADA5',Other:'#9A8F87'};
 
-const CURATED_TIPS = [
+const CURATED_TIPS=[
   {id:'ct1',cat:'Vendors',icon:'📸',title:'Book in This Order',body:'Lock in your venue first — your date depends on it. Then photographer, caterer, and music. These three book 12–18 months in advance. Everything else follows.'},
-  {id:'ct2',cat:'Budget',icon:'💰',title:'Always Add a 10–15% Buffer',body:'Nearly every couple encounters unexpected costs — last-minute alterations, extra centerpieces, weather backup rentals. Build a buffer in from day one. It will get used.'},
+  {id:'ct2',cat:'Budget',icon:'💰',title:'Always Add a 10–15% Buffer',body:'Nearly every couple encounters unexpected costs. Build a buffer in from day one — it will get used.'},
   {id:'ct3',cat:'Planning',icon:'💌',title:'Create a Wedding Email First',body:'Before contacting a single vendor, open a dedicated Gmail (e.g., sarah.james2026@gmail.com). Every quote, contract, and thread in one inbox — shareable with your partner.'},
-  {id:'ct4',cat:'Vendors',icon:'📝',title:'Contracts Before Deposits',body:'Never pay a deposit without a signed contract. Make sure it includes: what\'s included, backup plans, overtime fees, and your cancellation/refund policy.'},
+  {id:'ct4',cat:'Vendors',icon:'📝',title:'Contracts Before Deposits',body:'Never pay a deposit without a signed contract. Make sure it includes what\'s included, backup plans, overtime fees, and your cancellation/refund policy.'},
   {id:'ct5',cat:'Budget',icon:'🏛️',title:'Watch for Venue Catering Minimums',body:'If your venue requires in-house catering, always get an itemized quote before you fall in love with the space. Hidden F&B minimums can add $10k+ you didn\'t budget for.'},
   {id:'ct6',cat:'Guests',icon:'🏨',title:'Hotel Block Math',body:'Book a room block for 15–20% of your guest list (typically 10–15 rooms). Most hotels release unreserved rooms 30 days before, so you won\'t be charged for empty rooms.'},
-  {id:'ct7',cat:'Vendors',icon:'📷',title:'Add a Second Shooter',body:'Paying $300–500 extra for a second photographer is one of the best budget moves. You\'ll get both the ceremony and getting-ready moments covered simultaneously.'},
+  {id:'ct7',cat:'Vendors',icon:'📷',title:'Add a Second Shooter',body:'Paying $300–500 extra for a second photographer covers both the ceremony and getting-ready moments simultaneously. One of the best budget moves.'},
   {id:'ct8',cat:'Legal',icon:'⚖️',title:'Marriage License Timing',body:'Some counties require a 3-day waiting period after application. Most licenses expire in 30–60 days — don\'t apply too early. Check your specific county\'s rules.'},
-  {id:'ct9',cat:'Day-Of',icon:'🧰',title:'Build a Day-Of Emergency Kit',body:'Pack: safety pins, fashion tape, stain remover pen, clear nail polish (stops runs), pain reliever, blotting papers, phone charger, hair ties, breath mints, sewing kit.'},
-  {id:'ct10',cat:'Day-Of',icon:'💵',title:'Vendor Tipping Guide',body:'Typical cash tips: Photographer $100–250, Videographer $100–200, Caterer/wait staff 18–20% if not included, DJ/Band $50–200, Hair & Makeup 15–25%. Prepare envelopes in advance.'},
+  {id:'ct9',cat:'Day-Of',icon:'🧰',title:'Build a Day-Of Emergency Kit',body:'Safety pins, fashion tape, stain remover pen, clear nail polish, pain reliever, blotting papers, phone charger, hair ties, breath mints, sewing kit.'},
+  {id:'ct10',cat:'Day-Of',icon:'💵',title:'Vendor Tipping Guide',body:'Photographer $100–250, Videographer $100–200, Caterer/wait staff 18–20% if not included, DJ/Band $50–200, Hair & Makeup 15–25%. Prepare envelopes in advance.'},
   {id:'ct11',cat:'Planning',icon:'☂️',title:'Always Have a Weather Backup',body:'For outdoor ceremonies, get the venue\'s Plan B spelled out in writing in your contract. Don\'t assume they\'ll figure it out the morning of.'},
-  {id:'ct12',cat:'Guests',icon:'📊',title:'Guest List Attrition Rule',body:'Expect 15–20% of invitees to decline. If your dream number is 100 guests, invite 115–125. This is especially true for out-of-town guests.'},
-  {id:'ct13',cat:'Beauty',icon:'✨',title:'Trial on Engagement Shoot Day',body:'Schedule your hair and makeup trial on the same day as your engagement shoot. You\'ll see how you look in real photos — and have time to course-correct before the wedding.'},
-  {id:'ct14',cat:'Legal',icon:'📋',title:'Name Change Order of Operations',body:'After the wedding: Social Security office first, then DMV/ID, then passport, then bank accounts, then employer HR. Keep 5–10 certified copies of your marriage certificate.'},
-  {id:'ct15',cat:'Vendors',icon:'🎤',title:'Send a Vendor Fact Sheet',body:'Two weeks before, email every vendor a single-page fact sheet: venue addresses, parking, day-of coordinator\'s cell number, and the full schedule. Prevents 90% of day-of confusion.'},
-  {id:'ct16',cat:'Planning',icon:'💍',title:'Wedding Rings: Order Early',body:'Custom or engraved rings take 6–8 weeks. Order at 9 months out, build in time for sizing adjustments. Jewelers get slammed in spring/fall wedding season.'},
-  {id:'ct17',cat:'Planning',icon:'🌐',title:'Launch Wedding Website Early',body:'Get your website up before save-the-dates go out. Guests will Google you immediately. Include: date, city, registry link, hotel block info, and dress code.'},
-  {id:'ct18',cat:'Budget',icon:'🤝',title:'Negotiate Payment Plans',body:'Most vendors will work with you on a payment plan. A 50% deposit + 50% balance 30 days before is standard, but many will split into 3 payments if you ask nicely.'},
+  {id:'ct12',cat:'Guests',icon:'📊',title:'Guest List Attrition Rule',body:'Expect 15–20% of invitees to decline. If your dream number is 100 guests, invite 115–125.'},
+  {id:'ct13',cat:'Beauty',icon:'✨',title:'Trial on Engagement Shoot Day',body:'Schedule your hair and makeup trial on the same day as your engagement shoot. You\'ll see how you look in real photos — and have time to course-correct.'},
+  {id:'ct14',cat:'Legal',icon:'📋',title:'Name Change Order of Operations',body:'Social Security office first, then DMV/ID, then passport, then bank accounts, then employer HR. Keep 5–10 certified copies of your marriage certificate.'},
+  {id:'ct15',cat:'Vendors',icon:'🎤',title:'Send a Vendor Fact Sheet',body:'Two weeks before, email every vendor a single-page fact sheet: venue addresses, parking, day-of coordinator\'s cell, and the full schedule.'},
+  {id:'ct16',cat:'Planning',icon:'💍',title:'Wedding Rings: Order Early',body:'Custom or engraved rings take 6–8 weeks. Order at 9 months out. Jewelers get slammed in spring/fall wedding season.'},
+  {id:'ct17',cat:'Planning',icon:'🌐',title:'Launch Wedding Website Early',body:'Get your site up before save-the-dates go out. Include: date, city, registry link, hotel block info, and dress code.'},
+  {id:'ct18',cat:'Budget',icon:'🤝',title:'Negotiate Payment Plans',body:'Most vendors will work with you on 3 payments if you ask nicely. 50% deposit + 50% balance 30 days before is standard.'},
 ];
 
-// ══ IndexedDB ══════════════════════════════════════════════════════════════
+// ══ IndexedDB ════════════════════════════════════════════════════════════
 
-const IDB = { db: null };
-function initIDB() {
-  return new Promise((res, rej) => {
-    const req = indexedDB.open('vow_files', 1);
-    req.onupgradeneeded = e => e.target.result.createObjectStore('files');
-    req.onsuccess = e => { IDB.db = e.target.result; res(); };
-    req.onerror = e => rej(e);
-  });
-}
-function idbPut(id, data) {
-  return new Promise((res,rej) => {
-    const tx = IDB.db.transaction('files','readwrite');
-    tx.objectStore('files').put(data, id);
-    tx.oncomplete = res; tx.onerror = rej;
-  });
-}
-function idbGet(id) {
-  return new Promise((res,rej) => {
-    const tx = IDB.db.transaction('files','readonly');
-    const r = tx.objectStore('files').get(id);
-    r.onsuccess = e => res(e.target.result); r.onerror = rej;
-  });
-}
-function idbDel(id) {
-  return new Promise(res => {
-    const tx = IDB.db.transaction('files','readwrite');
-    tx.objectStore('files').delete(id);
-    tx.oncomplete = res;
-  });
-}
+const IDB={db:null};
+function initIDB(){return new Promise((res,rej)=>{const req=indexedDB.open('vow_files',1);req.onupgradeneeded=e=>e.target.result.createObjectStore('files');req.onsuccess=e=>{IDB.db=e.target.result;res();};req.onerror=e=>rej(e);});}
+function idbPut(id,data){return new Promise((res,rej)=>{const tx=IDB.db.transaction('files','readwrite');tx.objectStore('files').put(data,id);tx.oncomplete=res;tx.onerror=rej;});}
+function idbGet(id){return new Promise((res,rej)=>{const tx=IDB.db.transaction('files','readonly');const r=tx.objectStore('files').get(id);r.onsuccess=e=>res(e.target.result);r.onerror=rej;});}
+function idbDel(id){return new Promise(res=>{const tx=IDB.db.transaction('files','readwrite');tx.objectStore('files').delete(id);tx.oncomplete=res;});}
 
-// ══ State ══════════════════════════════════════════════════════════════════
+// ══ State ════════════════════════════════════════════════════════════════
 
-const KEY = 'vow_v3';
-function defaultState() {
-  return {setup:false,wedding:{brideName:'',partnerName:'',weddingDate:'',venue:''},vendors:[],timeline:{completed:[]},budget:{total:0,categories:{}},documents:[],tips:[],inspo:[],pinterestUrl:''};
-}
-let S = (() => { try { return JSON.parse(localStorage.getItem(KEY)) || defaultState(); } catch { return defaultState(); } })();
-let pendingFile = null; // file selected in doc modal but not yet saved
-let activeVendorFilter = 'All';
-let activeTipFilter = 'All';
-let editingVendorId = null;
-let editingDocId = null;
-let openTransferFromId = null;
+const KEY='vow_v4';
+function defaultState(){return{setup:false,wedding:{brideName:'',partnerName:'',weddingDate:'',venue:''},vendors:[],timeline:{completed:[]},budget:{total:0,categories:{}},documents:[],tips:[],inspo:[],pinterestUrl:'',guests:[],tables:[]};}
 
-function save() { localStorage.setItem(KEY, JSON.stringify(S)); }
-function uid() { return Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
-function fmt$(n) { return n ? '$'+Number(n).toLocaleString() : '—'; }
-function fmtDate(d) { if(!d)return''; return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); }
-function daysUntil(d) {
-  if(!d)return null;
-  const now = new Date(); now.setHours(0,0,0,0);
-  return Math.round((new Date(d+'T00:00:00')-now)/86400000);
-}
-function addMonths(dateStr, months) {
-  if(!dateStr)return null;
-  const d = new Date(dateStr+'T12:00:00');
-  const whole=Math.trunc(months), frac=months-whole;
-  d.setMonth(d.getMonth()-whole);
-  if(frac)d.setDate(d.getDate()-Math.round(frac*30));
-  return d.toISOString().slice(0,10);
-}
-
-// ══ Init ══════════════════════════════════════════════════════════════════
-
-async function init() {
-  await initIDB();
-  VENDOR_CATEGORIES.forEach(c => {
-    const o=document.createElement('option'); o.value=o.textContent=c;
-    document.getElementById('v-category').appendChild(o);
-  });
-  BUDGET_CATEGORIES.forEach(c => {
-    const o=document.createElement('option'); o.value=c.id; o.textContent=c.name;
-    document.getElementById('v-budget-cat').appendChild(o);
-  });
-  if(S.setup) {
-    document.getElementById('onboarding').style.display='none';
-    renderAll();
-  } else {
-    const ny=new Date(); ny.setFullYear(ny.getFullYear()+1);
-    document.getElementById('ob-date').value=ny.toISOString().slice(0,10);
+// Migrate v3 → v4
+let S=defaultState();
+try{
+  const v4=localStorage.getItem(KEY);
+  if(v4){S=JSON.parse(v4);}
+  else{
+    const v3=localStorage.getItem('vow_v3');
+    if(v3){const old=JSON.parse(v3);S={...defaultState(),...old,guests:[],tables:[]};}
   }
+}catch(e){}
+if(!S.guests)S.guests=[];
+if(!S.tables)S.tables=[];
+if(!S.inspo)S.inspo=[];
+if(!S.budget.categories.accomm)S.budget.categories.accomm=S.budget.categories.accommodations||0;
+
+let pendingDocFile=null,pendingBrochureFile=null;
+let activeVendorFilter='All',activeTipFilter='All';
+let editingVendorId=null,editingDocId=null,editingGuestId=null,editingTableId=null;
+let timelineView='list',guestView='list';
+let calendarDate=new Date();
+
+function save(){localStorage.setItem(KEY,JSON.stringify(S));}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+function fmt$(n){return n?'$'+Number(n).toLocaleString():'—';}
+function fmtDate(d){if(!d)return'';return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+function daysUntil(d){if(!d)return null;const now=new Date();now.setHours(0,0,0,0);return Math.round((new Date(d+'T00:00:00')-now)/86400000);}
+function addMonths(dateStr,months){if(!dateStr)return null;const d=new Date(dateStr+'T12:00:00');const whole=Math.trunc(months),frac=months-whole;d.setMonth(d.getMonth()-whole);if(frac)d.setDate(d.getDate()-Math.round(frac*30));return d.toISOString().slice(0,10);}
+
+// ══ Init ═════════════════════════════════════════════════════════════════
+
+async function init(){
+  await initIDB();
+  VENDOR_CATEGORIES.forEach(c=>{const o=document.createElement('option');o.value=o.textContent=c;document.getElementById('v-category').appendChild(o);});
+  BUDGET_CATEGORIES.forEach(c=>{const o=document.createElement('option');o.value=c.id;o.textContent=c.name;document.getElementById('v-budget-cat').appendChild(o);});
+  if(S.setup){document.getElementById('onboarding').style.display='none';renderAll();}
+  else{const ny=new Date();ny.setFullYear(ny.getFullYear()+1);document.getElementById('ob-date').value=ny.toISOString().slice(0,10);}
 }
 
-// ══ Onboarding ══════════════════════════════════════════════════════════
+// ══ Onboarding ═══════════════════════════════════════════════════════════
 
-function goToStep2() {
-  const bride=document.getElementById('ob-bride').value.trim();
-  const date=document.getElementById('ob-date').value;
+function goToStep2(){
+  const bride=document.getElementById('ob-bride').value.trim(),date=document.getElementById('ob-date').value;
   if(!bride||!date){alert('Please enter your name and wedding date.');return;}
   const total=parseFloat(document.getElementById('ob-budget').value)||0;
-  if(!total){ skipBudget(); return; }
-
-  // Populate step 2
+  if(!total){skipBudget();return;}
   document.getElementById('ob2-total-display').textContent=fmt$(total);
   document.getElementById('ob-step-1').classList.remove('active');
   document.getElementById('ob-step-2').classList.add('active');
-  renderOb2Cats(total);
-}
-
-function renderOb2Cats(total) {
   const container=document.getElementById('ob2-cats');
-  container.innerHTML = BUDGET_CATEGORIES.map(c => {
-    const suggested=Math.round(total*c.pct/100);
-    return `<div class="ob2-cat-row">
-      <div class="ob2-cat-name">${c.name}</div>
-      <div class="ob2-cat-pct">${c.pct}%</div>
-      <input class="ob2-cat-input" type="number" id="ob2-${c.id}" value="${suggested}" oninput="updateOb2Remaining(${total})" />
-    </div>`;
+  container.innerHTML=BUDGET_CATEGORIES.map(c=>{
+    const s=Math.round(total*c.pct/100);
+    return`<div class="ob2-cat-row"><div class="ob2-cat-color" style="background:${BUDGET_COLORS[c.id]};"></div><div class="ob2-cat-name">${c.name}</div><div class="ob2-cat-pct">${c.pct}%</div><input class="ob2-cat-input" type="number" id="ob2-${c.id}" value="${s}" oninput="updateOb2Remaining(${total})" /></div>`;
   }).join('');
   updateOb2Remaining(total);
 }
 
-function updateOb2Remaining(total) {
-  const allocated=BUDGET_CATEGORIES.reduce((s,c)=>{
-    return s+(parseFloat(document.getElementById('ob2-'+c.id)?.value)||0);
-  },0);
-  const rem=total-allocated;
-  const el=document.getElementById('ob2-remaining');
-  el.textContent=fmt$(Math.abs(rem))+(rem<0?' over budget':''+( rem===0?' perfectly allocated':' unallocated'));
+function updateOb2Remaining(total){
+  const alloc=BUDGET_CATEGORIES.reduce((s,c)=>{return s+(parseFloat(document.getElementById('ob2-'+c.id)?.value)||0);},0);
+  const rem=total-alloc;const el=document.getElementById('ob2-remaining');
+  el.textContent=fmt$(Math.abs(rem))+(rem<0?' over':rem===0?' ✓':' left');
   el.className='ob2-total-remaining'+(rem<-100?' over':'');
 }
 
-function finishOnboarding() {
-  const bride=document.getElementById('ob-bride').value.trim();
-  const date=document.getElementById('ob-date').value;
-  S.setup=true;
-  S.wedding={brideName:bride,partnerName:document.getElementById('ob-partner').value.trim(),weddingDate:date,venue:document.getElementById('ob-venue').value.trim()};
+function finishOnboarding(){
+  const bride=document.getElementById('ob-bride').value.trim(),date=document.getElementById('ob-date').value;
+  S.setup=true;S.wedding={brideName:bride,partnerName:document.getElementById('ob-partner').value.trim(),weddingDate:date,venue:document.getElementById('ob-venue').value.trim()};
   S.budget.total=parseFloat(document.getElementById('ob-budget').value)||0;
-  BUDGET_CATEGORIES.forEach(c=>{
-    const inp=document.getElementById('ob2-'+c.id);
-    S.budget.categories[c.id]=inp?parseFloat(inp.value)||0:Math.round(S.budget.total*c.pct/100);
-  });
-  save();
-  document.getElementById('onboarding').style.display='none';
-  renderAll();
+  BUDGET_CATEGORIES.forEach(c=>{const inp=document.getElementById('ob2-'+c.id);S.budget.categories[c.id]=inp?parseFloat(inp.value)||0:Math.round(S.budget.total*c.pct/100);});
+  save();document.getElementById('onboarding').style.display='none';renderAll();
 }
-
-function skipBudget() {
-  const bride=document.getElementById('ob-bride').value.trim();
-  const date=document.getElementById('ob-date').value;
+function skipBudget(){
+  const bride=document.getElementById('ob-bride').value.trim(),date=document.getElementById('ob-date').value;
   if(!bride||!date){alert('Please enter your name and wedding date.');return;}
-  S.setup=true;
-  S.wedding={brideName:bride,partnerName:document.getElementById('ob-partner').value.trim(),weddingDate:date,venue:document.getElementById('ob-venue').value.trim()};
+  S.setup=true;S.wedding={brideName:bride,partnerName:document.getElementById('ob-partner').value.trim(),weddingDate:date,venue:document.getElementById('ob-venue').value.trim()};
   S.budget.total=parseFloat(document.getElementById('ob-budget').value)||0;
   if(S.budget.total>0)BUDGET_CATEGORIES.forEach(c=>{S.budget.categories[c.id]=Math.round(S.budget.total*c.pct/100);});
-  save();
-  document.getElementById('onboarding').style.display='none';
-  renderAll();
+  save();document.getElementById('onboarding').style.display='none';renderAll();
 }
 
-// ══ Navigation ══════════════════════════════════════════════════════════
+// ══ Navigation ═══════════════════════════════════════════════════════════
 
-function switchTab(tab) {
+function switchTab(tab){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
   document.getElementById('tab-'+tab).classList.add('active');
   document.getElementById('nav-'+tab).classList.add('active');
   if(tab==='dashboard')renderDashboard();
+  else if(tab==='guests')renderGuests();
   else if(tab==='vendors')renderVendors();
   else if(tab==='timeline')renderTimeline();
   else if(tab==='budget')renderBudget();
@@ -963,276 +1012,350 @@ function switchTab(tab) {
   else if(tab==='inspo')renderInspo();
   else if(tab==='tips')renderTips();
 }
+function renderAll(){renderSidebar();renderDashboard();}
 
-function renderAll() { renderSidebar(); renderDashboard(); }
+// ══ Sidebar ═══════════════════════════════════════════════════════════════
 
-// ══ Sidebar ══════════════════════════════════════════════════════════════
-
-function renderSidebar() {
-  const {brideName,partnerName,weddingDate}=S.wedding;
+function renderSidebar(){
+  const{brideName,partnerName,weddingDate}=S.wedding;
   const d=daysUntil(weddingDate);
   document.getElementById('countdown-number').textContent=d!==null?(d>=0?d:'🎊'):'—';
   document.getElementById('countdown-date').textContent=weddingDate?fmtDate(weddingDate):'';
   document.getElementById('sidebar-couple').textContent=[brideName,partnerName].filter(Boolean).join(' & ');
 }
 
-// ══ Dashboard ══════════════════════════════════════════════════════════
+// ══ Dashboard ════════════════════════════════════════════════════════════
 
-function renderDashboard() {
-  const {brideName,partnerName,weddingDate}=S.wedding;
+function renderDashboard(){
+  const{brideName,partnerName,weddingDate}=S.wedding;
   const d=daysUntil(weddingDate);
   const h=document.getElementById('hero-heading');
   if(brideName){const p=partnerName?` & <em>${partnerName}</em>`:'';h.innerHTML=`<em>${brideName}</em>${p}'s Wedding`;}
-  else{h.innerHTML=`Your <em>Wedding</em> Command Center`;}
+  else h.innerHTML=`Your <em>Wedding</em> Command Center`;
   const meta=document.getElementById('hero-meta');
-  if(d!==null)meta.textContent=d>0?`${d} day${d!==1?'s':''} to go · ${fmtDate(weddingDate)}`:d===0?'🎊 Today is the day!':`${Math.abs(d)} days ago · ${fmtDate(weddingDate)}`;
+  if(d!==null)meta.textContent=d>0?`${d} day${d!==1?'s':''} to go · ${fmtDate(weddingDate)}`:d===0?'🎊 Today is the day!':`${Math.abs(d)} days ago`;
+
+  const yes=S.guests.filter(g=>g.rsvp==='yes').length;
+  const invited=S.guests.length;
+  document.getElementById('stat-guests').textContent=yes;
+  document.getElementById('stat-guests-sub').textContent=`of ${invited} invited`;
 
   const booked=S.vendors.filter(v=>v.status==='booked'||v.status==='paid').length;
   document.getElementById('stat-booked').textContent=booked;
   document.getElementById('stat-booked-sub').textContent=`of ${S.vendors.length} tracked`;
 
-  const total=S.budget.total||0;
-  const committed=getCommitted();
-  const totalCommitted=Object.values(committed).reduce((a,b)=>a+b,0);
-  const pct=total>0?Math.round(totalCommitted/total*100):0;
+  const total=S.budget.total||0,committed=getCommitted();
+  const tc=Object.values(committed).reduce((a,b)=>a+b,0);
+  const pct=total>0?Math.round(tc/total*100):0;
   document.getElementById('stat-budget-pct').textContent=pct+'%';
-  document.getElementById('stat-budget-sub').textContent=total>0?`${fmt$(totalCommitted)} of ${fmt$(total)}`:'Set your budget →';
+  document.getElementById('stat-budget-sub').textContent=total>0?`${fmt$(tc)} of ${fmt$(total)}`:'Set budget →';
 
   const done=S.timeline.completed.length,tot=TIMELINE_MILESTONES.length;
   document.getElementById('stat-tasks').textContent=tot>0?Math.round(done/tot*100)+'%':'0%';
   document.getElementById('stat-tasks-sub').textContent=`${done} of ${tot} done`;
 
   const vl=document.getElementById('dash-vendor-list');
-  if(!S.vendors.length){vl.innerHTML=`<div style="padding:10px 0;text-align:center;color:var(--text-muted);font-size:13px;">No vendors yet. <a href="#" onclick="switchTab('vendors')" style="color:var(--tiffany-deep)">Add your first →</a></div>`;}
+  if(!S.vendors.length){vl.innerHTML=`<div style="text-align:center;color:var(--text-muted);font-size:13px;padding:8px 0;">No vendors yet. <a href="#" onclick="switchTab('vendors')" style="color:var(--tiffany-deep)">Add your first →</a></div>`;}
   else{vl.innerHTML=[...S.vendors].sort((a,b)=>{const o={researching:0,contacted:1,meeting:2,booked:3,paid:4};return(o[b.status]||0)-(o[a.status]||0);}).slice(0,6).map(v=>`<div class="vendor-mini-item"><div><div class="vendor-mini-name">${v.name||v.category}</div><div class="vendor-mini-cat">${v.category}</div></div>${statusBadge(v.status)}</div>`).join('');}
 
   const tl=document.getElementById('dash-timeline-list');
-  if(!weddingDate){tl.innerHTML=`<div style="padding:10px 0;text-align:center;color:var(--text-muted);font-size:13px;">Set your wedding date to see upcoming tasks</div>`;return;}
+  if(!weddingDate){tl.innerHTML=`<div style="text-align:center;color:var(--text-muted);font-size:13px;padding:8px 0;">Set your wedding date to see upcoming tasks</div>`;return;}
   const upcoming=TIMELINE_MILESTONES.map(m=>({...m,targetDate:addMonths(weddingDate,m.mo)})).filter(m=>!S.timeline.completed.includes(m.id)).map(m=>({...m,d:daysUntil(m.targetDate)})).filter(m=>m.d!==null).sort((a,b)=>a.d-b.d).slice(0,5);
   tl.innerHTML=upcoming.map(m=>{const d=m.d;let cls='',txt='';if(d<0){cls='overdue';txt=`${Math.abs(d)}d overdue`;}else if(d<=14){cls='soon';txt=`in ${d}d`;}else txt=fmtDate(m.targetDate);return`<div class="timeline-mini-item"><div style="flex:1"><div class="timeline-mini-task">${m.task}</div><div class="timeline-mini-cat">${m.cat}</div></div><div class="timeline-mini-due ${cls}">${txt}</div></div>`;}).join('');
 }
 
+// ══ Guests ═══════════════════════════════════════════════════════════════
+
+function renderGuests(){
+  const yes=S.guests.filter(g=>g.rsvp==='yes').length;
+  const no=S.guests.filter(g=>g.rsvp==='no').length;
+  const pending=S.guests.filter(g=>g.rsvp==='pending'||!g.rsvp).length;
+  const dietary=S.guests.filter(g=>g.dietary).length;
+  const plusOnes=S.guests.filter(g=>g.plusOne==='yes').length;
+  document.getElementById('guest-stats').innerHTML=`
+    <div class="guest-stat"><div class="guest-stat-value">${S.guests.length}</div><div class="guest-stat-label">Invited</div></div>
+    <div class="guest-stat"><div class="guest-stat-value" style="color:#3D7A6A;">${yes}</div><div class="guest-stat-label">Confirmed</div></div>
+    <div class="guest-stat"><div class="guest-stat-value" style="color:#8B3A3A;">${no}</div><div class="guest-stat-label">Declined</div></div>
+    <div class="guest-stat"><div class="guest-stat-value" style="color:var(--gold);">${pending}</div><div class="guest-stat-label">Pending</div></div>
+    <div class="guest-stat"><div class="guest-stat-value" style="color:var(--tiffany-deep);">${dietary}</div><div class="guest-stat-label">Dietary Needs</div></div>`;
+
+  if(guestView==='list') renderGuestList();
+  else renderSeatingChart();
+}
+
+function setGuestView(view){
+  guestView=view;
+  document.getElementById('guest-view-list-btn').classList.toggle('active',view==='list');
+  document.getElementById('guest-view-seating-btn').classList.toggle('active',view==='seating');
+  document.getElementById('guest-list-view').style.display=view==='list'?'block':'none';
+  document.getElementById('guest-seating-view').style.display=view==='seating'?'block':'none';
+  if(view==='list')renderGuestList();else renderSeatingChart();
+}
+
+function renderGuestList(){
+  const el=document.getElementById('guest-list-view');
+  if(!S.guests.length){el.innerHTML=`<div class="empty-state"><div class="empty-state-icon">👰</div><h3>No guests yet</h3><p>Add your guest list to track RSVPs, dietary needs, and seating assignments.</p></div>`;return;}
+  const RSVP_LABELS={yes:'Yes ✓',no:'No',pending:'Pending',maybe:'Maybe'};
+  el.innerHTML=`<div class="guest-table-wrap"><table class="guest-table">
+    <thead><tr><th>Name</th><th>RSVP</th><th>Side</th><th>Meal</th><th>Dietary</th><th>Table</th><th>Thank You</th><th></th></tr></thead>
+    <tbody>${S.guests.map(g=>`<tr>
+      <td><div class="guest-name-cell">${g.name}</div>${g.plusOne==='yes'?`<div class="guest-plus">+1${g.plusOneName?' ('+g.plusOneName+')':''}</div>`:''}</td>
+      <td><span class="badge rsvp-${g.rsvp||'pending'}">${RSVP_LABELS[g.rsvp||'pending']}</span></td>
+      <td style="font-size:12px;color:var(--text-muted);">${g.side==='bride'?"Bride's":g.side==='groom'?"Groom's":'Both'}</td>
+      <td style="font-size:12px;">${g.meal||'—'}</td>
+      <td>${g.dietary?`<span class="guest-dietary-tag">${g.dietary}</span>`:'—'}</td>
+      <td style="font-size:13px;color:var(--tiffany-deep);">${g.table||'—'}</td>
+      <td style="font-size:12px;">${g.thankyou==='yes'?'✓ Sent':'—'}</td>
+      <td><div class="guest-actions"><button class="btn btn-ghost btn-sm" onclick="openGuestModal('${g.id}')">Edit</button></div></td>
+    </tr>`).join('')}
+    </tbody></table></div>`;
+}
+
+function renderSeatingChart(){
+  const el=document.getElementById('guest-seating-view');
+  if(!S.tables.length){el.innerHTML=`<div class="empty-state"><div class="empty-state-icon">🪑</div><h3>No tables yet</h3><p>Add tables above, then assign guests to them in the Guest List view.</p></div>`;return;}
+  const assignedIds=new Set();
+  const tableHtml=S.tables.map(t=>{
+    const guestsAtTable=S.guests.filter(g=>g.table===t.name||g.table===t.id);
+    guestsAtTable.forEach(g=>assignedIds.add(g.id));
+    const cap=t.capacity||8;
+    const empty=Math.max(0,cap-guestsAtTable.length);
+    return`<div class="table-card">
+      <button class="table-delete-btn" onclick="openTableModal('${t.id}')">✎</button>
+      <div class="table-card-header">
+        <div><div class="table-card-name">${t.name}</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">${t.shape||'Round'}</div></div>
+        <span class="table-capacity-badge">${guestsAtTable.length}/${cap}</span>
+      </div>
+      <div class="table-guest-list">
+        ${guestsAtTable.map(g=>`<div class="table-guest-item"><span class="table-guest-name">${g.name}</span><span class="badge rsvp-${g.rsvp||'pending'}" style="font-size:10px;padding:1px 7px;">${g.rsvp==='yes'?'✓':g.rsvp==='no'?'✗':'?'}</span></div>`).join('')}
+        ${Array(empty).fill(0).slice(0,3).map(()=>`<div class="table-empty-seat">Empty seat</div>`).join('')}
+        ${empty>3?`<div class="table-empty-seat">+${empty-3} more empty seats</div>`:''}
+      </div>
+    </div>`;
+  }).join('');
+  const unassigned=S.guests.filter(g=>!assignedIds.has(g.id));
+  el.innerHTML=`<div class="seating-grid">${tableHtml}${unassigned.length?`<div class="unassigned-guests"><div class="unassigned-label">Unassigned (${unassigned.length})</div><div class="unassigned-chips">${unassigned.map(g=>`<span class="unassigned-chip">${g.name}</span>`).join('')}</div></div>`:''}</div>`;
+}
+
+function openGuestModal(id=null){
+  editingGuestId=id;
+  const del=document.getElementById('g-delete-btn');
+  if(id){
+    const g=S.guests.find(x=>x.id===id);if(!g)return;
+    document.getElementById('guest-modal-title').textContent='Edit Guest';
+    del.classList.remove('hidden');
+    ['name','email','phone','dietary','table','plusOneName','gift','notes'].forEach(f=>document.getElementById('g-'+f).value=g[f]||'');
+    document.getElementById('g-rsvp').value=g.rsvp||'pending';
+    document.getElementById('g-side').value=g.side||'bride';
+    document.getElementById('g-meal').value=g.meal||'';
+    document.getElementById('g-plus-one').value=g.plusOne||'';
+    document.getElementById('g-thankyou').value=g.thankyou||'no';
+  } else {
+    document.getElementById('guest-modal-title').textContent='Add Guest';
+    del.classList.add('hidden');
+    ['g-name','g-email','g-phone','g-dietary','g-table','g-plus-one-name','g-gift','g-notes'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('g-rsvp').value='pending';document.getElementById('g-side').value='bride';
+    document.getElementById('g-meal').value='';document.getElementById('g-plus-one').value='';
+    document.getElementById('g-thankyou').value='no';
+  }
+  document.getElementById('guest-modal-backdrop').classList.add('open');
+}
+function closeGuestModal(f=false){if(f===true||f?.target===document.getElementById('guest-modal-backdrop')){document.getElementById('guest-modal-backdrop').classList.remove('open');editingGuestId=null;}}
+function saveGuest(){
+  const guest={id:editingGuestId||uid(),name:document.getElementById('g-name').value.trim(),email:document.getElementById('g-email').value.trim(),phone:document.getElementById('g-phone').value.trim(),rsvp:document.getElementById('g-rsvp').value,side:document.getElementById('g-side').value,meal:document.getElementById('g-meal').value,dietary:document.getElementById('g-dietary').value.trim(),table:document.getElementById('g-table').value.trim(),plusOne:document.getElementById('g-plus-one').value,plusOneName:document.getElementById('g-plus-one-name').value.trim(),thankyou:document.getElementById('g-thankyou').value,gift:document.getElementById('g-gift').value.trim(),notes:document.getElementById('g-notes').value.trim()};
+  if(!guest.name){alert('Please enter the guest\'s name.');return;}
+  if(editingGuestId){const i=S.guests.findIndex(g=>g.id===editingGuestId);if(i>=0)S.guests[i]=guest;}else S.guests.push(guest);
+  save();closeGuestModal(true);renderGuests();renderDashboard();
+}
+function deleteGuest(){if(!editingGuestId||!confirm('Delete this guest?'))return;S.guests=S.guests.filter(g=>g.id!==editingGuestId);save();closeGuestModal(true);renderGuests();renderDashboard();}
+
+function openTableModal(id=null){
+  editingTableId=id;
+  const del=document.getElementById('tb-delete-btn');
+  if(id){
+    const t=S.tables.find(x=>x.id===id);if(!t)return;
+    document.getElementById('table-modal-title').textContent='Edit Table';
+    del.classList.remove('hidden');
+    document.getElementById('tb-name').value=t.name||'';
+    document.getElementById('tb-capacity').value=t.capacity||'';
+    document.getElementById('tb-shape').value=t.shape||'round';
+    document.getElementById('tb-notes').value=t.notes||'';
+  } else {
+    document.getElementById('table-modal-title').textContent='Add Table';
+    del.classList.add('hidden');
+    ['tb-name','tb-notes'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('tb-capacity').value='';
+    document.getElementById('tb-shape').value='round';
+  }
+  document.getElementById('table-modal-backdrop').classList.add('open');
+}
+function closeTableModal(f=false){if(f===true||f?.target===document.getElementById('table-modal-backdrop')){document.getElementById('table-modal-backdrop').classList.remove('open');editingTableId=null;}}
+function saveTable(){
+  const t={id:editingTableId||uid(),name:document.getElementById('tb-name').value.trim(),capacity:parseInt(document.getElementById('tb-capacity').value)||8,shape:document.getElementById('tb-shape').value,notes:document.getElementById('tb-notes').value.trim()};
+  if(!t.name){alert('Please enter a table name.');return;}
+  if(editingTableId){const i=S.tables.findIndex(x=>x.id===editingTableId);if(i>=0)S.tables[i]=t;}else S.tables.push(t);
+  save();closeTableModal(true);renderGuests();
+}
+function deleteTable(){if(!editingTableId||!confirm('Delete this table? Guests assigned to it will become unassigned.'))return;const t=S.tables.find(x=>x.id===editingTableId);if(t){S.guests.forEach(g=>{if(g.table===t.name)g.table='';});}S.tables=S.tables.filter(x=>x.id!==editingTableId);save();closeTableModal(true);renderGuests();}
+
 // ══ Vendors ══════════════════════════════════════════════════════════════
 
 function statusBadge(s){const L={researching:'Researching',contacted:'Contacted',meeting:'Meeting Set',booked:'Booked',paid:'Paid ✓'};return`<span class="badge badge-${s}"><span class="badge-dot"></span>${L[s]||s}</span>`;}
+function getCommitted(){const c={};S.vendors.forEach(v=>{if((v.status==='booked'||v.status==='paid')&&v.budgetCat&&v.price)c[v.budgetCat]=(c[v.budgetCat]||0)+v.price;});return c;}
 
-function getCommitted() {
-  const c={};
-  S.vendors.forEach(v=>{if((v.status==='booked'||v.status==='paid')&&v.budgetCat&&v.price)c[v.budgetCat]=(c[v.budgetCat]||0)+v.price;});
-  return c;
-}
-
-function renderVendors() {
-  // Compare CTA
+function renderVendors(){
   const ctaBar=document.getElementById('compare-cta-bar');
-  const categoriesWithMultiple=VENDOR_CATEGORIES.filter(cat=>{
-    const vv=S.vendors.filter(v=>v.category===cat&&v.status!=='booked'&&v.status!=='paid');
-    return vv.length>=2;
-  });
-  if(categoriesWithMultiple.length>0){
-    ctaBar.innerHTML=categoriesWithMultiple.map(cat=>{
-      const vv=S.vendors.filter(v=>v.category===cat&&v.status!=='booked'&&v.status!=='paid');
-      return`<div class="compare-cta"><div class="compare-cta-text"><strong>${cat}:</strong> You're comparing ${vv.length} options — ready for a side-by-side breakdown?</div><button class="btn btn-tiffany btn-sm" onclick="openCompareModal('${cat}')">Compare Side-by-Side</button></div>`;
-    }).join('');
-  } else ctaBar.innerHTML='';
-
+  const multi=VENDOR_CATEGORIES.filter(cat=>S.vendors.filter(v=>v.category===cat&&v.status!=='booked'&&v.status!=='paid').length>=2);
+  ctaBar.innerHTML=multi.map(cat=>{const vv=S.vendors.filter(v=>v.category===cat&&v.status!=='booked'&&v.status!=='paid');return`<div class="compare-cta"><div class="compare-cta-text"><strong>${cat}:</strong> ${vv.length} options to compare</div><button class="btn btn-tiffany btn-sm" onclick="openCompareModal('${cat}')">Compare Side-by-Side</button></div>`;}).join('');
   const cats=['All',...new Set(S.vendors.map(v=>v.category))];
   document.getElementById('vendor-filters').innerHTML=cats.map(c=>`<span class="filter-chip ${activeVendorFilter===c?'active':''}" onclick="setVendorFilter('${c}')">${c}</span>`).join('');
   const filtered=activeVendorFilter==='All'?S.vendors:S.vendors.filter(v=>v.category===activeVendorFilter);
   const grid=document.getElementById('vendors-grid');
-  if(!S.vendors.length){grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><div class="empty-state-icon">🌸</div><h3>No vendors yet</h3><p>Add your first vendor to start tracking your team.<br>Paste a vendor email to auto-fill the details.</p></div>`;return;}
-  grid.innerHTML=filtered.map(v=>`
-    <div class="vendor-card" onclick="openVendorModal('${v.id}')">
-      <div class="vendor-card-top"><span class="vendor-category-tag">${v.category}</span>${statusBadge(v.status)}</div>
-      <div class="vendor-name">${v.name||'(Unnamed)'}</div>
-      <div class="vendor-contact">${[v.contact,v.phone].filter(Boolean).join(' · ')||v.email||''}</div>
-      <div class="vendor-financials">
-        <div><div class="vendor-price">${v.price?'$'+Number(v.price).toLocaleString():'—'}</div>${v.deposit?`<div class="vendor-deposit">Deposit: $${Number(v.deposit).toLocaleString()}</div>`:''}</div>
-        <div style="display:flex;gap:5px;">
-          ${v.portal?`<a href="${v.portal}" target="_blank" onclick="event.stopPropagation()" class="btn btn-tiffany btn-sm">Portal ↗</a>`:''}
-          ${v.website?`<a href="${v.website}" target="_blank" onclick="event.stopPropagation()" class="btn btn-ghost btn-sm">Web ↗</a>`:''}
-        </div>
+  if(!S.vendors.length){grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><div class="empty-state-icon">🌸</div><h3>No vendors yet</h3><p>Add your first vendor. Paste a vendor email to auto-fill details.</p></div>`;return;}
+  grid.innerHTML=filtered.map(v=>`<div class="vendor-card" onclick="openVendorModal('${v.id}')">
+    <div class="vendor-card-top"><span class="vendor-category-tag">${v.category}</span>${statusBadge(v.status)}</div>
+    <div class="vendor-name">${v.name||'(Unnamed)'}</div>
+    <div class="vendor-contact">${[v.contact,v.phone].filter(Boolean).join(' · ')||v.email||''}</div>
+    <div class="vendor-financials">
+      <div><div class="vendor-price">${v.price?'$'+Number(v.price).toLocaleString():'—'}</div>${v.deposit?`<div style="font-size:12px;color:var(--text-muted);">Deposit: $${Number(v.deposit).toLocaleString()}</div>`:''}</div>
+      <div style="display:flex;gap:5px;">
+        ${v.portal?`<a href="${v.portal}" target="_blank" onclick="event.stopPropagation()" class="btn btn-tiffany btn-sm">Portal ↗</a>`:''}
+        ${v.website?`<a href="${v.website}" target="_blank" onclick="event.stopPropagation()" class="btn btn-ghost btn-sm">Web ↗</a>`:''}
+        ${v.hasBrochureFile?`<button class="btn btn-gold btn-sm" onclick="event.stopPropagation();downloadBrochure('${v.id}','${v.brochureFileName||'brochure'}')">📎</button>`:''}
       </div>
-    </div>`).join('');
+    </div>
+  </div>`).join('');
 }
 
 function setVendorFilter(cat){activeVendorFilter=cat;renderVendors();}
 
-function openVendorModal(id=null) {
-  editingVendorId=id;
-  document.getElementById('email-paste-area').value='';
-  document.getElementById('parse-result').textContent='';
-  document.getElementById('email-import-body').classList.remove('open');
-  document.getElementById('import-toggle-text').textContent='Expand ▾';
+function openVendorModal(id=null){
+  editingVendorId=id;pendingBrochureFile=null;
+  document.getElementById('email-paste-area').value='';document.getElementById('parse-result').textContent='';
+  document.getElementById('email-import-body').classList.remove('open');document.getElementById('import-toggle-text').textContent='Expand ▾';
+  document.getElementById('brochure-selected-display').style.display='none';document.getElementById('v-brochure-file').value='';
   const del=document.getElementById('v-delete-btn');
   if(id){
     const v=S.vendors.find(x=>x.id===id);if(!v)return;
-    document.getElementById('vendor-modal-title').textContent='Edit Vendor';
-    del.classList.remove('hidden');
-    const flds={category:'v-category',status:'v-status',name:'v-name',contact:'v-contact',email:'v-email',phone:'v-phone',website:'v-website',portal:'v-portal',brochure:'v-brochure',budgetCat:'v-budget-cat',fees:'v-fees',catMin:'v-cat-min',capacity:'v-capacity',pros:'v-pros',cons:'v-cons',notes:'v-notes'};
-    for(const[k,elId] of Object.entries(flds))document.getElementById(elId).value=v[k]||'';
-    document.getElementById('v-price').value=v.price||'';
-    document.getElementById('v-deposit').value=v.deposit||'';
-    document.getElementById('v-balance-date').value=v.balanceDate||'';
+    document.getElementById('vendor-modal-title').textContent='Edit Vendor';del.classList.remove('hidden');
+    const flds={category:'v-category',status:'v-status',name:'v-name',contact:'v-contact',email:'v-email',phone:'v-phone',website:'v-website',portal:'v-portal',brochure:'v-brochure',budgetCat:'v-budget-cat',fees:'v-fees',capacity:'v-capacity',pros:'v-pros',cons:'v-cons',notes:'v-notes'};
+    for(const[k,elId]of Object.entries(flds))document.getElementById(elId).value=v[k]||'';
+    document.getElementById('v-price').value=v.price||'';document.getElementById('v-deposit').value=v.deposit||'';
+    document.getElementById('v-balance-date').value=v.balanceDate||'';document.getElementById('v-cat-min').value=v.catMin||'';
+    if(v.hasBrochureFile){const d=document.getElementById('brochure-selected-display');d.textContent=`📎 ${v.brochureFileName||'Uploaded brochure'} (already saved)`;d.style.display='block';}
   } else {
-    document.getElementById('vendor-modal-title').textContent='Add Vendor';
-    del.classList.add('hidden');
-    ['v-category','v-name','v-contact','v-email','v-phone','v-website','v-portal','v-brochure','v-fees','v-cat-min','v-capacity','v-pros','v-cons','v-notes'].forEach(id=>document.getElementById(id).value='');
-    ['v-price','v-deposit'].forEach(id=>document.getElementById(id).value='');
-    document.getElementById('v-status').value='researching';
-    document.getElementById('v-balance-date').value='';
-    document.getElementById('v-budget-cat').value='';
+    document.getElementById('vendor-modal-title').textContent='Add Vendor';del.classList.add('hidden');
+    ['v-category','v-name','v-contact','v-email','v-phone','v-website','v-portal','v-brochure','v-fees','v-capacity','v-pros','v-cons','v-notes'].forEach(id=>document.getElementById(id).value='');
+    ['v-price','v-deposit','v-cat-min'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('v-status').value='researching';document.getElementById('v-balance-date').value='';document.getElementById('v-budget-cat').value='';
   }
   document.getElementById('vendor-modal-backdrop').classList.add('open');
 }
-function closeVendorModal(f=false){if(f===true||f?.target===document.getElementById('vendor-modal-backdrop')){document.getElementById('vendor-modal-backdrop').classList.remove('open');editingVendorId=null;}}
+function closeVendorModal(f=false){if(f===true||f?.target===document.getElementById('vendor-modal-backdrop')){document.getElementById('vendor-modal-backdrop').classList.remove('open');editingVendorId=null;pendingBrochureFile=null;}}
 
-function saveVendor(){
-  const vendor={
-    id:editingVendorId||uid(),
-    category:document.getElementById('v-category').value,
-    status:document.getElementById('v-status').value,
-    name:document.getElementById('v-name').value.trim(),
-    contact:document.getElementById('v-contact').value.trim(),
-    email:document.getElementById('v-email').value.trim(),
-    phone:document.getElementById('v-phone').value.trim(),
-    website:document.getElementById('v-website').value.trim(),
-    portal:document.getElementById('v-portal').value.trim(),
-    brochure:document.getElementById('v-brochure').value.trim(),
-    fees:document.getElementById('v-fees').value.trim(),
-    catMin:parseFloat(document.getElementById('v-cat-min').value)||0,
-    capacity:document.getElementById('v-capacity').value.trim(),
-    pros:document.getElementById('v-pros').value.trim(),
-    cons:document.getElementById('v-cons').value.trim(),
-    price:parseFloat(document.getElementById('v-price').value)||0,
-    deposit:parseFloat(document.getElementById('v-deposit').value)||0,
-    balanceDate:document.getElementById('v-balance-date').value,
-    budgetCat:document.getElementById('v-budget-cat').value,
-    notes:document.getElementById('v-notes').value.trim(),
-  };
-  if(!vendor.category){alert('Please select a category.');return;}
-  if(editingVendorId){const i=S.vendors.findIndex(v=>v.id===editingVendorId);if(i>=0)S.vendors[i]=vendor;}
-  else{if(!vendor.budgetCat&&V2B[vendor.category])vendor.budgetCat=V2B[vendor.category];S.vendors.push(vendor);}
-  save();closeVendorModal(true);renderVendors();renderSidebar();renderDashboard();
+function handleBrochureSelect(input){
+  const file=input.files[0];if(!file)return;
+  pendingBrochureFile=file;
+  const d=document.getElementById('brochure-selected-display');
+  d.textContent=`📎 ${file.name} (${(file.size/1024).toFixed(1)} KB)`;d.style.display='block';
 }
 
+async function saveVendor(){
+  const vendor={id:editingVendorId||uid(),category:document.getElementById('v-category').value,status:document.getElementById('v-status').value,name:document.getElementById('v-name').value.trim(),contact:document.getElementById('v-contact').value.trim(),email:document.getElementById('v-email').value.trim(),phone:document.getElementById('v-phone').value.trim(),website:document.getElementById('v-website').value.trim(),portal:document.getElementById('v-portal').value.trim(),brochure:document.getElementById('v-brochure').value.trim(),fees:document.getElementById('v-fees').value.trim(),catMin:parseFloat(document.getElementById('v-cat-min').value)||0,capacity:document.getElementById('v-capacity').value.trim(),pros:document.getElementById('v-pros').value.trim(),cons:document.getElementById('v-cons').value.trim(),price:parseFloat(document.getElementById('v-price').value)||0,deposit:parseFloat(document.getElementById('v-deposit').value)||0,balanceDate:document.getElementById('v-balance-date').value,budgetCat:document.getElementById('v-budget-cat').value,notes:document.getElementById('v-notes').value.trim(),hasBrochureFile:false,brochureFileName:''};
+  if(!vendor.category){alert('Please select a category.');return;}
+  if(editingVendorId){const existing=S.vendors.find(v=>v.id===editingVendorId);if(existing){vendor.hasBrochureFile=existing.hasBrochureFile;vendor.brochureFileName=existing.brochureFileName;}}
+  else if(!vendor.budgetCat&&V2B[vendor.category])vendor.budgetCat=V2B[vendor.category];
+  if(pendingBrochureFile){
+    await new Promise(res=>{const reader=new FileReader();reader.onload=async e=>{await idbPut('brochure_'+vendor.id,{name:pendingBrochureFile.name,type:pendingBrochureFile.type,data:e.target.result});vendor.hasBrochureFile=true;vendor.brochureFileName=pendingBrochureFile.name;res();};reader.readAsDataURL(pendingBrochureFile);});
+  }
+  if(editingVendorId){const i=S.vendors.findIndex(v=>v.id===editingVendorId);if(i>=0)S.vendors[i]=vendor;}else S.vendors.push(vendor);
+  save();closeVendorModal(true);renderVendors();renderSidebar();renderDashboard();
+}
 function deleteVendor(){if(!editingVendorId||!confirm('Delete this vendor?'))return;S.vendors=S.vendors.filter(v=>v.id!==editingVendorId);save();closeVendorModal(true);renderVendors();renderDashboard();}
+async function downloadBrochure(id,name){const f=await idbGet('brochure_'+id);if(!f){alert('File not found.');return;}const a=document.createElement('a');a.href=f.data;a.download=f.name||name;a.click();}
 
-// ══ Compare ══════════════════════════════════════════════════════════════
+// ══ Compare ═══════════════════════════════════════════════════════════════
 
-function openCompareModal(cat) {
+function openCompareModal(cat){
   const vendors=S.vendors.filter(v=>v.category===cat);
   document.getElementById('compare-cat-title').textContent=cat;
-  const grid=document.getElementById('compare-grid');
-  grid.innerHTML=vendors.map(v=>{
+  document.getElementById('compare-grid').innerHTML=vendors.map(v=>{
     const isBooked=v.status==='booked'||v.status==='paid';
-    return `<div class="compare-col ${isBooked?'compare-winner':''}" id="compare-col-${v.id}">
-      <div style="margin-bottom:10px;">${statusBadge(v.status)}</div>
+    return`<div class="compare-col ${isBooked?'compare-winner':''}">
+      <div style="margin-bottom:8px;">${statusBadge(v.status)}</div>
       <div class="compare-col-name">${v.name||'(Unnamed)'}</div>
-      <div class="compare-price" style="margin:8px 0 12px;">${v.price?'$'+Number(v.price).toLocaleString():'—'}</div>
-      ${v.catMin?`<div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">Catering min: $${Number(v.catMin).toLocaleString()}</div>`:''}
-      ${v.fees?`<div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">Fees: ${v.fees}</div>`:''}
+      <div class="compare-price" style="margin:7px 0 10px;">${v.price?'$'+Number(v.price).toLocaleString():'—'}</div>
+      ${v.catMin?`<div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">Catering min: $${Number(v.catMin).toLocaleString()}</div>`:''}
+      ${v.fees?`<div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">Fees: ${v.fees}</div>`:''}
       ${v.capacity?`<div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">${v.capacity}</div>`:''}
       <div class="compare-field"><label>Pros</label><textarea class="compare-textarea" onchange="updateVendorField('${v.id}','pros',this.value)">${v.pros||''}</textarea></div>
       <div class="compare-field"><label>Cons</label><textarea class="compare-textarea" onchange="updateVendorField('${v.id}','cons',this.value)">${v.cons||''}</textarea></div>
-      <div class="compare-field"><label>Notes</label><textarea class="compare-textarea" style="min-height:48px;" onchange="updateVendorField('${v.id}','notes',this.value)">${v.notes||''}</textarea></div>
+      <div class="compare-field"><label>Notes</label><textarea class="compare-textarea" style="min-height:44px;" onchange="updateVendorField('${v.id}','notes',this.value)">${v.notes||''}</textarea></div>
       <div class="compare-col-links">
         ${v.website?`<a href="${v.website}" target="_blank" class="btn btn-outline btn-sm">Website ↗</a>`:''}
         ${v.portal?`<a href="${v.portal}" target="_blank" class="btn btn-tiffany btn-sm">Portal ↗</a>`:''}
         ${v.brochure?`<a href="${v.brochure}" target="_blank" class="btn btn-gold btn-sm">Brochure ↗</a>`:''}
+        ${v.hasBrochureFile?`<button class="btn btn-gold btn-sm" onclick="downloadBrochure('${v.id}','brochure')">📎 File</button>`:''}
       </div>
-      ${!isBooked?`<button class="btn btn-primary compare-book-btn" onclick="bookFromCompare('${v.id}','${cat}')">✓ Book This ${cat}</button>`:`<div style="text-align:center;font-size:12px;color:var(--tiffany-deep);font-weight:600;padding:10px 0;">✓ Booked</div>`}
+      ${!isBooked?`<button class="btn btn-primary compare-book-btn" onclick="bookFromCompare('${v.id}','${cat}')">✓ Book This ${cat}</button>`:`<div style="text-align:center;font-size:12px;color:var(--tiffany-deep);font-weight:600;padding:8px 0;">✓ Booked</div>`}
     </div>`;
   }).join('');
   document.getElementById('compare-modal-backdrop').classList.add('open');
 }
-
-function updateVendorField(id,field,val){
-  const v=S.vendors.find(x=>x.id===id);
-  if(v){v[field]=val;save();}
-}
-
-function bookFromCompare(id,cat){
-  if(!confirm(`Mark this ${cat} as Booked? Other ${cat} vendors will stay as-is.`))return;
-  const v=S.vendors.find(x=>x.id===id);
-  if(v){v.status='booked';save();}
-  closeCompareModal(true);renderVendors();renderDashboard();
-  showToast(`✓ ${v.name||cat} marked as <em>Booked</em>`);
-}
-
+function updateVendorField(id,field,val){const v=S.vendors.find(x=>x.id===id);if(v){v[field]=val;save();}}
+function bookFromCompare(id,cat){if(!confirm(`Mark this ${cat} as Booked?`))return;const v=S.vendors.find(x=>x.id===id);if(v){v.status='booked';save();}closeCompareModal(true);renderVendors();renderDashboard();showToast(`✓ ${v.name||cat} marked as <em>Booked</em>`);}
 function closeCompareModal(f=false){if(f===true||f?.target===document.getElementById('compare-modal-backdrop'))document.getElementById('compare-modal-backdrop').classList.remove('open');}
 
-// ══ Email Parser ══════════════════════════════════════════════════════
+// ══ Email Parser ═════════════════════════════════════════════════════════
 
-function toggleEmailImport(){
-  const b=document.getElementById('email-import-body'),t=document.getElementById('import-toggle-text');
-  if(b.classList.contains('open')){b.classList.remove('open');t.textContent='Expand ▾';}
-  else{b.classList.add('open');t.textContent='Collapse ▴';}
-}
-
+function toggleEmailImport(){const b=document.getElementById('email-import-body'),t=document.getElementById('import-toggle-text');if(b.classList.contains('open')){b.classList.remove('open');t.textContent='Expand ▾';}else{b.classList.add('open');t.textContent='Collapse ▴';}}
 function parseEmail(){
-  const text=document.getElementById('email-paste-area').value;
-  if(!text.trim()){alert('Paste an email first.');return;}
-  const r={};
-
-  // Email (prefer business domain)
-  const emails=(text.match(/[\w.+'-]+@[\w.-]+\.[a-zA-Z]{2,}/g)||[]);
-  r.email=emails.find(e=>!/gmail|yahoo|hotmail|outlook|icloud/.test(e))||emails[0];
-
-  // Phone
-  const phones=text.match(/(\+?1[\s.-]?)?\(?(\d{3})\)?[\s.-]?\d{3}[\s.-]?\d{4}/g);
-  if(phones)r.phone=phones[0].trim();
-
-  // Business name
+  const text=document.getElementById('email-paste-area').value;if(!text.trim()){alert('Paste an email first.');return;}const r={};
+  const emails=(text.match(/[\w.+'-]+@[\w.-]+\.[a-zA-Z]{2,}/g)||[]);r.email=emails.find(e=>!/gmail|yahoo|hotmail|outlook|icloud/.test(e))||emails[0];
+  const phones=text.match(/(\+?1[\s.-]?)?\(?(\d{3})\)?[\s.-]?\d{3}[\s.-]?\d{4}/g);if(phones)r.phone=phones[0].trim();
   const biz=text.match(/(?:from|at|with|–|-|,)\s*([A-Z][A-Za-z\s&']+(?:Photography|Photo|Film|Video|Events|Event|Studio|Productions|Catering|Planning|Planner|Floral|Florist|Design|DJ|Music|Entertainment|Bake|Cake|Beauty|Hair|Makeup|Salon|Limo|Transport|Venue|Hall|Garden|Estate|Manor|Inn|Hotel|Collective|Co\.|LLC))/i);
   if(biz)r.name=biz[1].trim();
-
-  // Best/largest price — take highest price in thread (likely final quote after negotiation)
   const prices=(text.match(/\$[\d,]+(?:\.\d{2})?/g)||[]).map(p=>parseFloat(p.replace(/[$,]/g,''))).filter(p=>p>100);
   if(prices.length)r.price=prices.sort((a,b)=>b-a)[0];
-
-  // Contact name from signature
-  const namePats=[
-    /(?:Best|Thanks|Regards|Warm regards|Sincerely|Cheers|Warmly)[,\s]*\r?\n+([A-Z][a-z]+ [A-Z][a-z]+)/,
-    /From:\s*([A-Z][a-z]+ [A-Z][a-z]+)\s*</,
-    /(?:I'm|I am|My name is|This is)\s+([A-Z][a-z]+ [A-Z][a-z]+)/i,
-  ];
+  const namePats=[/(?:Best|Thanks|Regards|Warm regards|Sincerely|Cheers|Warmly)[,\s]*\r?\n+([A-Z][a-z]+ [A-Z][a-z]+)/,/From:\s*([A-Z][a-z]+ [A-Z][a-z]+)\s*</,/(?:I'm|I am|My name is|This is)\s+([A-Z][a-z]+ [A-Z][a-z]+)/i];
   for(const re of namePats){const m=text.match(re);if(m&&m[1]){r.contact=m[1].trim();break;}}
-
   let filled=0;
   if(r.name){document.getElementById('v-name').value=r.name;filled++;}
   if(r.contact){document.getElementById('v-contact').value=r.contact;filled++;}
   if(r.email){document.getElementById('v-email').value=r.email;filled++;}
   if(r.phone){document.getElementById('v-phone').value=r.phone;filled++;}
   if(r.price){document.getElementById('v-price').value=r.price;filled++;}
-
   document.getElementById('parse-result').textContent=filled>0?`✓ ${filled} field${filled!==1?'s':''} filled — review and adjust`:'Couldn\'t extract details — fill manually';
 }
 
-// ══ Timeline ══════════════════════════════════════════════════════════
+// ══ Timeline ═════════════════════════════════════════════════════════════
+
+function setTimelineView(view){
+  timelineView=view;
+  document.getElementById('tl-view-list-btn').classList.toggle('active',view==='list');
+  document.getElementById('tl-view-cal-btn').classList.toggle('active',view==='calendar');
+  document.getElementById('timeline-list-view').style.display=view==='list'?'block':'none';
+  document.getElementById('timeline-cal-view').style.display=view==='calendar'?'block':'none';
+  if(view==='calendar')renderCalendar();else renderTimelineList();
+}
 
 function renderTimeline(){
-  const {weddingDate}=S.wedding;
-  const content=document.getElementById('timeline-content');
+  renderTimelineList();
+  if(timelineView==='calendar')renderCalendar();
+}
+
+function renderTimelineList(){
+  const{weddingDate}=S.wedding;
+  const content=document.getElementById('timeline-list-view');
   if(!weddingDate){content.innerHTML=`<div class="empty-state"><div class="empty-state-icon">📅</div><h3>No wedding date set</h3><p>Your timeline is generated automatically once you set a date.</p></div>`;return;}
   const done=S.timeline.completed;
   const ms=TIMELINE_MILESTONES.map(m=>({...m,targetDate:addMonths(weddingDate,m.mo),isDone:done.includes(m.id)}));
   document.getElementById('timeline-progress-text').textContent=`${done.length} / ${ms.length} complete`;
-  document.getElementById('timeline-subtitle').textContent=`Personalized to ${fmtDate(weddingDate)} · ${ms.filter(m=>!m.isDone).length} tasks remaining`;
-  const groups=[
-    {label:'Start Early',min:13,max:999},
-    {label:'12 Months Out',min:10,max:13},
-    {label:'9 Months Out',min:7,max:10},
-    {label:'6 Months Out',min:4,max:7},
-    {label:'3 Months Out',min:1,max:4},
-    {label:'Final Month',min:-.5,max:1},
-    {label:'After the Wedding',min:-12,max:-.5},
-  ];
+  document.getElementById('timeline-subtitle').textContent=`Personalized to ${fmtDate(weddingDate)} · ${ms.filter(m=>!m.isDone).length} remaining`;
+  const groups=[{label:'Start Early',min:13,max:999},{label:'12 Months Out',min:10,max:13},{label:'9 Months Out',min:7,max:10},{label:'6 Months Out',min:4,max:7},{label:'3 Months Out',min:1,max:4},{label:'Final Month',min:-.5,max:1},{label:'After the Wedding',min:-12,max:-.5}];
   content.innerHTML=groups.map(g=>{
-    const items=ms.filter(m=>m.mo>=g.min&&m.mo<g.max);
-    if(!items.length)return'';
-    const repMo=g.min<0?g.min+.25:g.min===0?.5:g.min;
-    const repDate=addMonths(weddingDate,repMo);
+    const items=ms.filter(m=>m.mo>=g.min&&m.mo<g.max);if(!items.length)return'';
+    const repDate=addMonths(weddingDate,g.min<0?g.min+.25:g.min===0?.5:g.min);
     return`<div class="timeline-group">
       <div class="timeline-group-header"><div class="timeline-group-title">${g.label}</div><div class="timeline-group-line"></div><div class="timeline-group-date">${repDate?fmtDate(repDate):''}</div></div>
       <div class="timeline-items">${items.map(m=>{
@@ -1250,73 +1373,133 @@ function renderTimeline(){
   }).join('');
 }
 
-function toggleMilestone(id){const i=S.timeline.completed.indexOf(id);if(i>=0)S.timeline.completed.splice(i,1);else S.timeline.completed.push(id);save();renderTimeline();renderDashboard();}
+function toggleMilestone(id){const i=S.timeline.completed.indexOf(id);if(i>=0)S.timeline.completed.splice(i,1);else S.timeline.completed.push(id);save();renderTimelineList();renderDashboard();}
 
-// ══ Budget ════════════════════════════════════════════════════════════
+function calNavMonth(dir){calendarDate=new Date(calendarDate.getFullYear(),calendarDate.getMonth()+dir,1);renderCalendar();}
 
-function getBudgetBarColor(pct){
-  if(pct<=0)return'var(--champagne)';
-  if(pct<60)return'var(--bar-green)';
-  if(pct<80)return'var(--tiffany-dark)';
-  if(pct<95)return'var(--bar-amber)';
-  if(pct<105)return'var(--bar-orange)';
-  return'var(--bar-red)';
+function renderCalendar(){
+  const{weddingDate}=S.wedding;
+  const yr=calendarDate.getFullYear(),mo=calendarDate.getMonth();
+  document.getElementById('cal-month-title').textContent=new Date(yr,mo,1).toLocaleDateString('en-US',{month:'long',year:'numeric'});
+  const first=new Date(yr,mo,1),last=new Date(yr,mo+1,0);
+  const startDay=first.getDay();
+  const today=new Date();today.setHours(0,0,0,0);
+
+  // Map milestone dates to this month
+  const milestonesByDate={};
+  if(weddingDate){
+    TIMELINE_MILESTONES.forEach(m=>{
+      const td=addMonths(weddingDate,m.mo);
+      if(td&&td.slice(0,7)===`${yr}-${String(mo+1).padStart(2,'0')}`){
+        if(!milestonesByDate[td])milestonesByDate[td]=[];
+        milestonesByDate[td].push(m);
+      }
+    });
+  }
+
+  const DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  let html=DAYS.map(d=>`<div class="cal-day-header">${d}</div>`).join('');
+
+  // Empty cells before first day
+  for(let i=0;i<startDay;i++)html+=`<div class="cal-day other-month"></div>`;
+
+  // Days of month
+  for(let d=1;d<=last.getDate();d++){
+    const dateStr=`${yr}-${String(mo+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const ms=milestonesByDate[dateStr]||[];
+    const isToday=new Date(yr,mo,d).getTime()===today.getTime();
+    html+=`<div class="cal-day ${isToday?'today':''}">
+      <div class="cal-day-num">${d}</div>
+      <div class="cal-dots">${ms.map(m=>{const done=S.timeline.completed.includes(m.id);const color=done?'#A8A8A8':(CAT_COLORS[m.cat]||'#81D8D0');return`<div class="cal-dot" style="background:${color};${done?'opacity:.5':''}" title="${m.task}"></div>`;}).join('')}</div>
+      ${ms.length===1?`<div class="cal-event-label">${ms[0].task}</div>`:''}
+    </div>`;
+  }
+
+  // Trailing empty cells
+  const trailing=(7-((startDay+last.getDate())%7))%7;
+  for(let i=0;i<trailing;i++)html+=`<div class="cal-day other-month"></div>`;
+
+  document.getElementById('cal-grid').innerHTML=html;
+
+  // Legend
+  const catsInMonth=[...new Set(Object.values(milestonesByDate).flat().map(m=>m.cat))];
+  document.getElementById('cal-legend').innerHTML=catsInMonth.length?catsInMonth.map(cat=>`<div class="cal-legend-item"><div class="cal-legend-dot" style="background:${CAT_COLORS[cat]||'#81D8D0'};"></div>${cat}</div>`).join(''):`<div style="font-size:12px;color:var(--text-muted);">No milestones this month</div>`;
 }
+
+// ══ Budget ═══════════════════════════════════════════════════════════════
+
+function buildDonutSVG(cats,committed,total){
+  if(!total)return`<div style="width:180px;height:180px;display:flex;align-items:center;justify-content:center;"><div style="text-align:center;color:var(--text-muted);font-size:12px;">Set a budget<br>to see chart</div></div>`;
+  const r=72,cx=90,cy=90,sw=22,circ=2*Math.PI*r;
+  const totalCommitted=Object.values(committed).reduce((a,b)=>a+b,0);
+  let cumulativeDash=0;
+  const arcs=cats.filter(c=>committed[c.id]>0).map(c=>{
+    const dash=Math.min(committed[c.id]/total,1)*circ;
+    const offset=circ*.25-cumulativeDash;
+    cumulativeDash+=dash;
+    return`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${BUDGET_COLORS[c.id]}" stroke-width="${sw}" stroke-dasharray="${dash} ${circ-dash}" stroke-dashoffset="${offset}" />`;
+  }).join('');
+  const pct=Math.round(Math.min(totalCommitted/total*100,999));
+  return`<svg width="180" height="180" viewBox="0 0 180 180">
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--pearl-warm)" stroke-width="${sw}"/>
+    ${arcs}
+    <text x="${cx}" y="${cy-5}" text-anchor="middle" fill="var(--text)" font-size="30" font-weight="400" font-family="Cormorant Garant,Georgia,serif">${pct}%</text>
+    <text x="${cx}" y="${cy+16}" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-family="DM Sans,system-ui,sans-serif">committed</text>
+  </svg>`;
+}
+
+function getBudgetBarColor(pct){if(pct<=0)return'var(--champagne)';if(pct<60)return'var(--tiffany-dark)';if(pct<80)return'var(--tiffany-dark)';if(pct<95)return'var(--gold)';if(pct<105)return'#D4703A';return'#C94848';}
 
 function renderBudget(){
   const total=S.budget.total||0;
   const committed=getCommitted();
   const totalCommitted=Object.values(committed).reduce((a,b)=>a+b,0);
-  const allocated=BUDGET_CATEGORIES.reduce((s,c)=>s+(S.budget.categories[c.id]||0),0);
-  const overallPct=total>0?Math.min(totalCommitted/total*100,100):0;
-  const overallColor=getBudgetBarColor(total>0?totalCommitted/total*100:0);
+  const donutSVG=buildDonutSVG(BUDGET_CATEGORIES,committed,total);
+  const legend=BUDGET_CATEGORIES.filter(c=>committed[c.id]>0).map(c=>`<div class="budget-legend-item"><div class="budget-legend-dot" style="background:${BUDGET_COLORS[c.id]};"></div>${c.name} (${fmt$(committed[c.id])})</div>`).join('');
 
-  // Summary cards
-  document.getElementById('budget-summary').innerHTML=`
-    <div class="budget-summary-card primary">
-      <div class="budget-summary-label">Total Budget</div>
-      <input class="budget-total-edit" id="budget-total-input" type="number" value="${total||''}" placeholder="0" oninput="updateTotalBudget(this.value)" />
-      <div class="budget-summary-sub">Click to edit</div>
-    </div>
-    <div class="budget-summary-card">
-      <div class="budget-summary-label">Committed</div>
-      <div class="budget-summary-value">${fmt$(totalCommitted)||'$0'}</div>
-      <div class="budget-summary-sub">From booked vendors</div>
-      <div class="budget-overall-bar" style="margin-top:12px;"><div class="budget-overall-fill" style="width:${overallPct}%;background:${overallColor};"></div></div>
-    </div>
-    <div class="budget-summary-card">
-      <div class="budget-summary-label">${total>0&&totalCommitted>total?'Over Budget':'Remaining'}</div>
-      <div class="budget-summary-value" style="${total>0&&totalCommitted>total?'color:var(--bar-red)':''}">${total>0?fmt$(Math.abs(total-totalCommitted)):'—'}</div>
-      <div class="budget-summary-sub">${total>0?`${Math.round(overallPct)}% committed`:'Set a total budget'}</div>
+  document.getElementById('budget-hero').innerHTML=`
+    <div class="budget-hero-inner">
+      <div class="budget-donut-wrap">
+        ${donutSVG}
+        ${legend?`<div class="budget-donut-legend">${legend}</div>`:''}
+      </div>
+      <div class="budget-stats">
+        <div class="budget-stat-row">
+          <div class="budget-stat-label">Total Budget</div>
+          <input class="budget-total-edit" id="budget-total-input" type="number" value="${total||''}" placeholder="Enter budget" oninput="updateTotalBudget(this.value)" />
+          <div class="budget-stat-sub">Click to edit</div>
+        </div>
+        <div class="budget-stat-row">
+          <div class="budget-stat-label">Committed (booked vendors)</div>
+          <div class="budget-stat-value">${fmt$(totalCommitted)||'$0'}</div>
+        </div>
+        <div class="budget-stat-row">
+          <div class="budget-stat-label">${total&&totalCommitted>total?'Over Budget':'Remaining'}</div>
+          <div class="budget-stat-value" style="${total&&totalCommitted>total?'color:#C94848':''}">${total?fmt$(Math.abs(total-totalCommitted)):'—'}</div>
+          <div class="budget-stat-sub">${total?`${Math.round(Math.min(totalCommitted/total*100,999))}% of total committed`:'Set a total budget above'}</div>
+        </div>
+      </div>
     </div>`;
 
-  // Category rows
   document.getElementById('budget-categories').innerHTML=BUDGET_CATEGORIES.map(c=>{
     const budgeted=S.budget.categories[c.id]||0;
     const commit=committed[c.id]||0;
     const pct=budgeted>0?commit/budgeted*100:0;
-    const barColor=getBudgetBarColor(pct);
     const barW=budgeted>0?Math.min(pct,100):0;
-    const overW=pct>100?Math.min((pct-100)/pct*100,30):0;
+    const barColor=getBudgetBarColor(pct);
     const remaining=budgeted-commit;
     const remClass=budgeted===0?'':remaining<0?'danger':pct>=80?'warn':'ok';
     const remText=budgeted===0?'—':remaining>=0?fmt$(remaining)+' left':`${fmt$(Math.abs(remaining))} over`;
     return`<div class="budget-row">
       <div class="budget-row-top">
-        <div class="budget-row-name">${c.name}</div>
-        <div class="budget-row-numbers">
+        <div class="budget-row-name"><div class="budget-row-color" style="background:${BUDGET_COLORS[c.id]};"></div>${c.name}</div>
+        <div style="display:flex;align-items:center;gap:6px;">
           <button class="budget-transfer-btn" onclick="openTransferModal('${c.id}')">↔ Move</button>
-          <input class="budget-row-budgeted-input" type="number" value="${budgeted||''}" placeholder="$0" title="Budget for ${c.name}" oninput="updateBudgetCat('${c.id}',this.value)" />
+          <input class="budget-row-budgeted-input" type="number" value="${budgeted||''}" placeholder="$0" oninput="updateBudgetCat('${c.id}',this.value)" />
         </div>
       </div>
-      <div class="budget-row-bar-wrap">
-        <div class="budget-row-bar-fill" style="width:${barW}%;background:${barColor};"></div>
-        ${overW>0?`<div class="budget-row-bar-overflow" style="width:${overW}%;"></div>`:''}
-      </div>
-      <div class="budget-row-meta">
-        <span class="committed">${commit?'$'+commit.toLocaleString()+' committed':'Not committed yet'}</span>
-        <span class="remaining ${remClass}">${remText}</span>
-      </div>
+      <div class="budget-row-bar-wrap"><div class="budget-row-bar-fill" style="width:${barW}%;background:${barColor};"></div></div>
+      <div class="budget-row-meta"><span class="committed">${commit?'$'+commit.toLocaleString()+' committed':'No committed spend yet'}</span><span class="budget-remaining ${remClass}">${remText}</span></div>
     </div>`;
   }).join('');
 }
@@ -1327,25 +1510,16 @@ function updateTotalBudget(val){
   if(!anySet&&S.budget.total>0)BUDGET_CATEGORIES.forEach(c=>{S.budget.categories[c.id]=Math.round(S.budget.total*c.pct/100);});
   save();renderBudget();renderDashboard();
 }
-
 function updateBudgetCat(id,val){
-  const oldVal=S.budget.categories[id]||0;
+  const old=S.budget.categories[id]||0;
   S.budget.categories[id]=parseFloat(val)||0;
   save();
-  // Smart tip if freed up money
-  const diff=oldVal-S.budget.categories[id];
-  if(diff>100){
-    const cat=BUDGET_CATEGORIES.find(c=>c.id===id);
-    const suggestions=BUDGET_CATEGORIES.filter(c=>c.id!==id&&(getCommitted()[c.id]||0)/(S.budget.categories[c.id]||1)>0.75);
-    const suggest=suggestions[0];
-    showToast(suggest?`Freed up ${fmt$(diff)} from ${cat.name}. Consider adding to <em>${suggest.name}</em> (${Math.round((getCommitted()[suggest.id]||0)/(S.budget.categories[suggest.id]||1)*100)}% committed).`:`Freed up ${fmt$(diff)} from ${cat.name}.`);
-  }
+  const diff=old-S.budget.categories[id];
+  if(diff>100){const cn=BUDGET_CATEGORIES.find(c=>c.id===id);const committed=getCommitted();const s=BUDGET_CATEGORIES.filter(c=>c.id!==id&&(committed[c.id]||0)/(S.budget.categories[c.id]||1)>0.75)[0];showToast(s?`Freed ${fmt$(diff)} from ${cn.name}. Consider adding to <em>${s.name}</em>.`:`Freed ${fmt$(diff)} from ${cn.name}.`);}
   renderBudget();renderDashboard();
 }
-
 function openTransferModal(fromId){
-  const selF=document.getElementById('transfer-from');
-  const selT=document.getElementById('transfer-to');
+  const selF=document.getElementById('transfer-from'),selT=document.getElementById('transfer-to');
   selF.innerHTML=BUDGET_CATEGORIES.map(c=>`<option value="${c.id}" ${c.id===fromId?'selected':''}>${c.name} (${fmt$(S.budget.categories[c.id]||0)})</option>`).join('');
   selT.innerHTML=BUDGET_CATEGORIES.map(c=>`<option value="${c.id}" ${c.id===fromId?'disabled':''} ${c.id!==fromId&&BUDGET_CATEGORIES.indexOf(c)===1?'selected':''}>${c.name}</option>`).join('');
   document.getElementById('transfer-amount').value='';
@@ -1354,293 +1528,166 @@ function openTransferModal(fromId){
 function closeTransferModal(f=false){if(f===true||f?.target===document.getElementById('transfer-modal-backdrop'))document.getElementById('transfer-modal-backdrop').classList.remove('open');}
 function executeTransfer(){
   const amount=parseFloat(document.getElementById('transfer-amount').value)||0;
-  const fromId=document.getElementById('transfer-from').value;
-  const toId=document.getElementById('transfer-to').value;
+  const fromId=document.getElementById('transfer-from').value,toId=document.getElementById('transfer-to').value;
   if(!amount||fromId===toId){alert('Enter a valid amount and different categories.');return;}
   const fromBudget=S.budget.categories[fromId]||0;
-  if(amount>fromBudget){alert(`You only have ${fmt$(fromBudget)} in that category.`);return;}
-  S.budget.categories[fromId]=(fromBudget-amount);
-  S.budget.categories[toId]=(S.budget.categories[toId]||0)+amount;
+  if(amount>fromBudget){alert(`Only ${fmt$(fromBudget)} available in that category.`);return;}
+  S.budget.categories[fromId]=fromBudget-amount;S.budget.categories[toId]=(S.budget.categories[toId]||0)+amount;
   save();closeTransferModal(true);renderBudget();renderDashboard();
-  const fromName=BUDGET_CATEGORIES.find(c=>c.id===fromId)?.name;
-  const toName=BUDGET_CATEGORIES.find(c=>c.id===toId)?.name;
-  showToast(`Moved <em>${fmt$(amount)}</em> from ${fromName} → ${toName}`);
+  showToast(`Moved <em>${fmt$(amount)}</em> from ${BUDGET_CATEGORIES.find(c=>c.id===fromId)?.name} → ${BUDGET_CATEGORIES.find(c=>c.id===toId)?.name}`);
 }
 
-// ══ Documents ════════════════════════════════════════════════════════
+// ══ Documents ════════════════════════════════════════════════════════════
 
-function handleFileSelect(input){
-  const file=input.files[0];
-  if(!file)return;
-  pendingFile=file;
-  const disp=document.getElementById('file-selected-display');
-  disp.textContent=`📎 ${file.name} (${(file.size/1024).toFixed(1)} KB)`;
-  disp.style.display='block';
-}
+function handleFileSelect(input){const file=input.files[0];if(!file)return;pendingDocFile=file;const d=document.getElementById('file-selected-display');d.textContent=`📎 ${file.name} (${(file.size/1024).toFixed(1)} KB)`;d.style.display='block';}
 
 function renderDocuments(){
-  const sel=document.getElementById('d-vendor');
-  sel.innerHTML='<option value="">None</option>'+S.vendors.map(v=>`<option value="${v.id}">${v.name||v.category}</option>`).join('');
+  const sel=document.getElementById('d-vendor');sel.innerHTML='<option value="">None</option>'+S.vendors.map(v=>`<option value="${v.id}">${v.name||v.category}</option>`).join('');
   const grid=document.getElementById('docs-grid');
-  if(!S.documents.length){grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><div class="empty-state-icon">📄</div><h3>No documents tracked</h3><p>Upload contracts, invoices, and permits directly.<br>Or link to Google Drive, email, or anywhere they live.</p></div>`;return;}
+  if(!S.documents.length){grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><div class="empty-state-icon">📄</div><h3>No documents tracked</h3><p>Upload contracts & invoices directly, or link to Google Drive.</p></div>`;return;}
   const SL={needed:'Needed',requested:'Requested',received:'Received',signed:'Signed',filed:'Filed'};
-  grid.innerHTML=S.documents.map(d=>{
-    const vendor=S.vendors.find(v=>v.id===d.vendorId);
-    return`<div class="doc-card">
-      <div class="doc-card-top">
-        <div><div class="doc-icon">${DOC_ICONS[d.type]||'📄'}</div><div class="doc-name">${d.name}</div><div class="doc-vendor">${vendor?vendor.name||vendor.category:''}</div></div>
-        <div><div class="doc-type-tag">${d.type}</div><button class="btn btn-ghost btn-sm" style="margin-top:5px;" onclick="openDocModal('${d.id}')">Edit</button></div>
-      </div>
-      ${d.notes?`<div style="font-size:12px;color:var(--text-muted);margin-top:5px;line-height:1.5;">${d.notes}</div>`:''}
-      <div class="doc-footer">
-        <span class="badge doc-status-${d.status}">${SL[d.status]||d.status}</span>
-        <div style="display:flex;gap:6px;">
-          ${d.hasFile?`<button class="btn btn-outline btn-sm" onclick="downloadDocFile('${d.id}','${d.fileName||'file'}')">⬇ File</button>`:''}
-          ${d.url?`<a href="${d.url}" target="_blank" class="btn btn-outline btn-sm">Open ↗</a>`:''}
-        </div>
-      </div>
-    </div>`;
-  }).join('');
+  grid.innerHTML=S.documents.map(d=>{const vendor=S.vendors.find(v=>v.id===d.vendorId);return`<div class="doc-card">
+    <div class="doc-card-top"><div><div class="doc-icon">${DOC_ICONS[d.type]||'📄'}</div><div class="doc-name">${d.name}</div><div class="doc-vendor">${vendor?vendor.name||vendor.category:''}</div></div><div><div class="doc-type-tag">${d.type}</div><button class="btn btn-ghost btn-sm" style="margin-top:4px;" onclick="openDocModal('${d.id}')">Edit</button></div></div>
+    ${d.notes?`<div style="font-size:12px;color:var(--text-muted);margin-top:4px;line-height:1.5;">${d.notes}</div>`:''}
+    <div class="doc-footer"><span class="badge doc-status-${d.status}">${SL[d.status]||d.status}</span><div style="display:flex;gap:5px;">${d.hasFile?`<button class="btn btn-outline btn-sm" onclick="downloadDocFile('${d.id}','${d.fileName||'file'}')">⬇ File</button>`:''}${d.url?`<a href="${d.url}" target="_blank" class="btn btn-outline btn-sm">Open ↗</a>`:''}</div></div>
+  </div>`;}).join('');
 }
 
 function openDocModal(id=null){
-  editingDocId=id;pendingFile=null;
-  const fileDisp=document.getElementById('file-selected-display');
-  fileDisp.style.display='none';fileDisp.textContent='';
-  document.getElementById('d-file').value='';
-  const sel=document.getElementById('d-vendor');
-  sel.innerHTML='<option value="">None</option>'+S.vendors.map(v=>`<option value="${v.id}">${v.name||v.category}</option>`).join('');
+  editingDocId=id;pendingDocFile=null;
+  const d=document.getElementById('file-selected-display');d.style.display='none';d.textContent='';document.getElementById('d-file').value='';
+  const sel=document.getElementById('d-vendor');sel.innerHTML='<option value="">None</option>'+S.vendors.map(v=>`<option value="${v.id}">${v.name||v.category}</option>`).join('');
   if(id){
-    const d=S.documents.find(x=>x.id===id);if(!d)return;
-    document.getElementById('doc-modal-title').textContent='Edit Document';
-    document.getElementById('d-delete-btn').classList.remove('hidden');
-    document.getElementById('d-name').value=d.name||'';
-    document.getElementById('d-type').value=d.type||'Contract';
-    document.getElementById('d-status').value=d.status||'needed';
-    sel.value=d.vendorId||'';
-    document.getElementById('d-url').value=d.url||'';
-    document.getElementById('d-notes').value=d.notes||'';
-    if(d.hasFile){fileDisp.textContent=`📎 ${d.fileName||'Uploaded file'} (already saved)`;fileDisp.style.display='block';}
+    const doc=S.documents.find(x=>x.id===id);if(!doc)return;
+    document.getElementById('doc-modal-title').textContent='Edit Document';document.getElementById('d-delete-btn').classList.remove('hidden');
+    document.getElementById('d-name').value=doc.name||'';document.getElementById('d-type').value=doc.type||'Contract';document.getElementById('d-status').value=doc.status||'needed';
+    sel.value=doc.vendorId||'';document.getElementById('d-url').value=doc.url||'';document.getElementById('d-notes').value=doc.notes||'';
+    if(doc.hasFile){const di=document.getElementById('file-selected-display');di.textContent=`📎 ${doc.fileName||'Uploaded file'} (already saved)`;di.style.display='block';}
   } else {
-    document.getElementById('doc-modal-title').textContent='Add Document';
-    document.getElementById('d-delete-btn').classList.add('hidden');
-    ['d-name','d-url','d-notes'].forEach(x=>document.getElementById(x).value='');
-    document.getElementById('d-type').value='Contract';
-    document.getElementById('d-status').value='needed';
-    sel.value='';
+    document.getElementById('doc-modal-title').textContent='Add Document';document.getElementById('d-delete-btn').classList.add('hidden');
+    ['d-name','d-url','d-notes'].forEach(x=>document.getElementById(x).value='');document.getElementById('d-type').value='Contract';document.getElementById('d-status').value='needed';sel.value='';
   }
   document.getElementById('doc-modal-backdrop').classList.add('open');
 }
-function closeDocModal(f=false){if(f===true||f?.target===document.getElementById('doc-modal-backdrop')){document.getElementById('doc-modal-backdrop').classList.remove('open');editingDocId=null;pendingFile=null;}}
-
+function closeDocModal(f=false){if(f===true||f?.target===document.getElementById('doc-modal-backdrop')){document.getElementById('doc-modal-backdrop').classList.remove('open');editingDocId=null;pendingDocFile=null;}}
 async function saveDoc(){
-  const doc={
-    id:editingDocId||uid(),
-    name:document.getElementById('d-name').value.trim(),
-    type:document.getElementById('d-type').value,
-    status:document.getElementById('d-status').value,
-    vendorId:document.getElementById('d-vendor').value,
-    url:document.getElementById('d-url').value.trim(),
-    notes:document.getElementById('d-notes').value.trim(),
-    hasFile:false,fileName:'',
-  };
+  const doc={id:editingDocId||uid(),name:document.getElementById('d-name').value.trim(),type:document.getElementById('d-type').value,status:document.getElementById('d-status').value,vendorId:document.getElementById('d-vendor').value,url:document.getElementById('d-url').value.trim(),notes:document.getElementById('d-notes').value.trim(),hasFile:false,fileName:''};
   if(!doc.name){alert('Please enter a document name.');return;}
-
-  // Preserve existing file if editing
-  if(editingDocId){const existing=S.documents.find(d=>d.id===editingDocId);if(existing){doc.hasFile=existing.hasFile;doc.fileName=existing.fileName;}}
-
-  if(pendingFile){
-    // Store file in IndexedDB as dataURL
-    await new Promise(res=>{
-      const reader=new FileReader();
-      reader.onload=async e=>{
-        await idbPut(doc.id,{name:pendingFile.name,type:pendingFile.type,data:e.target.result});
-        doc.hasFile=true;doc.fileName=pendingFile.name;
-        res();
-      };
-      reader.readAsDataURL(pendingFile);
-    });
-  }
-
-  if(editingDocId){const i=S.documents.findIndex(d=>d.id===editingDocId);if(i>=0)S.documents[i]=doc;}
-  else S.documents.push(doc);
+  if(editingDocId){const ex=S.documents.find(d=>d.id===editingDocId);if(ex){doc.hasFile=ex.hasFile;doc.fileName=ex.fileName;}}
+  if(pendingDocFile){await new Promise(res=>{const reader=new FileReader();reader.onload=async e=>{await idbPut(doc.id,{name:pendingDocFile.name,type:pendingDocFile.type,data:e.target.result});doc.hasFile=true;doc.fileName=pendingDocFile.name;res();};reader.readAsDataURL(pendingDocFile);});}
+  if(editingDocId){const i=S.documents.findIndex(d=>d.id===editingDocId);if(i>=0)S.documents[i]=doc;}else S.documents.push(doc);
   save();closeDocModal(true);renderDocuments();
 }
+async function deleteDoc(){if(!editingDocId||!confirm('Delete this document?'))return;const d=S.documents.find(x=>x.id===editingDocId);if(d?.hasFile)await idbDel(editingDocId);S.documents=S.documents.filter(d=>d.id!==editingDocId);save();closeDocModal(true);renderDocuments();}
+async function downloadDocFile(id,name){const f=await idbGet(id);if(!f){alert('File not found.');return;}const a=document.createElement('a');a.href=f.data;a.download=f.name||name;a.click();}
 
-async function deleteDoc(){
-  if(!editingDocId||!confirm('Delete this document?'))return;
-  const d=S.documents.find(x=>x.id===editingDocId);
-  if(d?.hasFile)await idbDel(editingDocId);
-  S.documents=S.documents.filter(d=>d.id!==editingDocId);
-  save();closeDocModal(true);renderDocuments();
-}
-
-async function downloadDocFile(id,name){
-  const f=await idbGet(id);
-  if(!f){alert('File not found. It may have been lost when clearing browser data.');return;}
-  const a=document.createElement('a');
-  a.href=f.data;a.download=f.name||name;a.click();
-}
-
-// ══ Inspo ═════════════════════════════════════════════════════════════
+// ══ Inspo ════════════════════════════════════════════════════════════════
 
 function renderInspo(){
-  // Pinterest card
-  const pArea=document.getElementById('pinterest-card-area');
+  // Pinterest
+  const pArea=document.getElementById('pinterest-area');
   if(S.pinterestUrl){
-    pArea.innerHTML=`<div class="pinterest-card">
-      <div class="pinterest-card-left">
-        <div class="pinterest-logo">📌</div>
-        <div class="pinterest-title">Your Wedding Board</div>
-        <div class="pinterest-sub">${S.pinterestUrl.replace(/^https?:\/\//,'').replace(/\/$/,'')}</div>
+    pArea.innerHTML=`<div class="pinterest-card" style="margin-bottom:12px;">
+      <div><div style="font-size:24px;margin-bottom:5px;">📌</div><div class="pinterest-title">Your Wedding Board</div><div class="pinterest-sub">${S.pinterestUrl.replace(/^https?:\/\//,'').split('/').slice(0,3).join('/')}</div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="${S.pinterestUrl}" target="_blank" class="btn" style="background:rgba(255,255,255,.22);color:#fff;border:1px solid rgba(255,255,255,.3);">Open Board ↗</a>
+        <button class="btn" style="background:rgba(0,0,0,.18);color:#fff;font-size:12px;" onclick="S.pinterestUrl='';save();renderInspo()">Change</button>
       </div>
-      <div style="display:flex;gap:8px;">
-        <a href="${S.pinterestUrl}" target="_blank" class="btn" style="background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);">Open Board ↗</a>
-        <button class="btn" style="background:rgba(0,0,0,.2);color:#fff;font-size:12px;" onclick="S.pinterestUrl='';save();renderInspo()">Change</button>
-      </div>
+    </div>
+    <div class="pinterest-embed-area">
+      <a data-pin-do="embedBoard" data-pin-board-width="100%" data-pin-scale-height="300" data-pin-scale-width="80" href="${S.pinterestUrl}"></a>
     </div>`;
+    // Trigger Pinterest widget
+    setTimeout(()=>{if(window.PinUtils){try{window.PinUtils.build();}catch(e){}}},400);
   } else {
     pArea.innerHTML=`<div class="pinterest-card unset">
-      <div class="pinterest-card-left">
-        <div class="pinterest-logo" style="color:var(--text-muted);">📌</div>
-        <div class="pinterest-title">Link Your Pinterest Board</div>
-        <div class="pinterest-sub" style="color:var(--text-muted);">Paste your wedding board URL to keep it one tap away</div>
-      </div>
-      <div style="display:flex;gap:8px;align-items:center;">
-        <input class="pinterest-set-input" id="pinterest-url-input" placeholder="https://pinterest.com/your-board" />
+      <div><div style="font-size:22px;color:var(--text-muted);margin-bottom:5px;">📌</div><div class="pinterest-title">Link Your Wedding Pinterest Board</div><div class="pinterest-sub">Paste your board URL — it will embed the pins right here</div></div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <input class="pinterest-set-input" id="pinterest-url-input" placeholder="https://pinterest.com/username/board-name/" />
         <button class="btn btn-primary" onclick="savePinterestUrl()">Save</button>
       </div>
     </div>`;
   }
 
-  // Inspo items grid
+  // Saved inspo grid
   const grid=document.getElementById('inspo-grid');
-  if(!S.inspo.length){
-    grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><div class="empty-state-icon">✨</div><h3>No saved inspo yet</h3><p>Add TikTok videos or mood notes to build your vision board.</p></div>`;
-    return;
-  }
+  if(!S.inspo.length){grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><div class="empty-state-icon">✨</div><h3>No saved inspo yet</h3><p>Add TikTok videos, Instagram links, shopping finds, or mood notes.</p></div>`;return;}
+
   grid.innerHTML=S.inspo.map(item=>{
     if(item.type==='tiktok'){
-      const id=item.videoId;
-      return`<div class="inspo-card inspo-card-tiktok">
+      const vid=item.videoId;
+      return`<div class="inspo-card">
         <button class="inspo-card-delete" onclick="deleteInspo('${item.id}')">✕</button>
-        ${id?`<iframe src="https://www.tiktok.com/embed/v2/${id}" height="420" allowfullscreen style="border:none;width:100%;border-radius:12px 12px 0 0;display:block;"></iframe>`:
-          `<div style="background:var(--pearl);padding:20px;text-align:center;font-size:13px;color:var(--text-muted);">Could not load video. <a href="${item.url}" target="_blank" style="color:var(--tiffany-deep)">Open on TikTok ↗</a></div>`}
-        <div class="inspo-card-body">
-          ${item.label?`<div class="inspo-card-label">${item.label}</div>`:''}
-          <a href="${item.url}" target="_blank" style="font-size:12px;color:var(--tiffany-deep);text-decoration:none;">Watch on TikTok ↗</a>
-        </div>
+        ${vid?`<iframe src="https://www.tiktok.com/embed/v2/${vid}" height="420" allowfullscreen style="border:none;width:100%;display:block;"></iframe>`:`<div style="background:var(--pearl);padding:20px;text-align:center;font-size:13px;color:var(--text-muted);">Could not embed. <a href="${item.url}" target="_blank" style="color:var(--tiffany-deep)">Open on TikTok ↗</a></div>`}
+        <div class="inspo-card-body">${item.label?`<div class="inspo-card-label">${item.label}</div>`:''}<a href="${item.url}" target="_blank" style="font-size:12px;color:var(--tiffany-deep);">Watch on TikTok ↗</a></div>
+      </div>`;
+    } else if(item.type==='link'){
+      const color=LINK_COLORS[item.source]||'#9A8F87';
+      const icon=LINK_ICONS[item.source]||'🔗';
+      return`<div class="inspo-link-card">
+        <button class="inspo-link-delete" onclick="deleteInspo('${item.id}')">✕</button>
+        <div class="inspo-link-type-tag" style="color:${color};">${icon} ${item.source||'Link'}</div>
+        <div class="inspo-link-title">${item.title||item.url}</div>
+        <div class="inspo-link-url">${item.url}</div>
+        ${item.label?`<div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;">${item.label}</div>`:''}
+        <a href="${item.url}" target="_blank" class="btn btn-outline btn-sm">Open ↗</a>
       </div>`;
     } else {
       return`<div class="inspo-note-card">
         <button class="inspo-note-delete" onclick="deleteInspo('${item.id}')">✕</button>
         <div class="inspo-note-cat">${item.category||'General'}${item.label?' · '+item.label:''}</div>
-        <div style="font-size:18px;margin-bottom:6px;">${item.icon||'✨'}</div>
+        <div style="font-size:18px;margin-bottom:5px;">✨</div>
         <div class="inspo-note-text">${item.body}</div>
       </div>`;
     }
   }).join('');
 }
 
-function savePinterestUrl(){
-  const url=document.getElementById('pinterest-url-input')?.value.trim();
-  if(!url){alert('Please paste your Pinterest board URL.');return;}
-  S.pinterestUrl=url;save();renderInspo();
-}
-
+function savePinterestUrl(){const url=document.getElementById('pinterest-url-input')?.value.trim();if(!url){alert('Please paste your Pinterest board URL.');return;}S.pinterestUrl=url;save();renderInspo();}
 function openInspoModal(){document.getElementById('inspo-modal-backdrop').classList.add('open');}
-function closeInspoModal(f=false){
-  if(f===true||f?.target===document.getElementById('inspo-modal-backdrop')){
-    document.getElementById('inspo-modal-backdrop').classList.remove('open');
-    ['inspo-url','inspo-note-title','inspo-note-body','inspo-label'].forEach(id=>document.getElementById(id).value='');
-  }
-}
-function toggleInspoType(){
-  const t=document.getElementById('inspo-type').value;
-  document.getElementById('inspo-tiktok-fields').style.display=t==='tiktok'?'block':'none';
-  document.getElementById('inspo-note-fields').style.display=t==='note'?'block':'none';
-}
-
-function extractTikTokId(url){
-  const m=url.match(/video\/(\d+)/);
-  return m?m[1]:null;
-}
-
+function closeInspoModal(f=false){if(f===true||f?.target===document.getElementById('inspo-modal-backdrop')){document.getElementById('inspo-modal-backdrop').classList.remove('open');['inspo-url','inspo-link-url','inspo-link-title','inspo-note-title','inspo-note-body','inspo-label'].forEach(id=>document.getElementById(id).value='');}}
+function toggleInspoType(){const t=document.getElementById('inspo-type').value;document.getElementById('inspo-tiktok-fields').style.display=t==='tiktok'?'block':'none';document.getElementById('inspo-link-fields').style.display=t==='link'?'block':'none';document.getElementById('inspo-note-fields').style.display=t==='note'?'block':'none';}
+function extractTikTokId(url){const m=url.match(/video\/(\d+)/);return m?m[1]:null;}
 function saveInspo(){
   const type=document.getElementById('inspo-type').value;
   const label=document.getElementById('inspo-label').value.trim();
   if(type==='tiktok'){
-    const url=document.getElementById('inspo-url').value.trim();
-    if(!url){alert('Please paste a TikTok URL.');return;}
-    const videoId=extractTikTokId(url);
-    S.inspo.push({id:uid(),type:'tiktok',url,videoId,label});
+    const url=document.getElementById('inspo-url').value.trim();if(!url){alert('Please paste a TikTok URL.');return;}
+    S.inspo.push({id:uid(),type:'tiktok',url,videoId:extractTikTokId(url),label});
+  } else if(type==='link'){
+    const url=document.getElementById('inspo-link-url').value.trim();if(!url){alert('Please paste a URL.');return;}
+    S.inspo.push({id:uid(),type:'link',url,title:document.getElementById('inspo-link-title').value.trim(),source:document.getElementById('inspo-link-source').value,label});
   } else {
+    const body=document.getElementById('inspo-note-body').value.trim();if(!body){alert('Please write your note.');return;}
     const title=document.getElementById('inspo-note-title').value.trim();
-    const body=document.getElementById('inspo-note-body').value.trim();
-    if(!body){alert('Please write your note.');return;}
-    S.inspo.push({id:uid(),type:'note',category:document.getElementById('inspo-note-cat').value,icon:'✨',body:title?`**${title}**: ${body}`:body,label});
+    S.inspo.push({id:uid(),type:'note',category:document.getElementById('inspo-note-cat').value,body:title?`**${title}**: ${body}`:body,label});
   }
   save();closeInspoModal(true);renderInspo();
 }
+function deleteInspo(id){if(!confirm('Remove this?'))return;S.inspo=S.inspo.filter(i=>i.id!==id);save();renderInspo();}
 
-function deleteInspo(id){if(!confirm('Remove this inspo?'))return;S.inspo=S.inspo.filter(i=>i.id!==id);save();renderInspo();}
-
-// ══ Tips ══════════════════════════════════════════════════════════════
+// ══ Tips ═════════════════════════════════════════════════════════════════
 
 function renderTips(){
   const allCats=['All',...new Set(CURATED_TIPS.map(t=>t.cat))];
   document.getElementById('tips-filters').innerHTML=allCats.map(c=>`<span class="filter-chip ${activeTipFilter===c?'active':''}" onclick="setTipFilter('${c}')">${c}</span>`).join('');
   const fc=activeTipFilter==='All'?CURATED_TIPS:CURATED_TIPS.filter(t=>t.cat===activeTipFilter);
   const fp=activeTipFilter==='All'?S.tips:S.tips.filter(t=>t.cat===activeTipFilter);
-  document.getElementById('curated-tips-grid').innerHTML=fc.map(t=>`
-    <div class="tip-card curated">
-      <div class="tip-card-top"><span class="tip-cat-tag">${t.cat}</span><span class="tip-source rachel">From Rachel</span></div>
-      <div class="tip-icon">${t.icon}</div>
-      <div class="tip-title">${t.title}</div>
-      <div class="tip-body">${t.body}</div>
-      ${t.link?`<a href="${t.link}" target="_blank" class="tip-link">Read more ↗</a>`:''}
-    </div>`).join('')||`<div style="color:var(--text-muted);font-size:13px;padding:10px 0;">No tips in this category yet.</div>`;
+  document.getElementById('curated-tips-grid').innerHTML=fc.map(t=>`<div class="tip-card curated"><div class="tip-card-top"><span class="tip-cat-tag">${t.cat}</span><span class="tip-source rachel">From Rachel</span></div><div class="tip-icon">${t.icon}</div><div class="tip-title">${t.title}</div><div class="tip-body">${t.body}</div></div>`).join('')||`<div style="color:var(--text-muted);font-size:13px;padding:8px 0;">No tips in this category yet.</div>`;
   document.getElementById('personal-tips-label').style.display=fp.length===0&&activeTipFilter!=='All'?'none':'flex';
-  document.getElementById('personal-tips-grid').innerHTML=fp.length===0
-    ?`<div style="color:var(--text-muted);font-size:13px;padding:10px 0;">Your tips will appear here. <a href="#" onclick="openTipModal()" style="color:var(--tiffany-deep)">Add your first →</a></div>`
-    :fp.map(t=>`<div class="tip-card personal">
-      <button class="tip-delete" onclick="deleteTip('${t.id}')">✕</button>
-      <div class="tip-card-top"><span class="tip-cat-tag">${t.cat}</span><span class="tip-source personal-tag">Your Note</span></div>
-      <div class="tip-icon">${t.icon||'💡'}</div>
-      <div class="tip-title">${t.title}</div>
-      <div class="tip-body">${t.body}</div>
-      ${t.link?`<a href="${t.link}" target="_blank" class="tip-link">Read more ↗</a>`:''}
-    </div>`).join('');
+  document.getElementById('personal-tips-grid').innerHTML=fp.length===0?`<div style="color:var(--text-muted);font-size:13px;padding:8px 0;">Your tips will appear here. <a href="#" onclick="openTipModal()" style="color:var(--tiffany-deep)">Add your first →</a></div>`:fp.map(t=>`<div class="tip-card personal"><button class="tip-delete" onclick="deleteTip('${t.id}')">✕</button><div class="tip-card-top"><span class="tip-cat-tag">${t.cat}</span><span class="tip-source personal-tag">Your Note</span></div><div class="tip-icon">${t.icon||'💡'}</div><div class="tip-title">${t.title}</div><div class="tip-body">${t.body}</div>${t.link?`<a href="${t.link}" target="_blank" class="tip-link">Read more ↗</a>`:''}</div>`).join('');
 }
 
 function setTipFilter(cat){activeTipFilter=cat;renderTips();}
 function openTipModal(){document.getElementById('tip-modal-backdrop').classList.add('open');}
-function closeTipModal(f=false){
-  if(f===true||f?.target===document.getElementById('tip-modal-backdrop')){
-    document.getElementById('tip-modal-backdrop').classList.remove('open');
-    ['t-title','t-body','t-link','t-icon'].forEach(id=>document.getElementById(id).value='');
-  }
-}
-function saveTip(){
-  const title=document.getElementById('t-title').value.trim();
-  const body=document.getElementById('t-body').value.trim();
-  if(!title||!body){alert('Please fill in the title and tip.');return;}
-  S.tips.push({id:uid(),title,body,cat:document.getElementById('t-cat').value,icon:document.getElementById('t-icon').value.trim()||'💡',link:document.getElementById('t-link').value.trim()});
-  save();closeTipModal(true);renderTips();
-}
+function closeTipModal(f=false){if(f===true||f?.target===document.getElementById('tip-modal-backdrop')){document.getElementById('tip-modal-backdrop').classList.remove('open');['t-title','t-body','t-link','t-icon'].forEach(id=>document.getElementById(id).value='');}}
+function saveTip(){const title=document.getElementById('t-title').value.trim(),body=document.getElementById('t-body').value.trim();if(!title||!body){alert('Please fill in the title and tip.');return;}S.tips.push({id:uid(),title,body,cat:document.getElementById('t-cat').value,icon:document.getElementById('t-icon').value.trim()||'💡',link:document.getElementById('t-link').value.trim()});save();closeTipModal(true);renderTips();}
 function deleteTip(id){if(!confirm('Delete this tip?'))return;S.tips=S.tips.filter(t=>t.id!==id);save();renderTips();}
 
-// ══ Toast ══════════════════════════════════════════════════════════════
+// ══ Toast ════════════════════════════════════════════════════════════════
 
-function showToast(msg){
-  const c=document.getElementById('toast-container');
-  const t=document.createElement('div');
-  t.className='toast';t.innerHTML=msg;
-  c.appendChild(t);
-  setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),300);},3500);
-}
+function showToast(msg){const c=document.getElementById('toast-container');const t=document.createElement('div');t.className='toast';t.innerHTML=msg;c.appendChild(t);setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),300);},3500);}
 
-// ══ Start ══════════════════════════════════════════════════════════════
 init();
 </script>
 </body>
