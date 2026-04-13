@@ -411,6 +411,16 @@
     .fp-shape.selected .fp-shape-delete{display:flex;align-items:center;justify-content:center}
     .fp-upload-btn{padding:6px 12px;border:1px dashed var(--tiffany-dark);background:var(--tiffany-pale);color:var(--tiffany-deep);border-radius:7px;font-size:12px;font-weight:500;cursor:pointer;position:relative;overflow:hidden}
     .fp-upload-btn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+    .fp-scale-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:100px;font-size:11px;color:var(--tiffany-deep);font-weight:500}
+    .fp-canvas.calibrating{cursor:crosshair}
+    .fp-canvas.calibrating .fp-shape{pointer-events:none;opacity:.5}
+    .fp-cal-point{position:absolute;width:12px;height:12px;border-radius:50%;background:#C94848;border:2px solid #fff;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 2px #C94848}
+    .fp-cal-line{position:absolute;height:2px;background:#C94848;transform-origin:left center;pointer-events:none}
+    .fp-selected-panel{display:flex;gap:8px;align-items:center;padding:8px 12px;background:var(--tiffany-pale);border-radius:8px;font-size:12px;color:var(--tiffany-deep)}
+    .fp-size-input{width:52px;padding:3px 6px;border:1px solid var(--tiffany-light);border-radius:4px;font-family:var(--font-body);font-size:12px;text-align:right;background:#fff;outline:none}
+    .fp-size-input:focus{border-color:var(--tiffany-dark)}
+    .fp-shape-sm .fp-shape-label{font-size:9px}
+    .fp-shape-sm .fp-shape-count{font-size:8px}
 
     /* ── Vendor hotel fields ── */
     .hotel-fields{display:none;grid-column:1/-1;background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:8px;padding:12px 14px;margin-top:6px}
@@ -661,7 +671,7 @@
           </select>
         </div>
         <div class="form-group"><label class="form-label">Dietary Restrictions</label><input class="form-input" id="g-dietary" placeholder="e.g. Gluten-free, Nut allergy" /></div>
-        <div class="form-group"><label class="form-label">Table Assignment</label><input class="form-input" id="g-table" placeholder="Table name or number" /></div>
+        <div class="form-group"><label class="form-label">Table Assignment</label><select class="form-select" id="g-table"><option value="">Unassigned</option></select></div>
         <div class="form-group"><label class="form-label">Plus One?</label>
           <select class="form-select" id="g-plus-one">
             <option value="">No</option><option value="yes">Yes</option>
@@ -1126,7 +1136,8 @@ if(!S.guests)S.guests=[];
 if(!S.tables)S.tables=[];
 if(!S.inspo)S.inspo=[];
 if(!S.extraEvents)S.extraEvents=[];
-if(!S.floorplan)S.floorplan={hasBg:false,scale:1};
+if(!S.floorplan)S.floorplan={hasBg:false,pxPerFt:10};
+if(!S.floorplan.pxPerFt)S.floorplan.pxPerFt=10;
 if(!S.budget.categories.accomm)S.budget.categories.accomm=S.budget.categories.accommodations||0;
 
 let pendingDocFile=null,pendingBrochureFile=null,pendingFloorplanFile=null;
@@ -1303,6 +1314,7 @@ function renderGuestList(){
   const el=document.getElementById('guest-list-view');
   if(!S.guests.length){el.innerHTML=`<div class="empty-state"><div class="empty-state-icon">👰</div><h3>No guests yet</h3><p>Add your guest list to track RSVPs, dietary needs, and seating assignments.</p></div>`;return;}
   const RSVP_LABELS={yes:'Yes ✓',no:'No',pending:'Pending',maybe:'Maybe'};
+  const tableName=g=>{if(!g.table)return'—';const t=S.tables.find(x=>x.id===g.table||x.name===g.table);return t?t.name:g.table;};
   el.innerHTML=`<div class="guest-table-wrap"><table class="guest-table">
     <thead><tr><th>Name</th><th>RSVP</th><th>Side</th><th>Meal</th><th>Dietary</th><th>Table</th><th>Thank You</th><th></th></tr></thead>
     <tbody>${S.guests.map(g=>`<tr>
@@ -1311,7 +1323,7 @@ function renderGuestList(){
       <td style="font-size:12px;color:var(--text-muted);">${g.side==='bride'?"Bride's":g.side==='groom'?"Groom's":'Both'}</td>
       <td style="font-size:12px;">${g.meal||'—'}</td>
       <td>${g.dietary?`<span class="guest-dietary-tag">${g.dietary}</span>`:'—'}</td>
-      <td style="font-size:13px;color:var(--tiffany-deep);">${g.table||'—'}</td>
+      <td style="font-size:13px;color:var(--tiffany-deep);">${tableName(g)}</td>
       <td style="font-size:12px;">${g.thankyou==='yes'?'✓ Sent':'—'}</td>
       <td><div class="guest-actions"><button class="btn btn-ghost btn-sm" onclick="openGuestModal('${g.id}')">Edit</button></div></td>
     </tr>`).join('')}
@@ -1324,18 +1336,21 @@ function renderSeatingChart(){
   S.guests.forEach(g=>{if(g.table&&S.tables.find(t=>t.id===g.table||t.name===g.table))assignedIds.add(g.id);});
   const unassigned=S.guests.filter(g=>!assignedIds.has(g.id));
 
+  const seatsTakenAt=t=>S.guests.filter(g=>g.table===t.id||g.table===t.name).reduce((n,g)=>n+(g.plusOne==='yes'?2:1),0);
   const tableHtml=S.tables.map(t=>{
     const guestsAtTable=S.guests.filter(g=>g.table===t.id||g.table===t.name);
     const cap=t.capacity||8;
-    const empty=Math.max(0,cap-guestsAtTable.length);
-    return`<div class="table-card" data-table-id="${t.id}" ondragover="onTableDragOver(event,'${t.id}')" ondragleave="onTableDragLeave(event)" ondrop="onTableDrop(event,'${t.id}')">
+    const taken=seatsTakenAt(t);
+    const empty=Math.max(0,cap-taken);
+    const over=taken>cap;
+    return`<div class="table-card ${over?'':''}" data-table-id="${t.id}" ondragover="onTableDragOver(event,'${t.id}')" ondragleave="onTableDragLeave(event)" ondrop="onTableDrop(event,'${t.id}')">
       <button class="table-delete-btn" onclick="openTableModal('${t.id}')">✎</button>
       <div class="table-card-header">
         <div><div class="table-card-name">${t.name}</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">${t.shape||'Round'}</div></div>
-        <span class="table-capacity-badge">${guestsAtTable.length}/${cap}</span>
+        <span class="table-capacity-badge" style="${over?'background:rgba(139,58,58,.15);color:#8B3A3A;':''}">${taken}/${cap}${over?' over':''}</span>
       </div>
       <div class="table-guest-list">
-        ${guestsAtTable.map(g=>`<div class="table-guest-item" draggable="true" data-guest-id="${g.id}" ondragstart="onGuestDragStart(event,'${g.id}')" ondragend="onGuestDragEnd(event)"><span class="table-guest-name">${g.name}${g.plusOne==='yes'?' +1':''}</span><span class="badge rsvp-${g.rsvp||'pending'}" style="font-size:10px;padding:1px 7px;">${g.rsvp==='yes'?'✓':g.rsvp==='no'?'✗':'?'}</span></div>`).join('')}
+        ${guestsAtTable.map(g=>`<div class="table-guest-item" draggable="true" data-guest-id="${g.id}" ondragstart="onGuestDragStart(event,'${g.id}')" ondragend="onGuestDragEnd(event)"><span class="table-guest-name">${g.name}${g.plusOne==='yes'?' <span style="font-size:10px;color:var(--tiffany-deep);font-weight:600;">+1</span>':''}</span><span class="badge rsvp-${g.rsvp||'pending'}" style="font-size:10px;padding:1px 7px;">${g.rsvp==='yes'?'✓':g.rsvp==='no'?'✗':'?'}</span></div>`).join('')}
         ${Array(Math.min(empty,3)).fill(0).map(()=>`<div class="table-empty-seat">Empty seat · drag a guest here</div>`).join('')}
         ${empty>3?`<div class="table-empty-seat">+${empty-3} more empty seats</div>`:''}
       </div>
@@ -1363,48 +1378,105 @@ function onUnassignDragLeave(e){e.currentTarget.classList.remove('drag-over');}
 function onUnassignDrop(e){e.preventDefault();e.currentTarget.classList.remove('drag-over');if(!dragGuestId)return;const g=S.guests.find(x=>x.id===dragGuestId);if(!g)return;g.table='';save();renderSeatingChart();renderGuests();}
 
 // ── Floorplan Designer ──
-let fpSelectedId=null,fpDragging=null;
+let fpSelectedId=null,fpCalibMode=false,fpCalibP1=null;
+
+const SHAPE_DEFAULTS={
+  round:{wFt:6,hFt:6,cap:8},
+  rectangle:{wFt:8,hFt:2.5,cap:10},
+  estate:{wFt:20,hFt:3,cap:16},
+  serpentine:{wFt:15,hFt:3,cap:14},
+};
 
 function renderFloorplan(){
   const el=document.getElementById('guest-floorplan-view');
+  const pxFt=S.floorplan.pxPerFt||10;
+  const selT=fpSelectedId?S.tables.find(t=>t.id===fpSelectedId):null;
   el.innerHTML=`
     <div class="fp-toolbar">
-      <label class="fp-upload-btn">📷 ${S.floorplan.hasBg?'Replace venue floorplan':'Upload venue floorplan'}<input type="file" accept="image/*" onchange="uploadFloorplan(this)" /></label>
-      ${S.floorplan.hasBg?'<button class="fp-shape-btn" onclick="removeFloorplan()">✕ Remove background</button>':''}
+      <label class="fp-upload-btn">📷 ${S.floorplan.hasBg?'Replace floorplan':'Upload venue floorplan'}<input type="file" accept="image/*" onchange="uploadFloorplan(this)" /></label>
+      ${S.floorplan.hasBg?'<button class="fp-shape-btn" onclick="removeFloorplan()">✕ Remove bg</button>':''}
+      <button class="fp-shape-btn ${fpCalibMode?'':''}" onclick="startFpCalibration()" style="${fpCalibMode?'background:var(--tiffany-pale);color:var(--tiffany-deep);':''}">📏 ${fpCalibMode?'Click 2 points…':'Set Scale'}</button>
+      <span class="fp-scale-pill">${pxFt.toFixed(1)} px = 1 ft</span>
       <div style="flex:1;"></div>
-      <button class="fp-shape-btn" onclick="addFpShape('round')">● Round</button>
-      <button class="fp-shape-btn" onclick="addFpShape('rectangle')">▭ Rectangle</button>
-      <button class="fp-shape-btn" onclick="addFpShape('estate')">⬛ Estate</button>
-      <button class="fp-shape-btn" onclick="addFpShape('serpentine')">◡ Serpentine</button>
+      <button class="fp-shape-btn" onclick="addFpShape('round')">● Round 6ft</button>
+      <button class="fp-shape-btn" onclick="addFpShape('rectangle')">▭ Long 8ft</button>
+      <button class="fp-shape-btn" onclick="addFpShape('estate')">⬛ Estate 20ft</button>
+      <button class="fp-shape-btn" onclick="addFpShape('serpentine')">◡ Serpentine 15ft</button>
     </div>
+    ${selT?`<div class="fp-selected-panel">
+      <strong>${selT.name}</strong>
+      <span>Width: <input class="fp-size-input" type="number" step="0.5" value="${selT.wFt||6}" oninput="updateFpSize('${selT.id}','wFt',this.value)" /> ft</span>
+      <span>Depth: <input class="fp-size-input" type="number" step="0.5" value="${selT.hFt||6}" oninput="updateFpSize('${selT.id}','hFt',this.value)" /> ft</span>
+      <span>Seats: <input class="fp-size-input" type="number" value="${selT.capacity||8}" oninput="updateFpSize('${selT.id}','capacity',this.value)" /></span>
+      <button class="fp-shape-btn" onclick="openTableModal('${selT.id}')">Rename</button>
+      <button class="fp-shape-btn" style="color:#8B3A3A;" onclick="deleteFpTable('${selT.id}')">Delete</button>
+      <button class="fp-shape-btn" onclick="fpSelectedId=null;renderFloorplan();" style="margin-left:auto;">Deselect</button>
+    </div>`:''}
     <div class="fp-canvas-wrap">
-      <div class="fp-canvas ${S.floorplan.hasBg?'has-bg':''}" id="fp-canvas" onclick="fpSelectedId=null;renderFloorplan();"></div>
+      <div class="fp-canvas ${S.floorplan.hasBg?'has-bg':''} ${fpCalibMode?'calibrating':''}" id="fp-canvas"></div>
     </div>
-    <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">
-      💡 <strong>Tip:</strong> Upload your venue floorplan as a background, then add tables on top. Drag tables to position them. Click a table to select + edit; the × button deletes.
-      Tables you add here also appear in the Seating Chart view.
+    <div style="font-size:12px;color:var(--text-muted);margin-top:8px;line-height:1.5;">
+      💡 <strong>Tip:</strong> Upload your venue floorplan, then click <strong>📏 Set Scale</strong> and click the two ends of a known distance (e.g. your 10ft scale bar) to calibrate. After that, all tables render at the correct real-world size. Select a table to adjust width/depth in feet.
     </div>`;
 
   const canvas=document.getElementById('fp-canvas');
+  canvas.addEventListener('click',onCanvasClick);
+
   if(S.floorplan.hasBg){
     idbGet('floorplan_bg').then(f=>{if(f)canvas.style.backgroundImage=`url(${f.data})`;});
-  } else {
+  } else if(!S.tables.length){
     canvas.innerHTML=`<div class="fp-empty"><div style="font-size:28px;">📐</div><div>Upload your venue floorplan to get started</div><div style="font-size:11px;">Or add table shapes without a background</div></div>`;
   }
 
   S.tables.forEach(t=>{
-    const x=t.fpX??40,y=t.fpY??40,w=t.fpW||(t.shape==='rectangle'?160:t.shape==='serpentine'?200:90),h=t.fpH||(t.shape==='rectangle'?60:t.shape==='serpentine'?70:90);
-    const guestsHere=S.guests.filter(g=>g.table===t.id||g.table===t.name).length;
+    const x=t.fpX??40,y=t.fpY??40;
+    const wFt=t.wFt||SHAPE_DEFAULTS[t.shape||'round'].wFt;
+    const hFt=t.hFt||SHAPE_DEFAULTS[t.shape||'round'].hFt;
+    const w=wFt*pxFt,h=hFt*pxFt;
+    const guestsHere=S.guests.filter(g=>g.table===t.id||g.table===t.name).reduce((n,g)=>n+(g.plusOne==='yes'?2:1),0);
     const shape=t.shape||'round';
     const sh=document.createElement('div');
-    sh.className=`fp-shape ${shape} ${fpSelectedId===t.id?'selected':''}`;
+    sh.className=`fp-shape ${shape} ${fpSelectedId===t.id?'selected':''} ${w<70?'fp-shape-sm':''}`;
     sh.style.left=x+'px';sh.style.top=y+'px';sh.style.width=w+'px';sh.style.height=h+'px';
     sh.innerHTML=`<div class="fp-shape-label">${t.name}<div class="fp-shape-count">${guestsHere}/${t.capacity||8}</div></div><button class="fp-shape-delete" onclick="event.stopPropagation();deleteFpTable('${t.id}')">✕</button>`;
-    sh.addEventListener('mousedown',e=>fpStartDrag(e,t.id));
-    sh.addEventListener('click',e=>{e.stopPropagation();fpSelectedId=t.id;renderFloorplan();});
+    sh.addEventListener('mousedown',e=>{if(!fpCalibMode)fpStartDrag(e,t.id);});
+    sh.addEventListener('click',e=>{if(fpCalibMode)return;e.stopPropagation();fpSelectedId=t.id;renderFloorplan();});
     sh.addEventListener('dblclick',e=>{e.stopPropagation();openTableModal(t.id);});
     canvas.appendChild(sh);
   });
+
+  // Render calibration marker
+  if(fpCalibMode&&fpCalibP1){
+    const dot=document.createElement('div');
+    dot.className='fp-cal-point';dot.style.left=fpCalibP1.x+'px';dot.style.top=fpCalibP1.y+'px';
+    canvas.appendChild(dot);
+  }
+}
+
+function onCanvasClick(e){
+  if(!fpCalibMode){fpSelectedId=null;renderFloorplan();return;}
+  const rect=e.currentTarget.getBoundingClientRect();
+  const x=e.clientX-rect.left,y=e.clientY-rect.top;
+  if(!fpCalibP1){fpCalibP1={x,y};renderFloorplan();return;}
+  const dx=x-fpCalibP1.x,dy=y-fpCalibP1.y;
+  const distPx=Math.sqrt(dx*dx+dy*dy);
+  if(distPx<5){fpCalibP1=null;return;}
+  const feetStr=prompt(`That distance is how many feet?\n(e.g. your scale bar length)`,'10');
+  const feet=parseFloat(feetStr);
+  if(!feet||feet<=0){fpCalibMode=false;fpCalibP1=null;renderFloorplan();return;}
+  S.floorplan.pxPerFt=distPx/feet;
+  fpCalibMode=false;fpCalibP1=null;
+  save();renderFloorplan();
+  showToast(`Scale set: <em>${(distPx/feet).toFixed(1)} px/ft</em>`);
+}
+
+function startFpCalibration(){fpCalibMode=!fpCalibMode;fpCalibP1=null;renderFloorplan();}
+
+function updateFpSize(id,field,val){
+  const t=S.tables.find(x=>x.id===id);if(!t)return;
+  t[field]=parseFloat(val)||0;
+  if(field==='capacity')t.capacity=parseInt(val)||8;
+  save();renderFloorplan();
 }
 
 function fpStartDrag(e,id){
@@ -1431,8 +1503,9 @@ function fpStartDrag(e,id){
 function addFpShape(shape){
   const n=S.tables.filter(t=>t.shape===shape).length+1;
   const name=shape==='round'?`Round ${n}`:shape==='rectangle'?`Long ${n}`:shape==='estate'?`Estate ${n}`:`Serpentine ${n}`;
-  const t={id:uid(),name,capacity:shape==='rectangle'?10:shape==='estate'?12:shape==='serpentine'?16:8,shape,notes:'',fpX:40+(S.tables.length*20)%200,fpY:40+(S.tables.length*20)%200};
-  S.tables.push(t);save();renderFloorplan();
+  const d=SHAPE_DEFAULTS[shape];
+  const t={id:uid(),name,capacity:d.cap,shape,notes:'',wFt:d.wFt,hFt:d.hFt,fpX:40+(S.tables.length*20)%200,fpY:40+(S.tables.length*20)%200};
+  S.tables.push(t);fpSelectedId=t.id;save();renderFloorplan();
 }
 function deleteFpTable(id){if(!confirm('Delete this table?'))return;const t=S.tables.find(x=>x.id===id);if(t)S.guests.forEach(g=>{if(g.table===t.id||g.table===t.name)g.table='';});S.tables=S.tables.filter(x=>x.id!==id);fpSelectedId=null;save();renderFloorplan();}
 
@@ -1447,11 +1520,15 @@ async function removeFloorplan(){if(!confirm('Remove the floorplan background?')
 function openGuestModal(id=null){
   editingGuestId=id;
   const del=document.getElementById('g-delete-btn');
+  const tSel=document.getElementById('g-table');
+  tSel.innerHTML='<option value="">Unassigned</option>'+S.tables.map(t=>`<option value="${t.id}">${t.name}</option>`).join('');
   if(id){
     const g=S.guests.find(x=>x.id===id);if(!g)return;
     document.getElementById('guest-modal-title').textContent='Edit Guest';
     del.classList.remove('hidden');
-    ['name','email','phone','dietary','table','gift','notes'].forEach(f=>document.getElementById('g-'+f).value=g[f]||'');
+    ['name','email','phone','dietary','gift','notes'].forEach(f=>document.getElementById('g-'+f).value=g[f]||'');
+    const matched=S.tables.find(t=>t.id===g.table||t.name===g.table);
+    tSel.value=matched?matched.id:'';
     document.getElementById('g-plus-one-name').value=g.plusOneName||'';
     document.getElementById('g-rsvp').value=g.rsvp||'pending';
     document.getElementById('g-side').value=g.side||'bride';
@@ -1461,7 +1538,8 @@ function openGuestModal(id=null){
   } else {
     document.getElementById('guest-modal-title').textContent='Add Guest';
     del.classList.add('hidden');
-    ['g-name','g-email','g-phone','g-dietary','g-table','g-plus-one-name','g-gift','g-notes'].forEach(id=>document.getElementById(id).value='');
+    ['g-name','g-email','g-phone','g-dietary','g-plus-one-name','g-gift','g-notes'].forEach(id=>document.getElementById(id).value='');
+    tSel.value='';
     document.getElementById('g-rsvp').value='pending';document.getElementById('g-side').value='bride';
     document.getElementById('g-meal').value='';document.getElementById('g-plus-one').value='';
     document.getElementById('g-thankyou').value='no';
