@@ -381,9 +381,97 @@
     .ob2-cat-input{padding:4px 8px;border:1px solid var(--champagne);border-radius:6px;font-family:var(--font-body);font-size:13px;color:var(--text);width:95px;text-align:right;outline:none;transition:border-color .15s}
     .ob2-cat-input:focus{border-color:var(--tiffany-dark);background:var(--tiffany-pale)}
 
+    /* ── Drag-drop ── */
+    .guest-drag-chip{display:inline-flex;align-items:center;gap:4px;font-size:12px;background:var(--tiffany-pale);border:1px solid var(--tiffany-light);padding:5px 11px;border-radius:100px;color:var(--tiffany-deep);cursor:grab;user-select:none;transition:all .15s}
+    .guest-drag-chip:hover{background:var(--tiffany-light)}
+    .guest-drag-chip.dragging{opacity:.4;cursor:grabbing}
+    .table-card.drag-over{background:var(--tiffany-pale);border:2px dashed var(--tiffany-dark)}
+    .table-guest-item{cursor:grab}
+    .table-guest-item.dragging{opacity:.4}
+    .unassigned-guests.drag-over{background:var(--tiffany-pale);border:2px dashed var(--tiffany-dark)}
+
+    /* ── Floorplan Designer ── */
+    .fp-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px;padding:12px 14px;background:var(--white);border-radius:10px;box-shadow:var(--shadow-sm)}
+    .fp-shape-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border:1px solid var(--border);background:var(--white);border-radius:7px;font-size:12px;cursor:pointer;color:var(--text-mid);transition:all .15s}
+    .fp-shape-btn:hover{border-color:var(--tiffany-dark);color:var(--tiffany-deep)}
+    .fp-canvas-wrap{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:16px;position:relative;overflow:auto}
+    .fp-canvas{position:relative;width:100%;min-height:600px;background:var(--pearl);background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:8px;border:1px dashed var(--champagne-mid);overflow:hidden}
+    .fp-canvas.has-bg{border:none}
+    .fp-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-muted);pointer-events:none;font-size:13px;gap:6px}
+    .fp-shape{position:absolute;cursor:move;background:rgba(129,216,208,.9);border:2px solid var(--tiffany-deep);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--tiffany-deep);transition:box-shadow .15s;user-select:none}
+    .fp-shape:hover{box-shadow:0 0 0 3px rgba(74,173,165,.25)}
+    .fp-shape.selected{box-shadow:0 0 0 3px var(--tiffany-dark)}
+    .fp-shape.round{border-radius:50%}
+    .fp-shape.rectangle{border-radius:4px}
+    .fp-shape.estate{border-radius:4px}
+    .fp-shape.serpentine{border-radius:60px}
+    .fp-shape-label{text-align:center;line-height:1.1;padding:2px}
+    .fp-shape-count{font-size:9px;opacity:.8;margin-top:1px}
+    .fp-shape-delete{position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#8B3A3A;color:#fff;border:none;cursor:pointer;font-size:10px;display:none;z-index:2}
+    .fp-shape.selected .fp-shape-delete{display:flex;align-items:center;justify-content:center}
+    .fp-upload-btn{padding:6px 12px;border:1px dashed var(--tiffany-dark);background:var(--tiffany-pale);color:var(--tiffany-deep);border-radius:7px;font-size:12px;font-weight:500;cursor:pointer;position:relative;overflow:hidden}
+    .fp-upload-btn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+
+    /* ── Vendor hotel fields ── */
+    .hotel-fields{display:none;grid-column:1/-1;background:var(--tiffany-pale);border:1px solid var(--tiffany-light);border-radius:8px;padding:12px 14px;margin-top:6px}
+    .hotel-fields.show{display:block}
+    .hotel-fields-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--tiffany-deep);margin-bottom:8px}
+    .hotel-fields-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .hotel-fields-grid .form-grid-full{grid-column:1/-1}
+    .hotel-attrition-warn{background:rgba(196,149,74,.14);border-left:3px solid var(--gold);padding:7px 10px;font-size:11px;color:var(--text-mid);border-radius:4px;margin-top:6px;line-height:1.4}
+
+    /* ── Vendor card hotel badge ── */
+    .hotel-badge{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:3px 8px;border-radius:100px;font-weight:600;margin-top:5px}
+    .hotel-badge.negotiating{background:rgba(154,143,135,.15);color:#9A8F87}
+    .hotel-badge.sent{background:rgba(196,149,74,.15);color:var(--gold)}
+    .hotel-badge.signed{background:rgba(61,122,106,.15);color:#3D7A6A}
+
+    /* ── Multi-task calendar ── */
+    .cal-day{min-height:88px}
+    .cal-task{font-size:9px;line-height:1.25;margin-top:2px;padding:1px 4px;border-radius:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#fff;font-weight:500;cursor:pointer}
+    .cal-task.done{opacity:.45;text-decoration:line-through}
+    .cal-more{font-size:9px;color:var(--text-muted);margin-top:2px;font-weight:500}
+
+    /* ── Link thumbnail ── */
+    .inspo-link-thumb{width:100%;height:160px;background:var(--pearl);background-size:cover;background-position:center;background-repeat:no-repeat;border-bottom:1px solid var(--pearl-warm);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:28px}
+    .inspo-link-card{overflow:hidden}
+    .inspo-link-card.has-thumb{padding:0}
+    .inspo-link-card.has-thumb .inspo-link-body{padding:12px 15px}
+
+    /* ── Timeline edit ── */
+    .timeline-item{position:relative}
+    .tl-edit-btn{position:absolute;top:50%;right:44px;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;border:none;background:var(--pearl);cursor:pointer;font-size:10px;color:var(--text-muted);opacity:0;transition:opacity .15s}
+    .timeline-item:hover .tl-edit-btn{opacity:1}
+    .tl-edit-btn:hover{background:var(--tiffany-pale);color:var(--tiffany-deep)}
+
+    /* ── Extras ── */
+    .extras-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:20px}
+    .extra-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:18px;cursor:pointer;transition:all .15s;position:relative}
+    .extra-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+    .extra-card-icon{font-size:30px;margin-bottom:6px}
+    .extra-card-name{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--text);line-height:1.15}
+    .extra-card-date{font-size:12px;color:var(--tiffany-deep);margin-top:4px}
+    .extra-card-venue{font-size:12px;color:var(--text-muted);margin-top:2px}
+    .extra-card-meta{display:flex;gap:11px;margin-top:11px;padding-top:10px;border-top:1px solid var(--pearl-warm);font-size:11px;color:var(--text-muted)}
+    .extra-card-meta strong{color:var(--text);font-weight:600}
+    .extra-presets{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+    .extra-preset-btn{padding:7px 14px;background:var(--white);border:1px dashed var(--tiffany-light);border-radius:8px;font-size:12px;cursor:pointer;color:var(--tiffany-deep);transition:all .15s;display:flex;align-items:center;gap:5px}
+    .extra-preset-btn:hover{background:var(--tiffany-pale);border-color:var(--tiffany-dark)}
+    .extra-checklist{display:flex;flex-direction:column;gap:5px;margin-top:8px}
+    .extra-checklist-item{display:flex;align-items:center;gap:8px;font-size:13px}
+    .extra-checklist-item input{width:16px;height:16px;accent-color:var(--tiffany-dark);cursor:pointer}
+    .extra-checklist-item.done{color:var(--text-muted);text-decoration:line-through}
+    .extra-checklist-remove{background:transparent;border:none;cursor:pointer;color:var(--text-muted);font-size:12px;padding:2px 6px;border-radius:4px;margin-left:auto}
+    .extra-checklist-remove:hover{background:var(--pearl-warm);color:#8B3A3A}
+    .extra-attendee-chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;background:var(--pearl);border-radius:100px;padding:3px 9px;margin:2px}
+    .extra-attendee-chip button{background:transparent;border:none;cursor:pointer;color:var(--text-muted);font-size:11px;padding:0;margin-left:2px}
+
+    /* ── Helper buttons for timeline editing ── */
+    .timeline-add-btn{margin-bottom:14px}
+
     ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--champagne);border-radius:3px}
     .hidden{display:none !important}
-    @media(max-width:768px){.sidebar{width:56px;min-width:56px}.sidebar-logo .logo-sub,.sidebar-countdown,.sidebar-footer,.nav-item span{display:none}.tab-panel{padding:16px 14px}.stats-grid,.guest-stats{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.sidebar{width:56px;min-width:56px}.sidebar-logo .logo-sub,.sidebar-countdown,.sidebar-footer,.nav-item span{display:none}.tab-panel{padding:16px 14px}.stats-grid,.guest-stats{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.hotel-fields-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -437,6 +525,7 @@
       <button class="nav-item" onclick="switchTab('timeline')" id="nav-timeline"><span class="nav-icon">◷</span><span>Timeline</span></button>
       <button class="nav-item" onclick="switchTab('budget')" id="nav-budget"><span class="nav-icon">◎</span><span>Budget</span></button>
       <button class="nav-item" onclick="switchTab('documents')" id="nav-documents"><span class="nav-icon">❑</span><span>Documents</span></button>
+      <button class="nav-item" onclick="switchTab('extras')" id="nav-extras"><span class="nav-icon">🎉</span><span>Extra Events</span></button>
       <button class="nav-item" onclick="switchTab('inspo')" id="nav-inspo"><span class="nav-icon">✦</span><span>Inspiration</span></button>
       <button class="nav-item" onclick="switchTab('tips')" id="nav-tips"><span class="nav-icon">💡</span><span>Tips</span></button>
     </nav>
@@ -472,9 +561,18 @@
       <div class="view-toggle" style="margin-bottom:16px;">
         <button class="view-toggle-btn active" id="guest-view-list-btn" onclick="setGuestView('list')">Guest List</button>
         <button class="view-toggle-btn" id="guest-view-seating-btn" onclick="setGuestView('seating')">Seating Chart</button>
+        <button class="view-toggle-btn" id="guest-view-floorplan-btn" onclick="setGuestView('floorplan')">Floorplan</button>
       </div>
       <div id="guest-list-view"></div>
       <div id="guest-seating-view" style="display:none;"></div>
+      <div id="guest-floorplan-view" style="display:none;"></div>
+    </div>
+
+    <!-- Extras -->
+    <div class="tab-panel" id="tab-extras">
+      <div class="page-header"><div><div class="page-title">Extra Events</div><div class="page-subtitle">Rehearsal dinner, welcome party, bachelorette — plan them all alongside the main event</div></div></div>
+      <div class="extra-presets" id="extra-presets"></div>
+      <div class="extras-grid" id="extras-grid"></div>
     </div>
 
     <!-- Vendors -->
@@ -487,7 +585,7 @@
 
     <!-- Timeline -->
     <div class="tab-panel" id="tab-timeline">
-      <div class="page-header"><div><div class="page-title">Timeline</div><div class="page-subtitle" id="timeline-subtitle">Your personalized wedding planning countdown</div></div><span id="timeline-progress-text" style="font-size:13px;color:var(--text-muted);"></span></div>
+      <div class="page-header"><div><div class="page-title">Timeline</div><div class="page-subtitle" id="timeline-subtitle">Your personalized wedding planning countdown</div></div><div style="display:flex;gap:10px;align-items:center;"><span id="timeline-progress-text" style="font-size:13px;color:var(--text-muted);"></span><button class="btn btn-primary btn-sm" onclick="openMilestoneModal()">+ Add Milestone</button></div></div>
       <div class="view-toggle">
         <button class="view-toggle-btn active" id="tl-view-list-btn" onclick="setTimelineView('list')">List</button>
         <button class="view-toggle-btn" id="tl-view-cal-btn" onclick="setTimelineView('calendar')">Calendar</button>
@@ -629,7 +727,7 @@
         </div>
       </div>
       <div class="form-grid">
-        <div class="form-group"><label class="form-label">Category</label><select class="form-select" id="v-category"><option value="">Select...</option></select></div>
+        <div class="form-group"><label class="form-label">Category</label><select class="form-select" id="v-category" onchange="toggleHotelFields()"><option value="">Select...</option></select></div>
         <div class="form-group"><label class="form-label">Status</label>
           <select class="form-select" id="v-status">
             <option value="researching">Researching</option><option value="contacted">Contacted</option><option value="meeting">Meeting Scheduled</option><option value="booked">Booked</option><option value="paid">Paid in Full</option>
@@ -650,6 +748,30 @@
             <div class="file-drop-text">📎 <strong>Click to upload</strong> brochure or proposal · PDF, DOC, JPG</div>
           </div>
           <div id="brochure-selected-display" style="font-size:12px;color:var(--tiffany-deep);margin-top:4px;display:none;"></div>
+        </div>
+        <div class="hotel-fields" id="hotel-fields">
+          <div class="hotel-fields-title">🏨 Room Block Details</div>
+          <div class="hotel-fields-grid">
+            <div class="form-group"><label class="form-label">Contract Status</label>
+              <select class="form-select" id="v-hotel-contract">
+                <option value="negotiating">Negotiating</option><option value="sent">Contract Sent</option><option value="signed">Contract Signed ✓</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label">Rooms Blocked</label><input class="form-input" id="v-hotel-rooms" type="number" placeholder="e.g. 10" /></div>
+            <div class="form-group"><label class="form-label">Nightly Rate</label><input class="form-input" id="v-hotel-rate" type="number" placeholder="e.g. 189" /></div>
+            <div class="form-group"><label class="form-label">Booking Code / Group Name</label><input class="form-input" id="v-hotel-code" placeholder="e.g. SMITH2026" /></div>
+            <div class="form-group"><label class="form-label">Cutoff Date (guests must book by)</label><input class="form-input" id="v-hotel-cutoff" type="date" /></div>
+            <div class="form-group"><label class="form-label">Next Follow-up</label><input class="form-input" id="v-hotel-followup" type="date" /></div>
+            <div class="form-group"><label class="form-label">Attrition Policy?</label>
+              <select class="form-select" id="v-hotel-attrition" onchange="toggleAttritionWarn()">
+                <option value="none">No attrition / No penalty</option><option value="yes">Yes — charged for unbooked rooms</option><option value="unknown">Not sure — ASK!</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label">Attrition Threshold</label><input class="form-input" id="v-hotel-attrition-pct" placeholder="e.g. 80% or 8 rooms" /></div>
+            <div class="form-group form-grid-full"><label class="form-label">Days Waited on Response</label><input class="form-input" id="v-hotel-response-log" placeholder="Track slow responses here..." /></div>
+            <div class="form-group form-grid-full"><label class="form-label">Communication Notes</label><textarea class="form-textarea" id="v-hotel-comm-notes" placeholder="Contact names, email threads, what's still outstanding..."></textarea></div>
+          </div>
+          <div class="hotel-attrition-warn" id="attrition-warn" style="display:none;">⚠ Attrition policy means you pay for unbooked rooms after the cutoff date. Negotiate the threshold down or switch to a no-attrition contract if possible.</div>
         </div>
         <div class="form-section-divider">Financials</div>
         <div class="form-group"><label class="form-label">Quoted Price</label><input class="form-input" id="v-price" type="number" placeholder="0" /></div>
@@ -780,12 +902,72 @@
   </div>
 </div>
 
+<!-- ══ Milestone Modal ══ -->
+<div class="modal-backdrop" id="milestone-modal-backdrop" onclick="closeMilestoneModal(event)">
+  <div class="modal" style="width:480px;">
+    <div class="modal-header"><div class="modal-title" id="milestone-modal-title">Add Milestone</div><button class="modal-close" onclick="closeMilestoneModal(true)">✕</button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group form-grid-full"><label class="form-label">Task</label><input class="form-input" id="m-task" placeholder="e.g. Book ice cream truck" /></div>
+        <div class="form-group"><label class="form-label">Category</label>
+          <select class="form-select" id="m-cat">
+            <option>Venue</option><option>Photography</option><option>Catering</option><option>Planning</option><option>Budget</option><option>Music</option><option>Florals</option><option>Video</option><option>Honeymoon</option><option>Cake</option><option>Beauty</option><option>Stationery</option><option>Transport</option><option>Rings</option><option>Décor</option><option>Guests</option><option>Party</option><option>Wedding Party</option><option>Payments</option><option>Logistics</option><option>Rehearsal</option><option>Attire</option><option>RSVP</option><option>Ceremony</option><option>Legal</option><option>Digital</option><option>Registry</option><option>Vendors</option><option>After</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Months Before Wedding</label><input class="form-input" id="m-months" type="number" step="0.25" placeholder="e.g. 6" /></div>
+        <div class="form-group form-grid-full" style="font-size:11px;color:var(--text-muted);line-height:1.4;">Use positive numbers for before the wedding (12 = 12 months before), negative for after (-1 = 1 month after). Decimals ok: 0.5 = 2 weeks before.</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeMilestoneModal(true)">Cancel</button>
+      <button class="btn btn-danger hidden" id="m-delete-btn" onclick="deleteMilestone()">Delete</button>
+      <button class="btn btn-primary" onclick="saveMilestone()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ Extra Event Modal ══ -->
+<div class="modal-backdrop" id="event-modal-backdrop" onclick="closeEventModal(event)">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title" id="event-modal-title">Event Details</div><button class="modal-close" onclick="closeEventModal(true)">✕</button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label class="form-label">Icon</label><input class="form-input" id="ev-icon" placeholder="🍽️" maxlength="4" /></div>
+        <div class="form-group"><label class="form-label">Event Name</label><input class="form-input" id="ev-name" placeholder="e.g. Rehearsal Dinner" /></div>
+        <div class="form-group"><label class="form-label">Date</label><input class="form-input" id="ev-date" type="date" /></div>
+        <div class="form-group"><label class="form-label">Time</label><input class="form-input" id="ev-time" placeholder="e.g. 6:30 PM" /></div>
+        <div class="form-group form-grid-full"><label class="form-label">Venue / Location</label><input class="form-input" id="ev-venue" placeholder="Venue name + address" /></div>
+        <div class="form-group"><label class="form-label">Host</label><input class="form-input" id="ev-host" placeholder="Who's paying/hosting?" /></div>
+        <div class="form-group"><label class="form-label">Budget</label><input class="form-input" id="ev-budget" type="number" placeholder="0" /></div>
+        <div class="form-group"><label class="form-label">Dress Code</label><input class="form-input" id="ev-dress" placeholder="e.g. Cocktail attire" /></div>
+        <div class="form-group"><label class="form-label">Headcount Target</label><input class="form-input" id="ev-count" type="number" placeholder="e.g. 20" /></div>
+        <div class="form-group form-grid-full"><label class="form-label">Attendees (select from main guest list)</label>
+          <div id="ev-attendees-container" style="background:var(--pearl);border-radius:7px;padding:9px;max-height:140px;overflow-y:auto;border:1px solid var(--border);"></div>
+        </div>
+        <div class="form-group form-grid-full"><label class="form-label">Checklist</label>
+          <div id="ev-checklist-container" style="background:var(--pearl);border-radius:7px;padding:9px;border:1px solid var(--border);"></div>
+          <div style="display:flex;gap:6px;margin-top:6px;">
+            <input class="form-input" id="ev-new-check" placeholder="Add a to-do..." style="flex:1;" />
+            <button class="btn btn-outline btn-sm" onclick="addEventCheck()">+ Add</button>
+          </div>
+        </div>
+        <div class="form-group form-grid-full"><label class="form-label">Notes</label><textarea class="form-textarea" id="ev-notes" placeholder="Menu ideas, dietary notes, vendor contacts..."></textarea></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeEventModal(true)">Cancel</button>
+      <button class="btn btn-danger hidden" id="ev-delete-btn" onclick="deleteEvent()">Delete</button>
+      <button class="btn btn-primary" onclick="saveEvent()">Save Event</button>
+    </div>
+  </div>
+</div>
+
 <div id="toast-container"></div>
 
 <script>
 // ══ Constants ════════════════════════════════════════════════════════════
 
-const VENDOR_CATEGORIES=['Venue','Photographer','Videographer','Caterer','DJ','Band','Florist','Wedding Planner','Hair & Makeup','Cake & Desserts','Officiant','Transportation','Attire & Alterations','Invitations & Stationery','Jewelry & Rings','Honeymoon','Rehearsal Dinner','Décor & Rentals','Other'];
+const VENDOR_CATEGORIES=['Venue','Photographer','Videographer','Caterer','DJ','Band','Florist','Wedding Planner','Hair & Makeup','Cake & Desserts','Officiant','Transportation','Attire & Alterations','Invitations & Stationery','Jewelry & Rings','Accommodations / Hotel','Honeymoon','Rehearsal Dinner','Décor & Rentals','Other'];
 
 const BUDGET_CATEGORIES=[
   {id:'venue',      name:'Venue',                   pct:25},
@@ -815,8 +997,19 @@ const V2B={
   'Wedding Planner':'planning','Hair & Makeup':'attire','Cake & Desserts':'cake',
   'Transportation':'transport','Attire & Alterations':'attire',
   'Invitations & Stationery':'stationery','Honeymoon':'honeymoon',
+  'Accommodations / Hotel':'accomm',
   'Jewelry & Rings':'misc','Officiant':'misc','Other':'misc','Rehearsal Dinner':'misc'
 };
+
+const EXTRA_EVENT_PRESETS=[
+  {id:'rehearsal',name:'Rehearsal Dinner',icon:'🍽️'},
+  {id:'welcome',name:'Welcome Event',icon:'🥂'},
+  {id:'farewell',name:'Farewell Brunch',icon:'☕'},
+  {id:'bachelorette',name:'Bachelorette Trip',icon:'👯'},
+  {id:'bachelor',name:'Bachelor Trip',icon:'🥃'},
+  {id:'shower',name:'Bridal Shower',icon:'🌸'},
+  {id:'engagement',name:'Engagement Party',icon:'💍'},
+];
 
 const CAT_COLORS={
   'Venue':'#81D8D0','Photography':'#F5C842','Catering':'#F4845F','Planning':'#9B59B6',
@@ -914,29 +1107,35 @@ function idbDel(id){return new Promise(res=>{const tx=IDB.db.transaction('files'
 
 // ══ State ════════════════════════════════════════════════════════════════
 
-const KEY='vow_v4';
-function defaultState(){return{setup:false,wedding:{brideName:'',partnerName:'',weddingDate:'',venue:''},vendors:[],timeline:{completed:[]},budget:{total:0,categories:{}},documents:[],tips:[],inspo:[],pinterestUrl:'',guests:[],tables:[]};}
+const KEY='vow_v5';
+function defaultState(){return{setup:false,wedding:{brideName:'',partnerName:'',weddingDate:'',venue:''},vendors:[],timeline:{completed:[]},budget:{total:0,categories:{}},documents:[],tips:[],inspo:[],pinterestUrl:'',guests:[],tables:[],milestones:null,extraEvents:[],floorplan:{hasBg:false,scale:1}};}
 
-// Migrate v3 → v4
+// Migrate v3/v4 → v5
 let S=defaultState();
 try{
-  const v4=localStorage.getItem(KEY);
-  if(v4){S=JSON.parse(v4);}
+  const v5=localStorage.getItem(KEY);
+  if(v5){S=JSON.parse(v5);}
   else{
+    const v4=localStorage.getItem('vow_v4');
     const v3=localStorage.getItem('vow_v3');
-    if(v3){const old=JSON.parse(v3);S={...defaultState(),...old,guests:[],tables:[]};}
+    if(v4){const old=JSON.parse(v4);S={...defaultState(),...old};}
+    else if(v3){const old=JSON.parse(v3);S={...defaultState(),...old,guests:[],tables:[]};}
   }
 }catch(e){}
 if(!S.guests)S.guests=[];
 if(!S.tables)S.tables=[];
 if(!S.inspo)S.inspo=[];
+if(!S.extraEvents)S.extraEvents=[];
+if(!S.floorplan)S.floorplan={hasBg:false,scale:1};
 if(!S.budget.categories.accomm)S.budget.categories.accomm=S.budget.categories.accommodations||0;
 
-let pendingDocFile=null,pendingBrochureFile=null;
+let pendingDocFile=null,pendingBrochureFile=null,pendingFloorplanFile=null;
 let activeVendorFilter='All',activeTipFilter='All';
 let editingVendorId=null,editingDocId=null,editingGuestId=null,editingTableId=null;
+let editingMilestoneId=null,editingEventId=null;
 let timelineView='list',guestView='list';
 let calendarDate=new Date();
+let dragGuestId=null,dragTableId=null;
 
 function save(){localStorage.setItem(KEY,JSON.stringify(S));}
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
@@ -949,6 +1148,8 @@ function addMonths(dateStr,months){if(!dateStr)return null;const d=new Date(date
 
 async function init(){
   await initIDB();
+  if(!S.milestones)S.milestones=TIMELINE_MILESTONES.map(m=>({...m}));
+  save();
   VENDOR_CATEGORIES.forEach(c=>{const o=document.createElement('option');o.value=o.textContent=c;document.getElementById('v-category').appendChild(o);});
   BUDGET_CATEGORIES.forEach(c=>{const o=document.createElement('option');o.value=c.id;o.textContent=c.name;document.getElementById('v-budget-cat').appendChild(o);});
   if(S.setup){document.getElementById('onboarding').style.display='none';renderAll();}
@@ -1009,6 +1210,7 @@ function switchTab(tab){
   else if(tab==='timeline')renderTimeline();
   else if(tab==='budget')renderBudget();
   else if(tab==='documents')renderDocuments();
+  else if(tab==='extras')renderExtras();
   else if(tab==='inspo')renderInspo();
   else if(tab==='tips')renderTips();
 }
@@ -1035,8 +1237,8 @@ function renderDashboard(){
   const meta=document.getElementById('hero-meta');
   if(d!==null)meta.textContent=d>0?`${d} day${d!==1?'s':''} to go · ${fmtDate(weddingDate)}`:d===0?'🎊 Today is the day!':`${Math.abs(d)} days ago`;
 
-  const yes=S.guests.filter(g=>g.rsvp==='yes').length;
-  const invited=S.guests.length;
+  const yes=S.guests.reduce((n,g)=>n+(g.rsvp==='yes'?(g.plusOne==='yes'?2:1):0),0);
+  const invited=S.guests.reduce((n,g)=>n+(g.plusOne==='yes'?2:1),0);
   document.getElementById('stat-guests').textContent=yes;
   document.getElementById('stat-guests-sub').textContent=`of ${invited} invited`;
 
@@ -1050,7 +1252,8 @@ function renderDashboard(){
   document.getElementById('stat-budget-pct').textContent=pct+'%';
   document.getElementById('stat-budget-sub').textContent=total>0?`${fmt$(tc)} of ${fmt$(total)}`:'Set budget →';
 
-  const done=S.timeline.completed.length,tot=TIMELINE_MILESTONES.length;
+  const allMs=getMilestones();
+  const done=S.timeline.completed.filter(id=>allMs.find(m=>m.id===id)).length,tot=allMs.length;
   document.getElementById('stat-tasks').textContent=tot>0?Math.round(done/tot*100)+'%':'0%';
   document.getElementById('stat-tasks-sub').textContent=`${done} of ${tot} done`;
 
@@ -1060,23 +1263,23 @@ function renderDashboard(){
 
   const tl=document.getElementById('dash-timeline-list');
   if(!weddingDate){tl.innerHTML=`<div style="text-align:center;color:var(--text-muted);font-size:13px;padding:8px 0;">Set your wedding date to see upcoming tasks</div>`;return;}
-  const upcoming=TIMELINE_MILESTONES.map(m=>({...m,targetDate:addMonths(weddingDate,m.mo)})).filter(m=>!S.timeline.completed.includes(m.id)).map(m=>({...m,d:daysUntil(m.targetDate)})).filter(m=>m.d!==null).sort((a,b)=>a.d-b.d).slice(0,5);
+  const upcoming=getMilestones().map(m=>({...m,targetDate:addMonths(weddingDate,m.mo)})).filter(m=>!S.timeline.completed.includes(m.id)).map(m=>({...m,d:daysUntil(m.targetDate)})).filter(m=>m.d!==null&&m.d>=0).sort((a,b)=>a.d-b.d).slice(0,5);
   tl.innerHTML=upcoming.map(m=>{const d=m.d;let cls='',txt='';if(d<0){cls='overdue';txt=`${Math.abs(d)}d overdue`;}else if(d<=14){cls='soon';txt=`in ${d}d`;}else txt=fmtDate(m.targetDate);return`<div class="timeline-mini-item"><div style="flex:1"><div class="timeline-mini-task">${m.task}</div><div class="timeline-mini-cat">${m.cat}</div></div><div class="timeline-mini-due ${cls}">${txt}</div></div>`;}).join('');
 }
 
 // ══ Guests ═══════════════════════════════════════════════════════════════
 
 function renderGuests(){
-  const yes=S.guests.filter(g=>g.rsvp==='yes').length;
-  const no=S.guests.filter(g=>g.rsvp==='no').length;
-  const pending=S.guests.filter(g=>g.rsvp==='pending'||!g.rsvp).length;
+  const yesSeats=S.guests.reduce((n,g)=>n+(g.rsvp==='yes'?(g.plusOne==='yes'?2:1):0),0);
+  const noSeats=S.guests.reduce((n,g)=>n+(g.rsvp==='no'?(g.plusOne==='yes'?2:1):0),0);
+  const pendingSeats=S.guests.reduce((n,g)=>n+((g.rsvp==='pending'||!g.rsvp||g.rsvp==='maybe')?(g.plusOne==='yes'?2:1):0),0);
+  const invitedSeats=S.guests.reduce((n,g)=>n+(g.plusOne==='yes'?2:1),0);
   const dietary=S.guests.filter(g=>g.dietary).length;
-  const plusOnes=S.guests.filter(g=>g.plusOne==='yes').length;
   document.getElementById('guest-stats').innerHTML=`
-    <div class="guest-stat"><div class="guest-stat-value">${S.guests.length}</div><div class="guest-stat-label">Invited</div></div>
-    <div class="guest-stat"><div class="guest-stat-value" style="color:#3D7A6A;">${yes}</div><div class="guest-stat-label">Confirmed</div></div>
-    <div class="guest-stat"><div class="guest-stat-value" style="color:#8B3A3A;">${no}</div><div class="guest-stat-label">Declined</div></div>
-    <div class="guest-stat"><div class="guest-stat-value" style="color:var(--gold);">${pending}</div><div class="guest-stat-label">Pending</div></div>
+    <div class="guest-stat"><div class="guest-stat-value">${invitedSeats}</div><div class="guest-stat-label">Seats Invited</div></div>
+    <div class="guest-stat"><div class="guest-stat-value" style="color:#3D7A6A;">${yesSeats}</div><div class="guest-stat-label">Confirmed</div></div>
+    <div class="guest-stat"><div class="guest-stat-value" style="color:#8B3A3A;">${noSeats}</div><div class="guest-stat-label">Declined</div></div>
+    <div class="guest-stat"><div class="guest-stat-value" style="color:var(--gold);">${pendingSeats}</div><div class="guest-stat-label">Pending</div></div>
     <div class="guest-stat"><div class="guest-stat-value" style="color:var(--tiffany-deep);">${dietary}</div><div class="guest-stat-label">Dietary Needs</div></div>`;
 
   if(guestView==='list') renderGuestList();
@@ -1087,9 +1290,13 @@ function setGuestView(view){
   guestView=view;
   document.getElementById('guest-view-list-btn').classList.toggle('active',view==='list');
   document.getElementById('guest-view-seating-btn').classList.toggle('active',view==='seating');
+  document.getElementById('guest-view-floorplan-btn').classList.toggle('active',view==='floorplan');
   document.getElementById('guest-list-view').style.display=view==='list'?'block':'none';
   document.getElementById('guest-seating-view').style.display=view==='seating'?'block':'none';
-  if(view==='list')renderGuestList();else renderSeatingChart();
+  document.getElementById('guest-floorplan-view').style.display=view==='floorplan'?'block':'none';
+  if(view==='list')renderGuestList();
+  else if(view==='seating')renderSeatingChart();
+  else renderFloorplan();
 }
 
 function renderGuestList(){
@@ -1113,29 +1320,129 @@ function renderGuestList(){
 
 function renderSeatingChart(){
   const el=document.getElementById('guest-seating-view');
-  if(!S.tables.length){el.innerHTML=`<div class="empty-state"><div class="empty-state-icon">🪑</div><h3>No tables yet</h3><p>Add tables above, then assign guests to them in the Guest List view.</p></div>`;return;}
   const assignedIds=new Set();
+  S.guests.forEach(g=>{if(g.table&&S.tables.find(t=>t.id===g.table||t.name===g.table))assignedIds.add(g.id);});
+  const unassigned=S.guests.filter(g=>!assignedIds.has(g.id));
+
   const tableHtml=S.tables.map(t=>{
-    const guestsAtTable=S.guests.filter(g=>g.table===t.name||g.table===t.id);
-    guestsAtTable.forEach(g=>assignedIds.add(g.id));
+    const guestsAtTable=S.guests.filter(g=>g.table===t.id||g.table===t.name);
     const cap=t.capacity||8;
     const empty=Math.max(0,cap-guestsAtTable.length);
-    return`<div class="table-card">
+    return`<div class="table-card" data-table-id="${t.id}" ondragover="onTableDragOver(event,'${t.id}')" ondragleave="onTableDragLeave(event)" ondrop="onTableDrop(event,'${t.id}')">
       <button class="table-delete-btn" onclick="openTableModal('${t.id}')">✎</button>
       <div class="table-card-header">
         <div><div class="table-card-name">${t.name}</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">${t.shape||'Round'}</div></div>
         <span class="table-capacity-badge">${guestsAtTable.length}/${cap}</span>
       </div>
       <div class="table-guest-list">
-        ${guestsAtTable.map(g=>`<div class="table-guest-item"><span class="table-guest-name">${g.name}</span><span class="badge rsvp-${g.rsvp||'pending'}" style="font-size:10px;padding:1px 7px;">${g.rsvp==='yes'?'✓':g.rsvp==='no'?'✗':'?'}</span></div>`).join('')}
-        ${Array(empty).fill(0).slice(0,3).map(()=>`<div class="table-empty-seat">Empty seat</div>`).join('')}
+        ${guestsAtTable.map(g=>`<div class="table-guest-item" draggable="true" data-guest-id="${g.id}" ondragstart="onGuestDragStart(event,'${g.id}')" ondragend="onGuestDragEnd(event)"><span class="table-guest-name">${g.name}${g.plusOne==='yes'?' +1':''}</span><span class="badge rsvp-${g.rsvp||'pending'}" style="font-size:10px;padding:1px 7px;">${g.rsvp==='yes'?'✓':g.rsvp==='no'?'✗':'?'}</span></div>`).join('')}
+        ${Array(Math.min(empty,3)).fill(0).map(()=>`<div class="table-empty-seat">Empty seat · drag a guest here</div>`).join('')}
         ${empty>3?`<div class="table-empty-seat">+${empty-3} more empty seats</div>`:''}
       </div>
     </div>`;
   }).join('');
-  const unassigned=S.guests.filter(g=>!assignedIds.has(g.id));
-  el.innerHTML=`<div class="seating-grid">${tableHtml}${unassigned.length?`<div class="unassigned-guests"><div class="unassigned-label">Unassigned (${unassigned.length})</div><div class="unassigned-chips">${unassigned.map(g=>`<span class="unassigned-chip">${g.name}</span>`).join('')}</div></div>`:''}</div>`;
+
+  el.innerHTML=`
+    ${S.tables.length?`<div class="seating-grid">${tableHtml}</div>`:`<div class="empty-state"><div class="empty-state-icon">🪑</div><h3>No tables yet</h3><p>Add tables above, then drag guests from the unassigned area onto them.</p></div>`}
+    <div class="unassigned-guests" id="unassigned-drop-zone" ondragover="onUnassignDragOver(event)" ondragleave="onUnassignDragLeave(event)" ondrop="onUnassignDrop(event)" style="margin-top:14px;">
+      <div class="unassigned-label">Unassigned (${unassigned.length}) — drag onto any table</div>
+      <div class="unassigned-chips">
+        ${unassigned.length?unassigned.map(g=>`<span class="guest-drag-chip" draggable="true" data-guest-id="${g.id}" ondragstart="onGuestDragStart(event,'${g.id}')" ondragend="onGuestDragEnd(event)">${g.name}${g.plusOne==='yes'?' +1':''}</span>`).join(''):'<span style="font-size:12px;color:var(--text-muted);">All guests assigned ✓</span>'}
+      </div>
+    </div>`;
 }
+
+// ── Drag-drop handlers ──
+function onGuestDragStart(e,id){dragGuestId=id;e.dataTransfer.effectAllowed='move';e.target.classList.add('dragging');}
+function onGuestDragEnd(e){e.target.classList.remove('dragging');dragGuestId=null;}
+function onTableDragOver(e,tid){e.preventDefault();e.currentTarget.classList.add('drag-over');}
+function onTableDragLeave(e){e.currentTarget.classList.remove('drag-over');}
+function onTableDrop(e,tid){e.preventDefault();e.currentTarget.classList.remove('drag-over');if(!dragGuestId)return;const g=S.guests.find(x=>x.id===dragGuestId);const t=S.tables.find(x=>x.id===tid);if(!g||!t)return;g.table=t.id;save();renderSeatingChart();renderGuests();showToast(`${g.name} → <em>${t.name}</em>`);}
+function onUnassignDragOver(e){e.preventDefault();e.currentTarget.classList.add('drag-over');}
+function onUnassignDragLeave(e){e.currentTarget.classList.remove('drag-over');}
+function onUnassignDrop(e){e.preventDefault();e.currentTarget.classList.remove('drag-over');if(!dragGuestId)return;const g=S.guests.find(x=>x.id===dragGuestId);if(!g)return;g.table='';save();renderSeatingChart();renderGuests();}
+
+// ── Floorplan Designer ──
+let fpSelectedId=null,fpDragging=null;
+
+function renderFloorplan(){
+  const el=document.getElementById('guest-floorplan-view');
+  el.innerHTML=`
+    <div class="fp-toolbar">
+      <label class="fp-upload-btn">📷 ${S.floorplan.hasBg?'Replace venue floorplan':'Upload venue floorplan'}<input type="file" accept="image/*" onchange="uploadFloorplan(this)" /></label>
+      ${S.floorplan.hasBg?'<button class="fp-shape-btn" onclick="removeFloorplan()">✕ Remove background</button>':''}
+      <div style="flex:1;"></div>
+      <button class="fp-shape-btn" onclick="addFpShape('round')">● Round</button>
+      <button class="fp-shape-btn" onclick="addFpShape('rectangle')">▭ Rectangle</button>
+      <button class="fp-shape-btn" onclick="addFpShape('estate')">⬛ Estate</button>
+      <button class="fp-shape-btn" onclick="addFpShape('serpentine')">◡ Serpentine</button>
+    </div>
+    <div class="fp-canvas-wrap">
+      <div class="fp-canvas ${S.floorplan.hasBg?'has-bg':''}" id="fp-canvas" onclick="fpSelectedId=null;renderFloorplan();"></div>
+    </div>
+    <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">
+      💡 <strong>Tip:</strong> Upload your venue floorplan as a background, then add tables on top. Drag tables to position them. Click a table to select + edit; the × button deletes.
+      Tables you add here also appear in the Seating Chart view.
+    </div>`;
+
+  const canvas=document.getElementById('fp-canvas');
+  if(S.floorplan.hasBg){
+    idbGet('floorplan_bg').then(f=>{if(f)canvas.style.backgroundImage=`url(${f.data})`;});
+  } else {
+    canvas.innerHTML=`<div class="fp-empty"><div style="font-size:28px;">📐</div><div>Upload your venue floorplan to get started</div><div style="font-size:11px;">Or add table shapes without a background</div></div>`;
+  }
+
+  S.tables.forEach(t=>{
+    const x=t.fpX??40,y=t.fpY??40,w=t.fpW||(t.shape==='rectangle'?160:t.shape==='serpentine'?200:90),h=t.fpH||(t.shape==='rectangle'?60:t.shape==='serpentine'?70:90);
+    const guestsHere=S.guests.filter(g=>g.table===t.id||g.table===t.name).length;
+    const shape=t.shape||'round';
+    const sh=document.createElement('div');
+    sh.className=`fp-shape ${shape} ${fpSelectedId===t.id?'selected':''}`;
+    sh.style.left=x+'px';sh.style.top=y+'px';sh.style.width=w+'px';sh.style.height=h+'px';
+    sh.innerHTML=`<div class="fp-shape-label">${t.name}<div class="fp-shape-count">${guestsHere}/${t.capacity||8}</div></div><button class="fp-shape-delete" onclick="event.stopPropagation();deleteFpTable('${t.id}')">✕</button>`;
+    sh.addEventListener('mousedown',e=>fpStartDrag(e,t.id));
+    sh.addEventListener('click',e=>{e.stopPropagation();fpSelectedId=t.id;renderFloorplan();});
+    sh.addEventListener('dblclick',e=>{e.stopPropagation();openTableModal(t.id);});
+    canvas.appendChild(sh);
+  });
+}
+
+function fpStartDrag(e,id){
+  if(e.target.classList.contains('fp-shape-delete'))return;
+  fpSelectedId=id;
+  const t=S.tables.find(x=>x.id===id);if(!t)return;
+  const shapeEl=e.currentTarget;
+  const startX=e.clientX,startY=e.clientY;
+  const origX=t.fpX??40,origY=t.fpY??40;
+  let moved=false;
+  function move(ev){
+    moved=true;
+    t.fpX=Math.max(0,origX+(ev.clientX-startX));
+    t.fpY=Math.max(0,origY+(ev.clientY-startY));
+    shapeEl.style.left=t.fpX+'px';
+    shapeEl.style.top=t.fpY+'px';
+  }
+  function up(){document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',up);if(moved)save();}
+  document.addEventListener('mousemove',move);
+  document.addEventListener('mouseup',up);
+  e.preventDefault();e.stopPropagation();
+}
+
+function addFpShape(shape){
+  const n=S.tables.filter(t=>t.shape===shape).length+1;
+  const name=shape==='round'?`Round ${n}`:shape==='rectangle'?`Long ${n}`:shape==='estate'?`Estate ${n}`:`Serpentine ${n}`;
+  const t={id:uid(),name,capacity:shape==='rectangle'?10:shape==='estate'?12:shape==='serpentine'?16:8,shape,notes:'',fpX:40+(S.tables.length*20)%200,fpY:40+(S.tables.length*20)%200};
+  S.tables.push(t);save();renderFloorplan();
+}
+function deleteFpTable(id){if(!confirm('Delete this table?'))return;const t=S.tables.find(x=>x.id===id);if(t)S.guests.forEach(g=>{if(g.table===t.id||g.table===t.name)g.table='';});S.tables=S.tables.filter(x=>x.id!==id);fpSelectedId=null;save();renderFloorplan();}
+
+function uploadFloorplan(input){
+  const f=input.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=async e=>{await idbPut('floorplan_bg',{name:f.name,type:f.type,data:e.target.result});S.floorplan.hasBg=true;save();renderFloorplan();};
+  r.readAsDataURL(f);
+}
+async function removeFloorplan(){if(!confirm('Remove the floorplan background?'))return;await idbDel('floorplan_bg');S.floorplan.hasBg=false;save();renderFloorplan();}
 
 function openGuestModal(id=null){
   editingGuestId=id;
@@ -1144,7 +1451,8 @@ function openGuestModal(id=null){
     const g=S.guests.find(x=>x.id===id);if(!g)return;
     document.getElementById('guest-modal-title').textContent='Edit Guest';
     del.classList.remove('hidden');
-    ['name','email','phone','dietary','table','plusOneName','gift','notes'].forEach(f=>document.getElementById('g-'+f).value=g[f]||'');
+    ['name','email','phone','dietary','table','gift','notes'].forEach(f=>document.getElementById('g-'+f).value=g[f]||'');
+    document.getElementById('g-plus-one-name').value=g.plusOneName||'';
     document.getElementById('g-rsvp').value=g.rsvp||'pending';
     document.getElementById('g-side').value=g.side||'bride';
     document.getElementById('g-meal').value=g.meal||'';
@@ -1212,19 +1520,28 @@ function renderVendors(){
   const filtered=activeVendorFilter==='All'?S.vendors:S.vendors.filter(v=>v.category===activeVendorFilter);
   const grid=document.getElementById('vendors-grid');
   if(!S.vendors.length){grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><div class="empty-state-icon">🌸</div><h3>No vendors yet</h3><p>Add your first vendor. Paste a vendor email to auto-fill details.</p></div>`;return;}
-  grid.innerHTML=filtered.map(v=>`<div class="vendor-card" onclick="openVendorModal('${v.id}')">
+  grid.innerHTML=filtered.map(v=>{
+    const isHotel=v.category==='Accommodations / Hotel';
+    const hotelPrice=isHotel&&v.hotelRate&&v.hotelRooms?`$${v.hotelRate}/night × ${v.hotelRooms}`:'';
+    return`<div class="vendor-card" onclick="openVendorModal('${v.id}')">
     <div class="vendor-card-top"><span class="vendor-category-tag">${v.category}</span>${statusBadge(v.status)}</div>
     <div class="vendor-name">${v.name||'(Unnamed)'}</div>
     <div class="vendor-contact">${[v.contact,v.phone].filter(Boolean).join(' · ')||v.email||''}</div>
+    ${isHotel?`<div style="font-size:12px;color:var(--text-mid);margin-bottom:6px;">
+      ${v.hotelContract?`<span class="hotel-badge ${v.hotelContract}">${v.hotelContract==='signed'?'✓ Signed':v.hotelContract==='sent'?'Sent':'Negotiating'}</span>`:''}
+      ${v.hotelAttrition==='yes'?'<span class="hotel-badge" style="background:rgba(196,149,74,.15);color:var(--gold);margin-left:4px;">⚠ Attrition</span>':''}
+      ${v.hotelRooms?`<div style="margin-top:4px;">${v.hotelRooms} rooms${v.hotelCode?' · '+v.hotelCode:''}</div>`:''}
+      ${v.hotelCutoff?`<div style="font-size:11px;color:var(--text-muted);">Cutoff: ${fmtDate(v.hotelCutoff)}</div>`:''}
+    </div>`:''}
     <div class="vendor-financials">
-      <div><div class="vendor-price">${v.price?'$'+Number(v.price).toLocaleString():'—'}</div>${v.deposit?`<div style="font-size:12px;color:var(--text-muted);">Deposit: $${Number(v.deposit).toLocaleString()}</div>`:''}</div>
+      <div><div class="vendor-price">${isHotel&&hotelPrice?hotelPrice:(v.price?'$'+Number(v.price).toLocaleString():'—')}</div>${v.deposit?`<div style="font-size:12px;color:var(--text-muted);">Deposit: $${Number(v.deposit).toLocaleString()}</div>`:''}</div>
       <div style="display:flex;gap:5px;">
         ${v.portal?`<a href="${v.portal}" target="_blank" onclick="event.stopPropagation()" class="btn btn-tiffany btn-sm">Portal ↗</a>`:''}
         ${v.website?`<a href="${v.website}" target="_blank" onclick="event.stopPropagation()" class="btn btn-ghost btn-sm">Web ↗</a>`:''}
         ${v.hasBrochureFile?`<button class="btn btn-gold btn-sm" onclick="event.stopPropagation();downloadBrochure('${v.id}','${v.brochureFileName||'brochure'}')">📎</button>`:''}
       </div>
     </div>
-  </div>`).join('');
+  </div>`;}).join('');
 }
 
 function setVendorFilter(cat){activeVendorFilter=cat;renderVendors();}
@@ -1242,14 +1559,36 @@ function openVendorModal(id=null){
     for(const[k,elId]of Object.entries(flds))document.getElementById(elId).value=v[k]||'';
     document.getElementById('v-price').value=v.price||'';document.getElementById('v-deposit').value=v.deposit||'';
     document.getElementById('v-balance-date').value=v.balanceDate||'';document.getElementById('v-cat-min').value=v.catMin||'';
+    document.getElementById('v-hotel-contract').value=v.hotelContract||'negotiating';
+    document.getElementById('v-hotel-rooms').value=v.hotelRooms||'';
+    document.getElementById('v-hotel-rate').value=v.hotelRate||'';
+    document.getElementById('v-hotel-code').value=v.hotelCode||'';
+    document.getElementById('v-hotel-cutoff').value=v.hotelCutoff||'';
+    document.getElementById('v-hotel-followup').value=v.hotelFollowup||'';
+    document.getElementById('v-hotel-attrition').value=v.hotelAttrition||'none';
+    document.getElementById('v-hotel-attrition-pct').value=v.hotelAttritionPct||'';
+    document.getElementById('v-hotel-response-log').value=v.hotelResponseLog||'';
+    document.getElementById('v-hotel-comm-notes').value=v.hotelCommNotes||'';
     if(v.hasBrochureFile){const d=document.getElementById('brochure-selected-display');d.textContent=`📎 ${v.brochureFileName||'Uploaded brochure'} (already saved)`;d.style.display='block';}
   } else {
     document.getElementById('vendor-modal-title').textContent='Add Vendor';del.classList.add('hidden');
     ['v-category','v-name','v-contact','v-email','v-phone','v-website','v-portal','v-brochure','v-fees','v-capacity','v-pros','v-cons','v-notes'].forEach(id=>document.getElementById(id).value='');
-    ['v-price','v-deposit','v-cat-min'].forEach(id=>document.getElementById(id).value='');
+    ['v-price','v-deposit','v-cat-min','v-hotel-rooms','v-hotel-rate','v-hotel-code','v-hotel-cutoff','v-hotel-followup','v-hotel-attrition-pct','v-hotel-response-log','v-hotel-comm-notes'].forEach(id=>document.getElementById(id).value='');
     document.getElementById('v-status').value='researching';document.getElementById('v-balance-date').value='';document.getElementById('v-budget-cat').value='';
+    document.getElementById('v-hotel-contract').value='negotiating';document.getElementById('v-hotel-attrition').value='none';
   }
+  toggleHotelFields();toggleAttritionWarn();
   document.getElementById('vendor-modal-backdrop').classList.add('open');
+}
+
+function toggleHotelFields(){
+  const cat=document.getElementById('v-category').value;
+  const isHotel=cat==='Accommodations / Hotel';
+  document.getElementById('hotel-fields').classList.toggle('show',isHotel);
+}
+function toggleAttritionWarn(){
+  const v=document.getElementById('v-hotel-attrition').value;
+  document.getElementById('attrition-warn').style.display=(v==='yes'||v==='unknown')?'block':'none';
 }
 function closeVendorModal(f=false){if(f===true||f?.target===document.getElementById('vendor-modal-backdrop')){document.getElementById('vendor-modal-backdrop').classList.remove('open');editingVendorId=null;pendingBrochureFile=null;}}
 
@@ -1261,7 +1600,7 @@ function handleBrochureSelect(input){
 }
 
 async function saveVendor(){
-  const vendor={id:editingVendorId||uid(),category:document.getElementById('v-category').value,status:document.getElementById('v-status').value,name:document.getElementById('v-name').value.trim(),contact:document.getElementById('v-contact').value.trim(),email:document.getElementById('v-email').value.trim(),phone:document.getElementById('v-phone').value.trim(),website:document.getElementById('v-website').value.trim(),portal:document.getElementById('v-portal').value.trim(),brochure:document.getElementById('v-brochure').value.trim(),fees:document.getElementById('v-fees').value.trim(),catMin:parseFloat(document.getElementById('v-cat-min').value)||0,capacity:document.getElementById('v-capacity').value.trim(),pros:document.getElementById('v-pros').value.trim(),cons:document.getElementById('v-cons').value.trim(),price:parseFloat(document.getElementById('v-price').value)||0,deposit:parseFloat(document.getElementById('v-deposit').value)||0,balanceDate:document.getElementById('v-balance-date').value,budgetCat:document.getElementById('v-budget-cat').value,notes:document.getElementById('v-notes').value.trim(),hasBrochureFile:false,brochureFileName:''};
+  const vendor={id:editingVendorId||uid(),category:document.getElementById('v-category').value,status:document.getElementById('v-status').value,name:document.getElementById('v-name').value.trim(),contact:document.getElementById('v-contact').value.trim(),email:document.getElementById('v-email').value.trim(),phone:document.getElementById('v-phone').value.trim(),website:document.getElementById('v-website').value.trim(),portal:document.getElementById('v-portal').value.trim(),brochure:document.getElementById('v-brochure').value.trim(),fees:document.getElementById('v-fees').value.trim(),catMin:parseFloat(document.getElementById('v-cat-min').value)||0,capacity:document.getElementById('v-capacity').value.trim(),pros:document.getElementById('v-pros').value.trim(),cons:document.getElementById('v-cons').value.trim(),price:parseFloat(document.getElementById('v-price').value)||0,deposit:parseFloat(document.getElementById('v-deposit').value)||0,balanceDate:document.getElementById('v-balance-date').value,budgetCat:document.getElementById('v-budget-cat').value,notes:document.getElementById('v-notes').value.trim(),hasBrochureFile:false,brochureFileName:'',hotelContract:document.getElementById('v-hotel-contract').value,hotelRooms:parseInt(document.getElementById('v-hotel-rooms').value)||0,hotelRate:parseFloat(document.getElementById('v-hotel-rate').value)||0,hotelCode:document.getElementById('v-hotel-code').value.trim(),hotelCutoff:document.getElementById('v-hotel-cutoff').value,hotelFollowup:document.getElementById('v-hotel-followup').value,hotelAttrition:document.getElementById('v-hotel-attrition').value,hotelAttritionPct:document.getElementById('v-hotel-attrition-pct').value.trim(),hotelResponseLog:document.getElementById('v-hotel-response-log').value.trim(),hotelCommNotes:document.getElementById('v-hotel-comm-notes').value.trim()};
   if(!vendor.category){alert('Please select a category.');return;}
   if(editingVendorId){const existing=S.vendors.find(v=>v.id===editingVendorId);if(existing){vendor.hasBrochureFile=existing.hasBrochureFile;vendor.brochureFileName=existing.brochureFileName;}}
   else if(!vendor.budgetCat&&V2B[vendor.category])vendor.budgetCat=V2B[vendor.category];
@@ -1344,12 +1683,14 @@ function renderTimeline(){
   if(timelineView==='calendar')renderCalendar();
 }
 
+function getMilestones(){return S.milestones||TIMELINE_MILESTONES;}
+
 function renderTimelineList(){
   const{weddingDate}=S.wedding;
   const content=document.getElementById('timeline-list-view');
   if(!weddingDate){content.innerHTML=`<div class="empty-state"><div class="empty-state-icon">📅</div><h3>No wedding date set</h3><p>Your timeline is generated automatically once you set a date.</p></div>`;return;}
   const done=S.timeline.completed;
-  const ms=TIMELINE_MILESTONES.map(m=>({...m,targetDate:addMonths(weddingDate,m.mo),isDone:done.includes(m.id)}));
+  const ms=getMilestones().map(m=>({...m,targetDate:addMonths(weddingDate,m.mo),isDone:done.includes(m.id)})).sort((a,b)=>b.mo-a.mo);
   document.getElementById('timeline-progress-text').textContent=`${done.length} / ${ms.length} complete`;
   document.getElementById('timeline-subtitle').textContent=`Personalized to ${fmtDate(weddingDate)} · ${ms.filter(m=>!m.isDone).length} remaining`;
   const groups=[{label:'Start Early',min:13,max:999},{label:'12 Months Out',min:10,max:13},{label:'9 Months Out',min:7,max:10},{label:'6 Months Out',min:4,max:7},{label:'3 Months Out',min:1,max:4},{label:'Final Month',min:-.5,max:1},{label:'After the Wedding',min:-12,max:-.5}];
@@ -1366,6 +1707,7 @@ function renderTimelineList(){
         return`<div class="timeline-item ${cls}" onclick="toggleMilestone('${m.id}')">
           <div class="timeline-check">${m.isDone?'✓':''}</div>
           <div class="timeline-content"><div class="timeline-task">${m.task}</div><div class="timeline-task-cat">${m.cat}</div></div>
+          <button class="tl-edit-btn" onclick="event.stopPropagation();openMilestoneModal('${m.id}')" title="Edit">✎</button>
           <div class="timeline-due-date ${dateCls}">${dateTxt}</div>
         </div>`;
       }).join('')}</div>
@@ -1374,6 +1716,49 @@ function renderTimelineList(){
 }
 
 function toggleMilestone(id){const i=S.timeline.completed.indexOf(id);if(i>=0)S.timeline.completed.splice(i,1);else S.timeline.completed.push(id);save();renderTimelineList();renderDashboard();}
+
+function openMilestoneModal(id=null){
+  editingMilestoneId=id;
+  const del=document.getElementById('m-delete-btn');
+  if(id){
+    const m=getMilestones().find(x=>x.id===id);if(!m)return;
+    document.getElementById('milestone-modal-title').textContent='Edit Milestone';
+    del.classList.remove('hidden');
+    document.getElementById('m-task').value=m.task||'';
+    document.getElementById('m-cat').value=m.cat||'Planning';
+    document.getElementById('m-months').value=m.mo;
+  } else {
+    document.getElementById('milestone-modal-title').textContent='Add Milestone';
+    del.classList.add('hidden');
+    document.getElementById('m-task').value='';
+    document.getElementById('m-cat').value='Planning';
+    document.getElementById('m-months').value='6';
+  }
+  document.getElementById('milestone-modal-backdrop').classList.add('open');
+}
+function closeMilestoneModal(f=false){if(f===true||f?.target===document.getElementById('milestone-modal-backdrop')){document.getElementById('milestone-modal-backdrop').classList.remove('open');editingMilestoneId=null;}}
+function saveMilestone(){
+  const task=document.getElementById('m-task').value.trim();
+  if(!task){alert('Please enter a task.');return;}
+  const mo=parseFloat(document.getElementById('m-months').value);
+  if(isNaN(mo)){alert('Please enter months before wedding.');return;}
+  const cat=document.getElementById('m-cat').value;
+  if(!S.milestones)S.milestones=TIMELINE_MILESTONES.map(m=>({...m}));
+  if(editingMilestoneId){
+    const i=S.milestones.findIndex(m=>m.id===editingMilestoneId);
+    if(i>=0)S.milestones[i]={...S.milestones[i],task,cat,mo};
+  } else {
+    S.milestones.push({id:'cm_'+uid(),task,cat,mo});
+  }
+  save();closeMilestoneModal(true);renderTimelineList();renderDashboard();
+}
+function deleteMilestone(){
+  if(!editingMilestoneId||!confirm('Delete this milestone?'))return;
+  if(!S.milestones)S.milestones=TIMELINE_MILESTONES.map(m=>({...m}));
+  S.milestones=S.milestones.filter(m=>m.id!==editingMilestoneId);
+  S.timeline.completed=S.timeline.completed.filter(id=>id!==editingMilestoneId);
+  save();closeMilestoneModal(true);renderTimelineList();renderDashboard();
+}
 
 function calNavMonth(dir){calendarDate=new Date(calendarDate.getFullYear(),calendarDate.getMonth()+dir,1);renderCalendar();}
 
@@ -1388,7 +1773,7 @@ function renderCalendar(){
   // Map milestone dates to this month
   const milestonesByDate={};
   if(weddingDate){
-    TIMELINE_MILESTONES.forEach(m=>{
+    getMilestones().forEach(m=>{
       const td=addMonths(weddingDate,m.mo);
       if(td&&td.slice(0,7)===`${yr}-${String(mo+1).padStart(2,'0')}`){
         if(!milestonesByDate[td])milestonesByDate[td]=[];
@@ -1408,10 +1793,12 @@ function renderCalendar(){
     const dateStr=`${yr}-${String(mo+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
     const ms=milestonesByDate[dateStr]||[];
     const isToday=new Date(yr,mo,d).getTime()===today.getTime();
+    const visible=ms.slice(0,3);
+    const overflow=ms.length-visible.length;
     html+=`<div class="cal-day ${isToday?'today':''}">
       <div class="cal-day-num">${d}</div>
-      <div class="cal-dots">${ms.map(m=>{const done=S.timeline.completed.includes(m.id);const color=done?'#A8A8A8':(CAT_COLORS[m.cat]||'#81D8D0');return`<div class="cal-dot" style="background:${color};${done?'opacity:.5':''}" title="${m.task}"></div>`;}).join('')}</div>
-      ${ms.length===1?`<div class="cal-event-label">${ms[0].task}</div>`:''}
+      ${visible.map(m=>{const done=S.timeline.completed.includes(m.id);const color=CAT_COLORS[m.cat]||'#81D8D0';return`<div class="cal-task ${done?'done':''}" style="background:${color};" title="${m.task.replace(/"/g,'&quot;')}" onclick="toggleMilestone('${m.id}');event.stopPropagation();">${m.task}</div>`;}).join('')}
+      ${overflow>0?`<div class="cal-more">+${overflow} more</div>`:''}
     </div>`;
   }
 
@@ -1624,13 +2011,17 @@ function renderInspo(){
     } else if(item.type==='link'){
       const color=LINK_COLORS[item.source]||'#9A8F87';
       const icon=LINK_ICONS[item.source]||'🔗';
-      return`<div class="inspo-link-card">
+      const thumbUrl=`https://api.microlink.io/?url=${encodeURIComponent(item.url)}&embed=image.url&screenshot=false`;
+      return`<div class="inspo-link-card has-thumb">
         <button class="inspo-link-delete" onclick="deleteInspo('${item.id}')">✕</button>
-        <div class="inspo-link-type-tag" style="color:${color};">${icon} ${item.source||'Link'}</div>
-        <div class="inspo-link-title">${item.title||item.url}</div>
-        <div class="inspo-link-url">${item.url}</div>
-        ${item.label?`<div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;">${item.label}</div>`:''}
-        <a href="${item.url}" target="_blank" class="btn btn-outline btn-sm">Open ↗</a>
+        <div class="inspo-link-thumb" style="background-image:url('${thumbUrl}');">${icon}</div>
+        <div class="inspo-link-body">
+          <div class="inspo-link-type-tag" style="color:${color};">${icon} ${item.source||'Link'}</div>
+          <div class="inspo-link-title">${item.title||item.url}</div>
+          <div class="inspo-link-url">${item.url}</div>
+          ${item.label?`<div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;">${item.label}</div>`:''}
+          <a href="${item.url}" target="_blank" class="btn btn-outline btn-sm">Open ↗</a>
+        </div>
       </div>`;
     } else {
       return`<div class="inspo-note-card">
@@ -1683,6 +2074,120 @@ function openTipModal(){document.getElementById('tip-modal-backdrop').classList.
 function closeTipModal(f=false){if(f===true||f?.target===document.getElementById('tip-modal-backdrop')){document.getElementById('tip-modal-backdrop').classList.remove('open');['t-title','t-body','t-link','t-icon'].forEach(id=>document.getElementById(id).value='');}}
 function saveTip(){const title=document.getElementById('t-title').value.trim(),body=document.getElementById('t-body').value.trim();if(!title||!body){alert('Please fill in the title and tip.');return;}S.tips.push({id:uid(),title,body,cat:document.getElementById('t-cat').value,icon:document.getElementById('t-icon').value.trim()||'💡',link:document.getElementById('t-link').value.trim()});save();closeTipModal(true);renderTips();}
 function deleteTip(id){if(!confirm('Delete this tip?'))return;S.tips=S.tips.filter(t=>t.id!==id);save();renderTips();}
+
+// ══ Extras (Rehearsal, Welcome, Farewell, Bachelorette, etc.) ════════════
+
+function renderExtras(){
+  const presets=document.getElementById('extra-presets');
+  const used=new Set(S.extraEvents.map(e=>e.presetId));
+  presets.innerHTML=EXTRA_EVENT_PRESETS.filter(p=>!used.has(p.id)).map(p=>`<button class="extra-preset-btn" onclick="addEventFromPreset('${p.id}')">${p.icon} + ${p.name}</button>`).join('')+`<button class="extra-preset-btn" onclick="openEventModal()">✦ + Custom Event</button>`;
+
+  const grid=document.getElementById('extras-grid');
+  if(!S.extraEvents.length){grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1"><div class="empty-state-icon">🎉</div><h3>No extra events yet</h3><p>Tap one of the quick-add buttons above to plan your rehearsal dinner, welcome party, or bachelorette trip.</p></div>`;return;}
+  grid.innerHTML=S.extraEvents.map(ev=>{
+    const doneCount=(ev.checklist||[]).filter(c=>c.done).length;
+    const totalCount=(ev.checklist||[]).length;
+    const attendeeCount=(ev.attendeeIds||[]).length;
+    return`<div class="extra-card" onclick="openEventModal('${ev.id}')">
+      <div class="extra-card-icon">${ev.icon||'🎉'}</div>
+      <div class="extra-card-name">${ev.name}</div>
+      ${ev.date?`<div class="extra-card-date">${fmtDate(ev.date)}${ev.time?' · '+ev.time:''}</div>`:'<div class="extra-card-date" style="color:var(--text-muted);">Date TBD</div>'}
+      ${ev.venue?`<div class="extra-card-venue">📍 ${ev.venue}</div>`:''}
+      <div class="extra-card-meta">
+        <span>👥 <strong>${attendeeCount}</strong> guests</span>
+        ${ev.budget?`<span>💰 <strong>$${Number(ev.budget).toLocaleString()}</strong></span>`:''}
+        ${totalCount?`<span>✓ <strong>${doneCount}/${totalCount}</strong> tasks</span>`:''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function addEventFromPreset(presetId){
+  const p=EXTRA_EVENT_PRESETS.find(x=>x.id===presetId);if(!p)return;
+  const defaultChecklists={
+    rehearsal:['Choose venue','Draft guest list','Send invites','Finalize menu','Confirm AV / speeches'],
+    welcome:['Pick venue','Set arrival window','Order welcome bags','Decor / signage'],
+    farewell:['Book brunch location','Send info to guests','Plan menu','Thank-you notes prep'],
+    bachelorette:['Pick destination','Book accommodations','Book flights','Activities plan','Group chat set up','Budget confirmation'],
+    bachelor:['Pick destination','Book accommodations','Activities plan','Budget confirmation'],
+    shower:['Pick host','Venue','Theme / decor','Games','Registry shared'],
+    engagement:['Venue','Guest list','Photographer','Menu'],
+  };
+  const ev={id:uid(),presetId:p.id,name:p.name,icon:p.icon,date:'',time:'',venue:'',host:'',budget:0,dress:'',count:0,notes:'',attendeeIds:[],checklist:(defaultChecklists[p.id]||[]).map(t=>({id:uid(),task:t,done:false}))};
+  S.extraEvents.push(ev);save();renderExtras();openEventModal(ev.id);
+}
+
+let tempChecklist=[];
+let tempAttendeeIds=[];
+
+function openEventModal(id=null){
+  editingEventId=id;
+  const del=document.getElementById('ev-delete-btn');
+  if(id){
+    const ev=S.extraEvents.find(x=>x.id===id);if(!ev)return;
+    document.getElementById('event-modal-title').textContent='Edit '+ev.name;
+    del.classList.remove('hidden');
+    document.getElementById('ev-icon').value=ev.icon||'🎉';
+    document.getElementById('ev-name').value=ev.name||'';
+    document.getElementById('ev-date').value=ev.date||'';
+    document.getElementById('ev-time').value=ev.time||'';
+    document.getElementById('ev-venue').value=ev.venue||'';
+    document.getElementById('ev-host').value=ev.host||'';
+    document.getElementById('ev-budget').value=ev.budget||'';
+    document.getElementById('ev-dress').value=ev.dress||'';
+    document.getElementById('ev-count').value=ev.count||'';
+    document.getElementById('ev-notes').value=ev.notes||'';
+    tempChecklist=JSON.parse(JSON.stringify(ev.checklist||[]));
+    tempAttendeeIds=[...(ev.attendeeIds||[])];
+  } else {
+    document.getElementById('event-modal-title').textContent='New Event';
+    del.classList.add('hidden');
+    ['ev-name','ev-date','ev-time','ev-venue','ev-host','ev-budget','ev-dress','ev-count','ev-notes'].forEach(f=>document.getElementById(f).value='');
+    document.getElementById('ev-icon').value='🎉';
+    tempChecklist=[];
+    tempAttendeeIds=[];
+  }
+  renderEventChecklist();renderEventAttendees();
+  document.getElementById('event-modal-backdrop').classList.add('open');
+}
+function closeEventModal(f=false){if(f===true||f?.target===document.getElementById('event-modal-backdrop')){document.getElementById('event-modal-backdrop').classList.remove('open');editingEventId=null;}}
+
+function renderEventChecklist(){
+  const c=document.getElementById('ev-checklist-container');
+  c.innerHTML=tempChecklist.length?tempChecklist.map((item,i)=>`<div class="extra-checklist-item ${item.done?'done':''}"><input type="checkbox" ${item.done?'checked':''} onchange="tempChecklist[${i}].done=this.checked;renderEventChecklist();" /><span>${item.task}</span><button class="extra-checklist-remove" onclick="tempChecklist.splice(${i},1);renderEventChecklist();">✕</button></div>`).join(''):'<div style="font-size:12px;color:var(--text-muted);">No tasks yet. Add one below.</div>';
+}
+function addEventCheck(){
+  const inp=document.getElementById('ev-new-check');
+  const task=inp.value.trim();if(!task)return;
+  tempChecklist.push({id:uid(),task,done:false});
+  inp.value='';renderEventChecklist();
+}
+function renderEventAttendees(){
+  const c=document.getElementById('ev-attendees-container');
+  if(!S.guests.length){c.innerHTML='<div style="font-size:12px;color:var(--text-muted);">Add guests in the Guests tab first, then select attendees here.</div>';return;}
+  c.innerHTML=S.guests.map(g=>`<label style="display:inline-flex;align-items:center;gap:5px;margin:3px 8px 3px 0;font-size:12px;cursor:pointer;"><input type="checkbox" ${tempAttendeeIds.includes(g.id)?'checked':''} onchange="toggleEventAttendee('${g.id}',this.checked);" />${g.name}${g.plusOne==='yes'?' +1':''}</label>`).join('');
+}
+function toggleEventAttendee(id,checked){
+  if(checked){if(!tempAttendeeIds.includes(id))tempAttendeeIds.push(id);}
+  else{tempAttendeeIds=tempAttendeeIds.filter(x=>x!==id);}
+}
+function saveEvent(){
+  const name=document.getElementById('ev-name').value.trim();
+  if(!name){alert('Please enter an event name.');return;}
+  const data={name,icon:document.getElementById('ev-icon').value.trim()||'🎉',date:document.getElementById('ev-date').value,time:document.getElementById('ev-time').value.trim(),venue:document.getElementById('ev-venue').value.trim(),host:document.getElementById('ev-host').value.trim(),budget:parseFloat(document.getElementById('ev-budget').value)||0,dress:document.getElementById('ev-dress').value.trim(),count:parseInt(document.getElementById('ev-count').value)||0,notes:document.getElementById('ev-notes').value.trim(),checklist:tempChecklist,attendeeIds:tempAttendeeIds};
+  if(editingEventId){
+    const i=S.extraEvents.findIndex(e=>e.id===editingEventId);
+    if(i>=0)S.extraEvents[i]={...S.extraEvents[i],...data};
+  } else {
+    S.extraEvents.push({id:uid(),...data});
+  }
+  save();closeEventModal(true);renderExtras();
+}
+function deleteEvent(){
+  if(!editingEventId||!confirm('Delete this event?'))return;
+  S.extraEvents=S.extraEvents.filter(e=>e.id!==editingEventId);
+  save();closeEventModal(true);renderExtras();
+}
 
 // ══ Toast ════════════════════════════════════════════════════════════════
 
